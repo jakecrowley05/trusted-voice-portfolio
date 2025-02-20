@@ -8,25 +8,37 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-warm-light to-white">
+    <section className="min-h-screen flex items-center relative bg-[#F5F5F5]">
       <div className="container mx-auto px-4 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 animate-fade-up [--animation-delay:200ms]">
-            Trusted Advisor & Strategic Consultant
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-rich-black mb-6 animate-fade-up [--animation-delay:400ms]">
-            Guiding Businesses Through Complex Decisions
-          </h1>
-          <p className="text-lg md:text-xl text-rich-gray mb-8 animate-fade-up [--animation-delay:600ms]">
-            Expertise in Financial Markets, Real Estate, Technology, and Strategic Innovation
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up [--animation-delay:800ms]">
-            <Button size="lg" className="w-full sm:w-auto">
-              Schedule a Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
-              View Expertise
-            </Button>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <h1 className="text-4xl md:text-6xl font-bold text-rich-black mb-6 animate-fade-up [--animation-delay:200ms]">
+              Jake Crowley
+            </h1>
+            <p className="text-xl md:text-2xl text-rich-gray mb-8 animate-fade-up [--animation-delay:400ms] font-light">
+              Strategic Advisor & Innovation Consultant
+            </p>
+            <p className="text-lg text-rich-gray mb-8 animate-fade-up [--animation-delay:600ms] leading-relaxed">
+              Guiding businesses through complex decisions in financial markets, real estate, technology, and strategic innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up [--animation-delay:800ms]">
+              <Button size="lg" className="w-full sm:w-auto">
+                Schedule a Consultation
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                Learn More
+              </Button>
+            </div>
+          </div>
+          
+          <div className="order-1 md:order-2 relative">
+            <div className="aspect-[3/4] relative overflow-hidden rounded-lg shadow-xl">
+              <img 
+                src="/lovable-uploads/0c46f373-82e4-481d-81af-f0b55d4787a9.png"
+                alt="Jake Crowley"
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </div>

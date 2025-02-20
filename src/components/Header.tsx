@@ -20,22 +20,22 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a href="#" className="text-rich-black text-xl font-semibold">
-            Your Name
+            Jake Crowley
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#expertise" className="text-rich-black hover:text-primary transition-colors">
-              Expertise
+              Areas of Focus
             </a>
             <a href="#background" className="text-rich-black hover:text-primary transition-colors">
-              Background
+              About
             </a>
             <a href="#insights" className="text-rich-black hover:text-primary transition-colors">
               Insights
             </a>
             <Button variant="default" className="ml-4">
-              Get in Touch
+              Contact
             </Button>
           </nav>
 
@@ -53,16 +53,16 @@ const Header = () => {
           <nav className="md:hidden py-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
               <a href="#expertise" className="text-rich-black hover:text-primary transition-colors px-4 py-2">
-                Expertise
+                Areas of Focus
               </a>
               <a href="#background" className="text-rich-black hover:text-primary transition-colors px-4 py-2">
-                Background
+                About
               </a>
               <a href="#insights" className="text-rich-black hover:text-primary transition-colors px-4 py-2">
                 Insights
               </a>
               <Button variant="default" className="mx-4">
-                Get in Touch
+                Contact
               </Button>
             </div>
           </nav>

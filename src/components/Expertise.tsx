@@ -47,17 +47,14 @@ const expertiseAreas = [
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-20 bg-warm-light">
+    <section id="expertise" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary mb-4">
-            Areas of Expertise
-          </span>
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-rich-black mb-4">
-            Comprehensive Advisory Services
+            Areas of Focus
           </h2>
-          <p className="text-rich-gray max-w-2xl mx-auto">
-            Leveraging deep expertise across multiple disciplines to provide strategic guidance and innovative solutions.
+          <p className="text-rich-gray">
+            Providing strategic guidance and innovative solutions across multiple disciplines
           </p>
         </div>
 
