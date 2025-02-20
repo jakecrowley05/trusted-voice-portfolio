@@ -1,8 +1,12 @@
 
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import ConsultationCalendar from './ConsultationCalendar';
 
 const Hero = () => {
+  const [showCalendar, setShowCalendar] = useState(false);
+  
   const scrollToExpertise = () => {
     document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -22,10 +26,10 @@ const Hero = () => {
               Guiding businesses through complex decisions in financial markets, real estate, technology, and strategic innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up [--animation-delay:800ms]">
-              <Button size="lg" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto" onClick={() => setShowCalendar(true)}>
                 Schedule a Consultation
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={scrollToExpertise}>
                 Learn More
               </Button>
             </div>
@@ -49,6 +53,11 @@ const Hero = () => {
       >
         <ChevronDown size={32} className="text-primary" />
       </button>
+
+      <ConsultationCalendar 
+        open={showCalendar}
+        onOpenChange={setShowCalendar}
+      />
     </section>
   );
 };
