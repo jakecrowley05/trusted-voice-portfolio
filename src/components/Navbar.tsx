@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +34,7 @@ const Navbar = () => {
             <a href="#process" className="text-gray-600 hover:text-primary transition-colors">How It Works</a>
             <a href="#testimonials" className="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
             <a href="#pricing" className="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+            <Link to="/dashboard" className="text-gray-600 hover:text-primary transition-colors">Dashboard</Link>
             <Button asChild className="rounded-full px-6">
               <a href="#contact">Get Started</a>
             </Button>
@@ -79,6 +81,13 @@ const Navbar = () => {
               >
                 Pricing
               </a>
+              <Link
+                to="/dashboard"
+                className="text-gray-600 hover:text-primary transition-colors px-4 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Dashboard
+              </Link>
               <div className="px-4 pt-2">
                 <Button asChild className="w-full rounded-full">
                   <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
