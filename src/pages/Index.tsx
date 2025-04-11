@@ -1,22 +1,26 @@
 
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Expertise from '@/components/Expertise';
-import About from '@/components/About';
-import Insights from '@/components/Insights';
+import Features from '@/components/Features';
+import Process from '@/components/Process';
+import Testimonials from '@/components/Testimonials';
+import Pricing from '@/components/Pricing';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Navbar />
       <main>
         <Hero />
-        <Expertise />
-        <About />
-        <Insights />
+        <Features />
+        <Process />
+        <Testimonials />
+        <Pricing />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 };
