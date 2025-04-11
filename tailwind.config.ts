@@ -26,7 +26,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2c5282", // Deeper blue like Belkins
+          DEFAULT: "#0F477E", // Belkins blue
           foreground: "#ffffff",
         },
         secondary: {

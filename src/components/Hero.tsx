@@ -16,7 +16,7 @@ const Hero = () => {
               AI Marketing Automation for <span className="text-primary">Legacy Businesses</span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 animate-fade-up [--animation-delay:400ms]">
+            <p className="text-xl text-gray-700 mb-8 animate-fade-up [--animation-delay:400ms]">
               Transform your marketing operations with our plug-and-play AI platform designed specifically for established businesses looking to modernize without disruption.
             </p>
             
@@ -38,7 +38,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 onClick={scrollToContact}
-                className="bg-primary text-white hover:bg-primary/90 rounded-full px-8"
+                className="bg-primary text-white hover:bg-primary/90 rounded-md px-8"
               >
                 Schedule a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -47,7 +47,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline" 
                 asChild
-                className="rounded-full px-8"
+                className="rounded-md px-8 border-gray-300"
               >
                 <a href="#process">How It Works</a>
               </Button>
