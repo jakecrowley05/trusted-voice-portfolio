@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-white to-gray-50">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
@@ -35,11 +35,20 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up [--animation-delay:800ms]">
-              <Button size="lg" onClick={scrollToContact}>
+              <Button 
+                size="lg" 
+                onClick={scrollToContact}
+                className="bg-primary text-white hover:bg-primary/90 rounded-full px-8"
+              >
                 Schedule a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                asChild
+                className="rounded-full px-8"
+              >
                 <a href="#process">How It Works</a>
               </Button>
             </div>
@@ -49,9 +58,9 @@ const Hero = () => {
             <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="relative bg-white p-4 rounded-xl shadow-lg animate-fade-up [--animation-delay:600ms]">
               <img 
-                src="/placeholder.svg" 
-                alt="Marketing Automation Dashboard" 
-                className="w-full rounded-lg"
+                src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                alt="Legacy Business Digital Transformation" 
+                className="w-full rounded-lg object-cover"
               />
               <div className="absolute top-1/4 right-0 translate-x-1/4 bg-white p-3 rounded-lg shadow-md">
                 <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">

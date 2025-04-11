@@ -26,7 +26,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6366f1", // Indigo 500
+          DEFAULT: "#2c5282", // Deeper blue like Belkins
           foreground: "#ffffff",
         },
         secondary: {

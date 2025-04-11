@@ -1,5 +1,5 @@
 
-import { Bot, Zap } from 'lucide-react';
+import { Circle, ChevronsUp } from 'lucide-react';
 
 interface LogoProps {
   variant?: 'default' | 'light';
@@ -13,11 +13,11 @@ const Logo = ({ variant = 'default', showIcon = true }: LogoProps) => {
     <div className="flex items-center gap-2">
       {showIcon && (
         <div className="relative">
-          <Bot className="h-7 w-7 text-primary" />
-          <Zap className="h-3 w-3 text-yellow-400 absolute top-0 right-0" />
+          <Circle className="h-6 w-6 text-primary" />
+          <ChevronsUp className="h-3 w-3 text-yellow-400 absolute top-0 right-0" />
         </div>
       )}
-      <span className={`text-xl font-bold ${textColor}`}>MarketMind AI</span>
+      <span className={`text-xl font-bold ${textColor}`}>Nobleloop</span>
     </div>
   );
 };
