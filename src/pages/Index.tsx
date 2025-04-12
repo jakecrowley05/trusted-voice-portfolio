@@ -7,6 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import AIAssistant from '@/components/AIAssistant';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <AIAssistant />
     </div>
   );
 };
