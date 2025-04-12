@@ -21,14 +21,8 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          '-apple-system', 
-          'BlinkMacSystemFont', 
-          'San Francisco', 
+          'IBM Plex Sans', 
           'Helvetica Neue', 
-          'Helvetica', 
-          'Ubuntu', 
-          'Roboto', 
-          'Noto', 
           'Arial', 
           'sans-serif'
         ],
@@ -40,7 +34,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0066CC", // Apple-like blue
+          DEFAULT: "#0F62FE", // IBM blue
+          dark: "#0043CE",
+          light: "#D0E2FF",
           foreground: "#ffffff",
         },
         secondary: {
@@ -66,6 +62,17 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        ibm: {
+          blue: "#0F62FE",
+          black: "#161616",
+          gray: "#8D8D8D",
+          gray10: "#F4F4F4",
+          gray20: "#E0E0E0",
+          gray30: "#C6C6C6",
+          gray60: "#6F6F6F",
+          gray80: "#393939",
+          gray100: "#161616",
         },
       },
       keyframes: {

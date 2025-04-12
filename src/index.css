@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,25 +8,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    --foreground: 0 0% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card-foreground: 0 0% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 221 39% 11%;
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
-    --accent: 220 14% 96%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 221 83% 53%;
-    --radius: 0.75rem;
+    --popover-foreground: 0 0% 9%;
+    --primary: 220 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 220 100% 52%;
+    --radius: 0px;
   }
 }
 
@@ -33,11 +35,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
   
-  /* Apple-like text rendering */
+  /* IBM text rendering */
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -52,24 +54,24 @@
   
   /* Improved focus styling */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary/30 ring-offset-2;
+    @apply outline-2 outline-offset-2 outline-primary;
   }
   
-  /* Apple-like button styling */
-  .apple-button {
-    @apply rounded-full px-6 py-3 text-center font-medium transition-all duration-300
-           bg-primary text-white hover:bg-primary/90 hover:shadow-md
-           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2;
+  /* IBM button styling */
+  .ibm-button {
+    @apply rounded-none px-5 py-3 text-center font-medium transition-all duration-200
+           bg-primary text-white hover:bg-primary/90
+           focus:outline-2 focus:outline-primary;
   }
   
   /* Gradient text */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark;
   }
   
-  /* Sleek section styles */
-  .sleek-section {
-    @apply py-24 px-4 overflow-hidden;
+  /* IBM section styles */
+  .ibm-section {
+    @apply py-16 px-4 overflow-hidden;
   }
 }
 

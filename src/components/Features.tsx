@@ -9,12 +9,12 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md hover:border-primary/20">
-      <div className="p-3 bg-primary/10 w-fit rounded-lg mb-4">
+    <div className="bg-white p-6 border-l-2 border-primary transition-all hover:shadow-md">
+      <div className="p-3 bg-primary/10 w-fit mb-4">
         <Icon className="h-6 w-6 text-primary" />
       </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold text-ibm-black mb-2">{title}</h3>
+      <p className="text-ibm-gray60">{description}</p>
     </div>
   );
 };
@@ -54,19 +54,19 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Marketing Automation Designed for Established Businesses
+          <h2 className="text-3xl md:text-4xl font-semibold text-ibm-black mb-4">
+            Enterprise-Grade Marketing Automation
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg text-ibm-gray60">
             Our platform provides all the tools you need to modernize your marketing 
             without disrupting what already works.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
