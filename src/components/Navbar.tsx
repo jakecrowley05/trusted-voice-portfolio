@@ -1,13 +1,17 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogOut } from 'lucide-react';
 import { Button } from './ui/button';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +19,32 @@ const Navbar = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Check if user is logged in
+    const getUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      setUser(data?.user);
+    };
+    
+    getUser();
+
+    // Subscribe to auth changes
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    toast({
+      title: 'Signed out',
+      description: 'You have been successfully signed out',
+    });
+  };
 
   return (
     <nav 
@@ -36,10 +64,22 @@ const Navbar = () => {
             <a href="#process" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">How It Works</a>
             <a href="#testimonials" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Testimonials</a>
             <a href="#pricing" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Pricing</a>
-            <Link to="/dashboard" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Dashboard</Link>
-            <Button asChild className="rounded-none px-5 text-sm font-medium bg-primary hover:bg-primary-dark">
-              <a href="#contact">Request Demo</a>
-            </Button>
+            
+            {user ? (
+              <>
+                <Link to="/dashboard" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Dashboard</Link>
+                <Button variant="ghost" size="sm" onClick={handleSignOut} className="text-sm">
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <Link to="/dashboard">
+                <Button asChild className="rounded-none px-5 text-sm font-medium bg-primary hover:bg-primary-dark">
+                  <span>Sign In</span>
+                </Button>
+              </Link>
+            )}
           </div>
           
           {/* Mobile Menu Button */}
@@ -84,18 +124,32 @@ const Navbar = () => {
               >
                 Pricing
               </a>
-              <Link
-                to="/dashboard"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Dashboard
-              </Link>
-              <div className="px-4 pt-2">
-                <Button asChild className="w-full rounded-none text-sm font-medium bg-primary hover:bg-primary-dark">
-                  <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Request Demo</a>
-                </Button>
-              </div>
+              
+              {user ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Dashboard
+                  </Link>
+                  <Button 
+                    variant="ghost" 
+                    onClick={handleSignOut} 
+                    className="justify-start px-4 py-2"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </Button>
+                </>
+              ) : (
+                <div className="px-4 pt-2">
+                  <Button asChild className="w-full rounded-none text-sm font-medium bg-primary hover:bg-primary-dark">
+                    <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         )}

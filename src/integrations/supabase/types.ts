@@ -9,7 +9,204 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      content_publishing: {
+        Row: {
+          error_message: string | null
+          id: string
+          platform: string
+          platform_post_id: string | null
+          published_at: string | null
+          social_media_content_id: string
+          status: string
+        }
+        Insert: {
+          error_message?: string | null
+          id?: string
+          platform: string
+          platform_post_id?: string | null
+          published_at?: string | null
+          social_media_content_id: string
+          status: string
+        }
+        Update: {
+          error_message?: string | null
+          id?: string
+          platform?: string
+          platform_post_id?: string | null
+          published_at?: string | null
+          social_media_content_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_publishing_social_media_content_id_fkey"
+            columns: ["social_media_content_id"]
+            isOneToOne: false
+            referencedRelation: "social_media_content"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      incoming_messages: {
+        Row: {
+          attachments: Json | null
+          content: string
+          created_at: string | null
+          id: string
+          metadata: Json | null
+          platform_connection_id: string | null
+          processed: boolean | null
+          recipient: string | null
+          sender: string | null
+          source_platform: string
+          subject: string | null
+          user_id: string
+        }
+        Insert: {
+          attachments?: Json | null
+          content: string
+          created_at?: string | null
+          id?: string
+          metadata?: Json | null
+          platform_connection_id?: string | null
+          processed?: boolean | null
+          recipient?: string | null
+          sender?: string | null
+          source_platform: string
+          subject?: string | null
+          user_id: string
+        }
+        Update: {
+          attachments?: Json | null
+          content?: string
+          created_at?: string | null
+          id?: string
+          metadata?: Json | null
+          platform_connection_id?: string | null
+          processed?: boolean | null
+          recipient?: string | null
+          sender?: string | null
+          source_platform?: string
+          subject?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "incoming_messages_platform_connection_id_fkey"
+            columns: ["platform_connection_id"]
+            isOneToOne: false
+            referencedRelation: "platform_connections"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      platform_connections: {
+        Row: {
+          created_at: string | null
+          credentials: Json
+          id: string
+          is_active: boolean | null
+          platform_type: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          credentials: Json
+          id?: string
+          is_active?: boolean | null
+          platform_type: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          credentials?: Json
+          id?: string
+          is_active?: boolean | null
+          platform_type?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      social_media_content: {
+        Row: {
+          content: string
+          content_type: string
+          created_at: string | null
+          id: string
+          published_at: string | null
+          source_message_id: string | null
+          status: string | null
+          suggested_image: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          content_type: string
+          created_at?: string | null
+          id?: string
+          published_at?: string | null
+          source_message_id?: string | null
+          status?: string | null
+          suggested_image?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          content_type?: string
+          created_at?: string | null
+          id?: string
+          published_at?: string | null
+          source_message_id?: string | null
+          status?: string | null
+          suggested_image?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "social_media_content_source_message_id_fkey"
+            columns: ["source_message_id"]
+            isOneToOne: false
+            referencedRelation: "incoming_messages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_preferences: {
+        Row: {
+          auto_generate_content: boolean | null
+          content_preferences: Json | null
+          created_at: string | null
+          default_platforms: Json | null
+          notification_settings: Json | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          auto_generate_content?: boolean | null
+          content_preferences?: Json | null
+          created_at?: string | null
+          default_platforms?: Json | null
+          notification_settings?: Json | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          auto_generate_content?: boolean | null
+          content_preferences?: Json | null
+          created_at?: string | null
+          default_platforms?: Json | null
+          notification_settings?: Json | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
