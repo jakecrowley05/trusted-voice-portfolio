@@ -1,5 +1,5 @@
 
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -8,69 +8,53 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-up [--animation-delay:200ms]">
-              AI Marketing Automation for <span className="text-primary">Legacy Businesses</span>
+    <section className="pt-32 pb-20 md:py-40 bg-white overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-12 gap-16 items-center">
+          <div className="md:col-span-5 space-y-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 tracking-tight leading-tight animate-fade-up [--animation-delay:200ms]">
+              Marketing <span className="gradient-text">reimagined</span> for legacy businesses.
             </h1>
             
-            <p className="text-xl text-gray-700 mb-8 animate-fade-up [--animation-delay:400ms]">
-              Transform your marketing operations with our plug-and-play AI platform designed specifically for established businesses looking to modernize without disruption.
+            <p className="text-xl text-gray-600 leading-relaxed animate-fade-up [--animation-delay:400ms]">
+              Transform your marketing operations with an AI platform designed specifically for established businesses seeking modern solutions.
             </p>
             
-            <div className="space-y-3 mb-8 animate-fade-up [--animation-delay:600ms]">
-              {[
-                'End-to-end campaign orchestration',
-                'Lead funnel optimization',
-                'Intelligent follow-ups & retention',
-                'White-glove implementation & support'
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{item}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up [--animation-delay:800ms]">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-up [--animation-delay:600ms]">
               <Button 
-                size="lg" 
                 onClick={scrollToContact}
-                className="bg-primary text-white hover:bg-primary/90 rounded-md px-8"
+                className="rounded-full px-8 py-6 text-base bg-primary text-white hover:bg-primary/90 shadow-sm"
               >
                 Schedule a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button 
-                size="lg" 
                 variant="outline" 
                 asChild
-                className="rounded-md px-8 border-gray-300"
+                className="rounded-full px-8 py-6 text-base border-gray-200 hover:bg-gray-50 text-gray-800"
               >
-                <a href="#process">How It Works</a>
+                <a href="#process">Learn More</a>
               </Button>
             </div>
           </div>
           
-          <div className="relative hidden md:block">
-            <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="relative bg-white p-4 rounded-xl shadow-lg animate-fade-up [--animation-delay:600ms]">
+          <div className="md:col-span-7 relative">
+            <div className="absolute -z-10 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 -right-10 -top-10"></div>
+            <div className="animate-subtle-float">
               <img 
                 src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                 alt="Legacy Business Digital Transformation" 
-                className="w-full rounded-lg object-cover"
+                className="w-full h-auto object-cover rounded-2xl shadow-xl"
               />
-              <div className="absolute top-1/4 right-0 translate-x-1/4 bg-white p-3 rounded-lg shadow-md">
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                  +45% Leads
-                </div>
+            </div>
+            <div className="absolute top-1/3 -right-10 bg-white shadow-lg p-4 rounded-xl animate-fade-up [--animation-delay:700ms]">
+              <div className="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-medium">
+                +45% Lead Conversion
               </div>
-              <div className="absolute bottom-1/4 left-0 -translate-x-1/3 bg-white p-3 rounded-lg shadow-md">
-                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                  100% Automated
-                </div>
+            </div>
+            <div className="absolute bottom-1/3 -left-10 bg-white shadow-lg p-4 rounded-xl animate-fade-up [--animation-delay:800ms]">
+              <div className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">
+                100% Automated
               </div>
             </div>
           </div>

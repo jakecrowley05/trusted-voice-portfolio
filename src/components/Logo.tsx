@@ -1,5 +1,5 @@
 
-import { Circle, ChevronsUp } from 'lucide-react';
+import { Circle } from 'lucide-react';
 
 interface LogoProps {
   variant?: 'default' | 'light';
@@ -12,12 +12,11 @@ const Logo = ({ variant = 'default', showIcon = true }: LogoProps) => {
   return (
     <div className="flex items-center gap-2">
       {showIcon && (
-        <div className="relative">
-          <Circle className="h-6 w-6 text-primary" />
-          <ChevronsUp className="h-3 w-3 text-yellow-400 absolute top-0 right-0" />
+        <div className="relative overflow-hidden">
+          <Circle className="h-5 w-5 text-primary" fill="currentColor" fillOpacity={0.2} />
         </div>
       )}
-      <span className={`text-xl font-bold ${textColor}`}>Nobleloop</span>
+      <span className={`text-lg font-medium tracking-tight ${textColor}`}>Nobleloop</span>
     </div>
   );
 };

@@ -15,11 +15,13 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Features />
-        <Process />
-        <Testimonials />
-        <Pricing />
-        <Contact />
+        <div className="max-w-screen-2xl mx-auto">
+          <Features />
+          <Process />
+          <Testimonials />
+          <Pricing />
+          <Contact />
+        </div>
       </main>
       <Footer />
       <AIAssistant />

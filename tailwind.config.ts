@@ -19,6 +19,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          'San Francisco', 
+          'Helvetica Neue', 
+          'Helvetica', 
+          'Ubuntu', 
+          'Roboto', 
+          'Noto', 
+          'Arial', 
+          'sans-serif'
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -26,7 +40,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0F477E", // Belkins blue
+          DEFAULT: "#0066CC", // Apple-like blue
           foreground: "#ffffff",
         },
         secondary: {
@@ -77,12 +91,17 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "subtle-float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.5s ease-out forwards",
         "fade-in": "fade-in 0.3s ease-out forwards",
+        "subtle-float": "subtle-float 6s ease-in-out infinite",
       },
     },
   },
