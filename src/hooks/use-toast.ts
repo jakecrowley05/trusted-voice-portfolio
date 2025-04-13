@@ -1,17 +1,10 @@
 
-import {
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
+import * as React from "react"
+
+import type {
+  ToastActionElement,
+  ToastProps,
 } from "@/components/ui/toast"
-import {
-  useToast as useToastPrimitive,
-  type ToastActionElement,
-  type ToastProps,
-} from "@/components/ui/use-toast"
 
 type ToasterToast = ToastProps & {
   id: string
@@ -79,16 +72,38 @@ export function toast(props: Omit<ToasterToast, "id">) {
 }
 
 export function useToast() {
-  return useToastPrimitive({
-    ...toastState,
-    subscribe: (callback: (state: ToastState) => void) => {
-      listeners.push(callback)
-      return () => {
-        const index = listeners.indexOf(callback)
-        if (index > -1) {
-          listeners.splice(index, 1)
-        }
+  const [state, setState] = React.useState<ToastState>(toastState)
+
+  React.useEffect(() => {
+    const listener = (newState: ToastState) => {
+      setState(newState)
+    }
+
+    listeners.push(listener)
+
+    return () => {
+      const index = listeners.indexOf(listener)
+      if (index > -1) {
+        listeners.splice(index, 1)
       }
+    }
+  }, [])
+
+  return {
+    ...state,
+    toast,
+    dismiss: (toastId?: string) => {
+      if (toastId) {
+        toastState.toasts = toastState.toasts.filter(
+          ({ id }) => id !== toastId
+        )
+      } else {
+        toastState.toasts = []
+      }
+
+      listeners.forEach((listener) => {
+        listener(toastState)
+      })
     },
-  })
+  }
 }

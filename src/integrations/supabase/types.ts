@@ -9,6 +9,91 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      alerts: {
+        Row: {
+          created_at: string | null
+          id: string
+          message: string
+          priority: string | null
+          property_id: string | null
+          status: string | null
+          type: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          message: string
+          priority?: string | null
+          property_id?: string | null
+          status?: string | null
+          type: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          message?: string
+          priority?: string | null
+          property_id?: string | null
+          status?: string | null
+          type?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "alerts_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      contacts: {
+        Row: {
+          alternate_addresses: string[] | null
+          created_at: string | null
+          email_addresses: string[] | null
+          id: string
+          phone_numbers: Json | null
+          property_id: string | null
+          relatives: Json | null
+          skip_trace_data: Json | null
+          updated_at: string | null
+        }
+        Insert: {
+          alternate_addresses?: string[] | null
+          created_at?: string | null
+          email_addresses?: string[] | null
+          id?: string
+          phone_numbers?: Json | null
+          property_id?: string | null
+          relatives?: Json | null
+          skip_trace_data?: Json | null
+          updated_at?: string | null
+        }
+        Update: {
+          alternate_addresses?: string[] | null
+          created_at?: string | null
+          email_addresses?: string[] | null
+          id?: string
+          phone_numbers?: Json | null
+          property_id?: string | null
+          relatives?: Json | null
+          skip_trace_data?: Json | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "contacts_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       content_publishing: {
         Row: {
           error_message: string | null
@@ -46,6 +131,57 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      home_buyers: {
+        Row: {
+          budget_max: number | null
+          budget_min: number | null
+          created_at: string
+          current_stage: string | null
+          documents: Json | null
+          email: string
+          house_preferences: Json | null
+          id: string
+          location_preferences: string[] | null
+          name: string
+          notes: string | null
+          phone: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          budget_max?: number | null
+          budget_min?: number | null
+          created_at?: string
+          current_stage?: string | null
+          documents?: Json | null
+          email: string
+          house_preferences?: Json | null
+          id?: string
+          location_preferences?: string[] | null
+          name: string
+          notes?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          budget_max?: number | null
+          budget_min?: number | null
+          created_at?: string
+          current_stage?: string | null
+          documents?: Json | null
+          email?: string
+          house_preferences?: Json | null
+          id?: string
+          location_preferences?: string[] | null
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
       }
       incoming_messages: {
         Row: {
@@ -100,6 +236,169 @@ export type Database = {
           },
         ]
       }
+      lead_activities: {
+        Row: {
+          activity_type: string
+          created_at: string
+          details: Json | null
+          id: string
+          lead_id: string | null
+        }
+        Insert: {
+          activity_type: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          lead_id?: string | null
+        }
+        Update: {
+          activity_type?: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          lead_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lead_activities_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          source: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          ai_generated: boolean | null
+          channel: string
+          content: string
+          created_at: string | null
+          delivery_metadata: Json | null
+          id: string
+          property_id: string | null
+          sent_at: string | null
+          sequence_id: string | null
+          status: string | null
+        }
+        Insert: {
+          ai_generated?: boolean | null
+          channel: string
+          content: string
+          created_at?: string | null
+          delivery_metadata?: Json | null
+          id?: string
+          property_id?: string | null
+          sent_at?: string | null
+          sequence_id?: string | null
+          status?: string | null
+        }
+        Update: {
+          ai_generated?: boolean | null
+          channel?: string
+          content?: string
+          created_at?: string | null
+          delivery_metadata?: Json | null
+          id?: string
+          property_id?: string | null
+          sent_at?: string | null
+          sequence_id?: string | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "messages_sequence_id_fkey"
+            columns: ["sequence_id"]
+            isOneToOne: false
+            referencedRelation: "outreach_sequences"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      outreach_sequences: {
+        Row: {
+          completed_steps: Json | null
+          created_at: string | null
+          current_step: number | null
+          id: string
+          next_action_date: string | null
+          property_id: string | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          completed_steps?: Json | null
+          created_at?: string | null
+          current_step?: number | null
+          id?: string
+          next_action_date?: string | null
+          property_id?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          completed_steps?: Json | null
+          created_at?: string | null
+          current_step?: number | null
+          id?: string
+          next_action_date?: string | null
+          property_id?: string | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "outreach_sequences_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       platform_connections: {
         Row: {
           created_at: string | null
@@ -129,6 +428,99 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      properties: {
+        Row: {
+          auction_date: string | null
+          created_at: string | null
+          id: string
+          lien_info: Json | null
+          mailing_address: string | null
+          mortgage_status: string | null
+          notice_date: string
+          owner_name: string
+          property_address: string
+          status: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          auction_date?: string | null
+          created_at?: string | null
+          id?: string
+          lien_info?: Json | null
+          mailing_address?: string | null
+          mortgage_status?: string | null
+          notice_date: string
+          owner_name: string
+          property_address: string
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          auction_date?: string | null
+          created_at?: string | null
+          id?: string
+          lien_info?: Json | null
+          mailing_address?: string | null
+          mortgage_status?: string | null
+          notice_date?: string
+          owner_name?: string
+          property_address?: string
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      responses: {
+        Row: {
+          ai_summary: string | null
+          channel: string
+          content: string
+          created_at: string | null
+          id: string
+          message_id: string | null
+          property_id: string | null
+          sentiment_score: number | null
+        }
+        Insert: {
+          ai_summary?: string | null
+          channel: string
+          content: string
+          created_at?: string | null
+          id?: string
+          message_id?: string | null
+          property_id?: string | null
+          sentiment_score?: number | null
+        }
+        Update: {
+          ai_summary?: string | null
+          channel?: string
+          content?: string
+          created_at?: string | null
+          id?: string
+          message_id?: string | null
+          property_id?: string | null
+          sentiment_score?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "responses_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "messages"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "responses_property_id_fkey"
+            columns: ["property_id"]
+            isOneToOne: false
+            referencedRelation: "properties"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       social_media_content: {
         Row: {
