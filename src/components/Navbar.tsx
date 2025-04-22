@@ -1,170 +1,135 @@
-
-import { useState, useEffect } from 'react';
-import { Menu, X, LogOut, HelpCircle } from 'lucide-react';
-import { Button } from './ui/button';
-import Logo from './Logo';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Menu, Bell, Settings, LogOut, User, HelpCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/components/ui/use-toast';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [user, setUser] = useState(null);
   const { toast } = useToast();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    // Check if user is logged in
-    const getUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      setUser(data?.user);
-    };
-    
-    getUser();
-
-    // Subscribe to auth changes
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user ?? null);
-    });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    toast({
-      title: 'Signed out',
-      description: 'You have been successfully signed out',
-    });
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      toast({
+        title: 'Logged out',
+        description: 'You have been successfully logged out.',
+      });
+      // Redirect to home page or login page
+    } catch (error) {
+      console.error('Error logging out:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to log out. Please try again.',
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-white shadow-sm py-2' 
-          : 'bg-transparent py-3'
-      }`}
-    >
+    <header className="bg-white shadow-sm sticky top-0 z-40">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <Logo />
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Features</a>
-            <a href="#process" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">How It Works</a>
-            <a href="#testimonials" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Testimonials</a>
-            <a href="#pricing" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Pricing</a>
-            <Link to="/help" className="text-sm text-ibm-gray80 hover:text-primary transition-colors flex items-center">
-              <HelpCircle className="h-4 w-4 mr-1" /> Help
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <span className="text-xl font-bold text-primary">Noble Loop</span>
             </Link>
-            
-            {user ? (
-              <>
-                <Link to="/dashboard" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Dashboard</Link>
-                <Button variant="ghost" size="sm" onClick={handleSignOut} className="text-sm">
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </Button>
-              </>
-            ) : (
-              <Link to="/dashboard">
-                <Button asChild className="rounded-none px-5 text-sm font-medium bg-primary hover:bg-primary-dark">
-                  <span>Sign In</span>
-                </Button>
+            <nav className="flex space-x-6 ml-6">
+              <Link to="/" className="text-gray-700 hover:text-gray-900 flex items-center">
+                Home
               </Link>
-            )}
-          </div>
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-ibm-black"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-        
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-3 animate-fade-in bg-white">
-            <div className="flex flex-col space-y-4">
-              <a 
-                href="#features"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Features
-              </a>
-              <a 
-                href="#process"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                How It Works
-              </a>
-              <a 
-                href="#testimonials"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Testimonials
-              </a>
-              <a 
-                href="#pricing"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link to="/dashboard" className="text-gray-700 hover:text-gray-900 flex items-center">
+                Dashboard
+              </Link>
+              <Link to="/help" className="text-gray-700 hover:text-gray-900 flex items-center">
+                Help Center
+              </Link>
+              <Link to="/pricing" className="text-gray-700 hover:text-gray-900 flex items-center">
                 Pricing
-              </a>
-              <Link
-                to="/help"
-                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2 flex items-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <HelpCircle className="h-4 w-4 mr-1" /> Help
               </Link>
-              
-              {user ? (
-                <>
-                  <Link
-                    to="/dashboard"
-                    className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <Button 
-                    variant="ghost" 
-                    onClick={handleSignOut} 
-                    className="justify-start px-4 py-2"
-                  >
-                    <LogOut className="h-4 w-4 mr-2" />
-                    Sign Out
-                  </Button>
-                </>
-              ) : (
-                <div className="px-4 pt-2">
-                  <Button asChild className="w-full rounded-none text-sm font-medium bg-primary hover:bg-primary-dark">
-                    <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
-                  </Button>
-                </div>
-              )}
-            </div>
+              <Link to="/contact" className="text-gray-700 hover:text-gray-900 flex items-center">
+                Contact
+              </Link>
+            </nav>
           </div>
-        )}
+
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="icon" className="relative">
+              <Bell className="h-5 w-5" />
+              <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+            </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/avatars/01.png" alt="User" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Profile</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Settings</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <HelpCircle className="mr-2 h-4 w-4" />
+                  <span>Help</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleLogout}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Log out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <Menu className="h-6 w-6" />
+            </Button>
+          </div>
+        </div>
       </div>
-    </nav>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden">
+          <div className="space-y-1 px-4 pb-3 pt-2">
+            <Link to="/" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+              Home
+            </Link>
+            <Link to="/dashboard" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+              Dashboard
+            </Link>
+            <Link to="/help" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+              Help Center
+            </Link>
+            <Link to="/pricing" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+              Pricing
+            </Link>
+            <Link to="/contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 
