@@ -41,22 +41,17 @@ const HelpCenter = () => {
       if (result.success) {
         setSearchResults(result.articles || []);
         toast({
-          title: 'Search results',
+          title: 'Search complete',
           description: `Found ${result.articles.length} matching articles`,
         });
       } else {
-        toast({
-          title: 'Search error',
-          description: result.error || 'Failed to search articles',
-          variant: 'destructive',
-        });
-        setSearchResults([]);
+        throw new Error(result.error || 'Search failed');
       }
     } catch (error) {
       console.error('Error searching help articles:', error);
       toast({
         title: 'Search error',
-        description: 'Failed to search help articles',
+        description: 'Unable to complete search. Please try again.',
         variant: 'destructive',
       });
       setSearchResults([]);
@@ -65,99 +60,83 @@ const HelpCenter = () => {
     }
   };
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    setSelectedArticle(null);
-    setSearchResults([]);
-  };
-
-  const handleArticleSelect = (article) => {
-    setSelectedArticle(article);
-  };
-
-  const handleBackToCategories = () => {
-    setSelectedCategory(null);
-    setSelectedArticle(null);
-    setSearchResults([]);
-  };
-
-  const handleBackToArticles = () => {
-    setSelectedArticle(null);
-  };
-
   return (
-    <div className="flex min-h-screen bg-white dark:bg-gray-950">
+    <div className="flex min-h-screen bg-background">
       <HelpSidebar 
         selectedCategory={selectedCategory}
-        onCategorySelect={handleCategorySelect}
+        onCategorySelect={setSelectedCategory}
         selectedArticle={selectedArticle}
-        onArticleSelect={handleArticleSelect}
+        onArticleSelect={setSelectedArticle}
       />
       
       <main className="flex-1 min-w-0">
-        <header className="bg-primary text-white py-12 md:py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">How can we help you?</h1>
-            <form onSubmit={handleSearch} className="max-w-2xl mx-auto flex">
-              <Input
-                type="text"
-                placeholder="Search for answers..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full py-3 px-4 bg-white text-gray-800 rounded-l-md focus:outline-none"
-              />
+        <header className="bg-primary/5 border-b">
+          <div className="container mx-auto px-4 py-12 md:py-16 max-w-3xl text-center">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">How can we help you?</h1>
+            <form onSubmit={handleSearch} className="max-w-2xl mx-auto flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Search for answers..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 py-6 text-base bg-background border-border"
+                />
+              </div>
               <Button 
                 type="submit" 
-                className="bg-gray-800 hover:bg-gray-700 text-white rounded-l-none"
+                size="lg"
+                className="shrink-0"
                 disabled={isSearching}
               >
-                <Search className="h-5 w-5" />
+                Search
               </Button>
             </form>
           </div>
         </header>
 
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 max-w-3xl">
           {searchResults.length > 0 ? (
-            <div>
+            <div className="animate-fade-in">
               <div className="flex items-center mb-6">
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  onClick={handleBackToCategories}
+                  onClick={() => setSearchResults([])}
                   className="mr-2"
                 >
                   <ChevronLeft className="h-4 w-4 mr-1" />
                   Back
                 </Button>
-                <h2 className="text-2xl font-bold">Search Results</h2>
+                <h2 className="text-2xl font-semibold">Search Results</h2>
               </div>
               
               <div className="space-y-4">
                 {searchResults.map((article) => (
                   <div 
                     key={article.id}
-                    className="p-4 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer transition-colors"
-                    onClick={() => handleArticleSelect(article)}
+                    className="p-4 bg-card hover:bg-muted/50 border rounded-lg cursor-pointer transition-colors"
+                    onClick={() => setSelectedArticle(article)}
                   >
-                    <h3 className="text-lg font-semibold text-primary">{article.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mt-1">{article.excerpt || article.content.substring(0, 120)}...</p>
+                    <h3 className="text-lg font-semibold text-primary mb-2">{article.title}</h3>
+                    <p className="text-muted-foreground">{article.excerpt || article.content.substring(0, 120)}...</p>
                   </div>
                 ))}
               </div>
             </div>
           ) : !selectedCategory && !selectedArticle ? (
-            <HelpCategoryList onCategorySelect={handleCategorySelect} />
+            <HelpCategoryList onCategorySelect={setSelectedCategory} />
           ) : selectedCategory && !selectedArticle ? (
             <HelpArticleList 
               category={selectedCategory}
-              onArticleSelect={handleArticleSelect}
-              onBackClick={handleBackToCategories}
+              onArticleSelect={setSelectedArticle}
+              onBackClick={() => setSelectedCategory(null)}
             />
           ) : (
             <HelpArticleView 
               article={selectedArticle}
-              onBackClick={handleBackToArticles}
+              onBackClick={() => setSelectedArticle(null)}
             />
           )}
         </div>
