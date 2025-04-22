@@ -1,11 +1,11 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, LogOut } from 'lucide-react';
+import { Menu, X, LogOut, HelpCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,6 +64,9 @@ const Navbar = () => {
             <a href="#process" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">How It Works</a>
             <a href="#testimonials" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Testimonials</a>
             <a href="#pricing" className="text-sm text-ibm-gray80 hover:text-primary transition-colors">Pricing</a>
+            <Link to="/help" className="text-sm text-ibm-gray80 hover:text-primary transition-colors flex items-center">
+              <HelpCircle className="h-4 w-4 mr-1" /> Help
+            </Link>
             
             {user ? (
               <>
@@ -124,6 +127,13 @@ const Navbar = () => {
               >
                 Pricing
               </a>
+              <Link
+                to="/help"
+                className="text-ibm-gray80 hover:text-primary transition-colors px-4 py-2 flex items-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <HelpCircle className="h-4 w-4 mr-1" /> Help
+              </Link>
               
               {user ? (
                 <>

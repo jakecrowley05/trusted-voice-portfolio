@@ -429,6 +429,62 @@ export type Database = {
         }
         Relationships: []
       }
+      post_analytics: {
+        Row: {
+          clicks: number | null
+          comments: number | null
+          created_at: string
+          discord_reactions: Json | null
+          id: string
+          impressions: number | null
+          likes: number | null
+          platform: Database["public"]["Enums"]["social_platform_type"]
+          reddit_awards: Json | null
+          shares: number | null
+          slack_reactions: Json | null
+          social_media_content_id: string
+          updated_at: string
+        }
+        Insert: {
+          clicks?: number | null
+          comments?: number | null
+          created_at?: string
+          discord_reactions?: Json | null
+          id?: string
+          impressions?: number | null
+          likes?: number | null
+          platform: Database["public"]["Enums"]["social_platform_type"]
+          reddit_awards?: Json | null
+          shares?: number | null
+          slack_reactions?: Json | null
+          social_media_content_id: string
+          updated_at?: string
+        }
+        Update: {
+          clicks?: number | null
+          comments?: number | null
+          created_at?: string
+          discord_reactions?: Json | null
+          id?: string
+          impressions?: number | null
+          likes?: number | null
+          platform?: Database["public"]["Enums"]["social_platform_type"]
+          reddit_awards?: Json | null
+          shares?: number | null
+          slack_reactions?: Json | null
+          social_media_content_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_analytics_social_media_content_id_fkey"
+            columns: ["social_media_content_id"]
+            isOneToOne: false
+            referencedRelation: "social_media_content"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       properties: {
         Row: {
           auction_date: string | null
@@ -522,6 +578,63 @@ export type Database = {
           },
         ]
       }
+      social_media_connections: {
+        Row: {
+          access_token: string
+          created_at: string
+          discord_guild_id: string | null
+          id: string
+          is_active: boolean
+          platform: Database["public"]["Enums"]["social_platform_type"]
+          platform_user_id: string | null
+          profile_image_url: string | null
+          refresh_token: string | null
+          subreddit: string | null
+          substack_publication_id: string | null
+          token_expires_at: string | null
+          updated_at: string
+          user_id: string
+          username: string | null
+          workspace_id: string | null
+        }
+        Insert: {
+          access_token: string
+          created_at?: string
+          discord_guild_id?: string | null
+          id?: string
+          is_active?: boolean
+          platform: Database["public"]["Enums"]["social_platform_type"]
+          platform_user_id?: string | null
+          profile_image_url?: string | null
+          refresh_token?: string | null
+          subreddit?: string | null
+          substack_publication_id?: string | null
+          token_expires_at?: string | null
+          updated_at?: string
+          user_id: string
+          username?: string | null
+          workspace_id?: string | null
+        }
+        Update: {
+          access_token?: string
+          created_at?: string
+          discord_guild_id?: string | null
+          id?: string
+          is_active?: boolean
+          platform?: Database["public"]["Enums"]["social_platform_type"]
+          platform_user_id?: string | null
+          profile_image_url?: string | null
+          refresh_token?: string | null
+          subreddit?: string | null
+          substack_publication_id?: string | null
+          token_expires_at?: string | null
+          updated_at?: string
+          user_id?: string
+          username?: string | null
+          workspace_id?: string | null
+        }
+        Relationships: []
+      }
       social_media_content: {
         Row: {
           content: string
@@ -607,7 +720,16 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      social_platform_type:
+        | "twitter"
+        | "instagram"
+        | "linkedin"
+        | "facebook"
+        | "bluesky"
+        | "discord"
+        | "slack"
+        | "reddit"
+        | "substack"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -722,6 +844,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      social_platform_type: [
+        "twitter",
+        "instagram",
+        "linkedin",
+        "facebook",
+        "bluesky",
+        "discord",
+        "slack",
+        "reddit",
+        "substack",
+      ],
+    },
   },
 } as const
