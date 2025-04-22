@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -17,6 +18,7 @@ import { supabase } from '@/integrations/supabase/client';
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toast } = useToast();
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -36,6 +38,11 @@ const Navbar = () => {
     }
   };
 
+  // Helper function to determine if a link is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40">
       <div className="container mx-auto px-4">
@@ -44,20 +51,35 @@ const Navbar = () => {
             <Link to="/" className="flex items-center">
               <span className="text-xl font-bold text-primary">Noble Loop</span>
             </Link>
-            <nav className="flex space-x-6 ml-6">
-              <Link to="/" className="text-gray-700 hover:text-gray-900 flex items-center">
+            <nav className="hidden md:flex space-x-6 ml-6">
+              <Link 
+                to="/" 
+                className={`transition-colors flex items-center ${isActive('/') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
                 Home
               </Link>
-              <Link to="/dashboard" className="text-gray-700 hover:text-gray-900 flex items-center">
+              <Link 
+                to="/dashboard" 
+                className={`transition-colors flex items-center ${isActive('/dashboard') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
                 Dashboard
               </Link>
-              <Link to="/help" className="text-gray-700 hover:text-gray-900 flex items-center">
+              <Link 
+                to="/help" 
+                className={`transition-colors flex items-center ${isActive('/help') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
                 Help Center
               </Link>
-              <Link to="/pricing" className="text-gray-700 hover:text-gray-900 flex items-center">
+              <Link 
+                to="/pricing" 
+                className={`transition-colors flex items-center ${isActive('/pricing') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
                 Pricing
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-gray-900 flex items-center">
+              <Link 
+                to="/contact" 
+                className={`transition-colors flex items-center ${isActive('/contact') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
                 Contact
               </Link>
             </nav>
@@ -81,17 +103,21 @@ const Navbar = () => {
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
+                <DropdownMenuItem asChild>
+                  <Link to="/dashboard">
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Settings className="mr-2 h-4 w-4" />
                   <span>Settings</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <HelpCircle className="mr-2 h-4 w-4" />
-                  <span>Help</span>
+                <DropdownMenuItem asChild>
+                  <Link to="/help">
+                    <HelpCircle className="mr-2 h-4 w-4" />
+                    <span>Help</span>
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleLogout}>
@@ -111,19 +137,19 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden">
           <div className="space-y-1 px-4 pb-3 pt-2">
-            <Link to="/" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+            <Link to="/" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Home
             </Link>
-            <Link to="/dashboard" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+            <Link to="/dashboard" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/dashboard') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Dashboard
             </Link>
-            <Link to="/help" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+            <Link to="/help" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/help') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Help Center
             </Link>
-            <Link to="/pricing" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+            <Link to="/pricing" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/pricing') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Pricing
             </Link>
-            <Link to="/contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+            <Link to="/contact" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/contact') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Contact
             </Link>
           </div>

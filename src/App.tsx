@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import HelpCenter from "./pages/HelpCenter";
 import NotFound from "./pages/NotFound";
+import Pricing from "./pages/Pricing";
+import Contact from "./pages/Contact";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -32,6 +34,8 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/help" element={<HelpCenter />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
