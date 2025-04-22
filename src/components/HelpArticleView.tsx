@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ThumbsUp, ThumbsDown, Copy } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 // Sample data - in a real app, this would come from the database
 const SAMPLE_ARTICLE_CONTENT = {
   101: {
+    id: 101,
     title: 'What is Noble Loop?',
     content: `
       <h2>Introduction to Noble Loop</h2>
@@ -96,10 +97,10 @@ const HelpArticleView = ({ article, onBackClick }) => {
           <div className="mt-12 p-6 bg-gray-50 rounded-lg">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-2">
-              {fullArticle.relatedArticles.map((id) => {
-                const relatedArticle = Object.values(SAMPLE_ARTICLE_CONTENT).find(a => a.id === id);
+              {fullArticle.relatedArticles.map((relatedId) => {
+                const relatedArticle = SAMPLE_ARTICLE_CONTENT[relatedId];
                 return relatedArticle ? (
-                  <li key={id}>
+                  <li key={relatedId}>
                     <a 
                       href="#" 
                       className="text-primary hover:underline"

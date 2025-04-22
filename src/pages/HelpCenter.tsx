@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import HelpCategoryList from '@/components/HelpCategoryList';
 import HelpArticleList from '@/components/HelpArticleList';
 import HelpArticleView from '@/components/HelpArticleView';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const HelpCenter = () => {
   const [searchQuery, setSearchQuery] = useState('');
