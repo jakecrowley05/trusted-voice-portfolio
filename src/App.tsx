@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import HelpCenter from "./pages/HelpCenter";
 import NotFound from "./pages/NotFound";
 import PricingPage from "./pages/Pricing";
 import ContactPage from "./pages/Contact";
+import ProductCoach from "./pages/ProductCoach";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +36,7 @@ const App = () => {
               <Route path="/help" element={<HelpCenter />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/product-coach" element={<ProductCoach />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

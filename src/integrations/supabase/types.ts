@@ -132,6 +132,59 @@ export type Database = {
           },
         ]
       }
+      follow_up_leads: {
+        Row: {
+          context: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          last_contacted: string | null
+          name: string
+          phone: string | null
+          priority: number | null
+          source: string | null
+          status: string | null
+          updated_at: string | null
+          workflow_id: string | null
+        }
+        Insert: {
+          context?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          last_contacted?: string | null
+          name: string
+          phone?: string | null
+          priority?: number | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string | null
+          workflow_id?: string | null
+        }
+        Update: {
+          context?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          last_contacted?: string | null
+          name?: string
+          phone?: string | null
+          priority?: number | null
+          source?: string | null
+          status?: string | null
+          updated_at?: string | null
+          workflow_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "follow_up_leads_workflow_id_fkey"
+            columns: ["workflow_id"]
+            isOneToOne: false
+            referencedRelation: "workflows"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       home_buyers: {
         Row: {
           budget_max: number | null
@@ -268,6 +321,39 @@ export type Database = {
           },
         ]
       }
+      lead_sources: {
+        Row: {
+          config: Json
+          created_at: string | null
+          id: string
+          last_sync: string | null
+          name: string
+          source_type: string
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          config: Json
+          created_at?: string | null
+          id?: string
+          last_sync?: string | null
+          name: string
+          source_type: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          config?: Json
+          created_at?: string | null
+          id?: string
+          last_sync?: string | null
+          name?: string
+          source_type?: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           created_at: string
@@ -354,6 +440,81 @@ export type Database = {
             columns: ["sequence_id"]
             isOneToOne: false
             referencedRelation: "outreach_sequences"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      news_sources: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          updated_at: string | null
+          url: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          updated_at?: string | null
+          url: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          updated_at?: string | null
+          url?: string
+        }
+        Relationships: []
+      }
+      outreach_log: {
+        Row: {
+          action_type: string
+          created_at: string | null
+          id: string
+          lead_id: string | null
+          message_content: string | null
+          sent_at: string | null
+          status: string | null
+          workflow_id: string | null
+        }
+        Insert: {
+          action_type: string
+          created_at?: string | null
+          id?: string
+          lead_id?: string | null
+          message_content?: string | null
+          sent_at?: string | null
+          status?: string | null
+          workflow_id?: string | null
+        }
+        Update: {
+          action_type?: string
+          created_at?: string | null
+          id?: string
+          lead_id?: string | null
+          message_content?: string | null
+          sent_at?: string | null
+          status?: string | null
+          workflow_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "outreach_log_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "follow_up_leads"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outreach_log_workflow_id_fkey"
+            columns: ["workflow_id"]
+            isOneToOne: false
+            referencedRelation: "workflows"
             referencedColumns: ["id"]
           },
         ]
@@ -530,6 +691,51 @@ export type Database = {
         }
         Relationships: []
       }
+      relationship_touchpoints: {
+        Row: {
+          ai_prep_note: string | null
+          created_at: string | null
+          email: string | null
+          follow_up_date: string | null
+          id: string
+          meeting_date: string
+          name: string
+          relationship_type: string | null
+          sentiment_score: number | null
+          summary: string | null
+          tags: string[] | null
+          updated_at: string | null
+        }
+        Insert: {
+          ai_prep_note?: string | null
+          created_at?: string | null
+          email?: string | null
+          follow_up_date?: string | null
+          id?: string
+          meeting_date?: string
+          name: string
+          relationship_type?: string | null
+          sentiment_score?: number | null
+          summary?: string | null
+          tags?: string[] | null
+          updated_at?: string | null
+        }
+        Update: {
+          ai_prep_note?: string | null
+          created_at?: string | null
+          email?: string | null
+          follow_up_date?: string | null
+          id?: string
+          meeting_date?: string
+          name?: string
+          relationship_type?: string | null
+          sentiment_score?: number | null
+          summary?: string | null
+          tags?: string[] | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       responses: {
         Row: {
           ai_summary: string | null
@@ -691,6 +897,7 @@ export type Database = {
           notification_settings: Json | null
           updated_at: string | null
           user_id: string
+          zapier_webhook_url: string | null
         }
         Insert: {
           auto_generate_content?: boolean | null
@@ -700,6 +907,7 @@ export type Database = {
           notification_settings?: Json | null
           updated_at?: string | null
           user_id: string
+          zapier_webhook_url?: string | null
         }
         Update: {
           auto_generate_content?: boolean | null
@@ -709,6 +917,43 @@ export type Database = {
           notification_settings?: Json | null
           updated_at?: string | null
           user_id?: string
+          zapier_webhook_url?: string | null
+        }
+        Relationships: []
+      }
+      workflows: {
+        Row: {
+          config: Json | null
+          created_at: string | null
+          description: string | null
+          id: string
+          last_run: string | null
+          name: string
+          status: string
+          trigger_type: string
+          updated_at: string | null
+        }
+        Insert: {
+          config?: Json | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          last_run?: string | null
+          name: string
+          status?: string
+          trigger_type: string
+          updated_at?: string | null
+        }
+        Update: {
+          config?: Json | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          last_run?: string | null
+          name?: string
+          status?: string
+          trigger_type?: string
+          updated_at?: string | null
         }
         Relationships: []
       }

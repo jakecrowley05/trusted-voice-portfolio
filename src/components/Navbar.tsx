@@ -71,6 +71,12 @@ const Navbar = () => {
                 Help Center
               </Link>
               <Link 
+                to="/product-coach" 
+                className={`transition-colors flex items-center ${isActive('/product-coach') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
+                Product Coach
+              </Link>
+              <Link 
                 to="/pricing" 
                 className={`transition-colors flex items-center ${isActive('/pricing') ? 'text-primary font-medium' : 'text-gray-700 hover:text-gray-900'}`}
               >
@@ -145,6 +151,9 @@ const Navbar = () => {
             </Link>
             <Link to="/help" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/help') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Help Center
+            </Link>
+            <Link to="/product-coach" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/product-coach') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
+              Product Coach
             </Link>
             <Link to="/pricing" className={`block px-3 py-2 text-base font-medium rounded-md ${isActive('/pricing') ? 'bg-primary/10 text-primary' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'}`}>
               Pricing
