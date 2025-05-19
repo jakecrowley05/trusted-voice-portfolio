@@ -41,7 +41,7 @@ const ContactSection = () => {
               
               <Button 
                 variant="outline" 
-                className="border-white/20 text-white hover:bg-white/10 text-lg font-medium px-8 py-6"
+                className="bg-transparent border-white/20 text-black hover:bg-white/10 hover:text-white text-lg font-medium px-8 py-6"
                 onClick={handleEmailClick}
               >
                 <Mail className="mr-2 h-5 w-5" />

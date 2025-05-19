@@ -25,13 +25,13 @@ const ConsultationCalendarDialog = ({ open, onOpenChange }: ConsultationCalendar
         
         <div className="h-[600px] w-full">
           <iframe
-            src="https://calendar.google.com/calendar/embed?src=jakecrowley05%40gmail.com&ctz=America%2FChicago"
+            src="https://calendly.com/jakecrowley05/30min"
             style={{ border: 0 }}
             width="100%"
             height="600"
             frameBorder="0"
             scrolling="no"
-            title="Google Calendar"
+            title="Calendly"
             className="w-full h-full"
           />
         </div>
@@ -50,7 +50,7 @@ const ConsultationCalendarDialog = ({ open, onOpenChange }: ConsultationCalendar
               onOpenChange(false);
             }}
             variant="outline"
-            className="w-full"
+            className="w-full bg-transparent text-black hover:bg-gray-100 border-gray-300"
           >
             <Calendar className="mr-2 h-4 w-4" /> Email Me Directly
           </Button>
