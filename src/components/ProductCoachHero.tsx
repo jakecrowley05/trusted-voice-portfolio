@@ -9,8 +9,8 @@ const ProductCoachHero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1500673922987-e212871fec22"
-          alt="Austin skyline"
+          src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107"
+          alt="Technology and connections"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-800/90 to-slate-900/80"></div>
@@ -19,15 +19,15 @@ const ProductCoachHero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-emerald-500/20 text-emerald-400 rounded-full mb-6 animate-fade-in">
-            Austin's Product-Market Fit Expert
+            Product-Market Fit Strategy
           </span>
           
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in [--animation-delay:200ms]">
-            Unlock Product-Market Fit Faster with Expert Guidance
+            Unlock Product-Market Fit Through Human-Centered Design
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-200 mb-8 max-w-xl animate-fade-in [--animation-delay:400ms]">
-            Helping Austin startups turn user insights into actionable strategies.
+            Transform user insights into powerful automations that create deeper customer connections.
           </p>
           
           <div className="animate-fade-in [--animation-delay:600ms]">
