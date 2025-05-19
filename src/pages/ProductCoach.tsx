@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import PricingSection from '@/components/PricingSection';
 import ContactSection from '@/components/ContactSection';
+import FinalCTA from '@/components/FinalCTA';
 
 const ProductCoach = () => {
   return (
@@ -22,6 +23,7 @@ const ProductCoach = () => {
           <TestimonialsSection />
           <CaseStudiesSection />
           <PricingSection />
+          <FinalCTA />
           <ContactSection />
         </div>
       </main>

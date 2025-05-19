@@ -67,8 +67,7 @@ const PricingSection = () => {
           ]}
           cta={
             <Button 
-              className="w-full" 
-              variant="outline"
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white" 
               asChild
             >
               <a href="#contact">
@@ -94,7 +93,7 @@ const PricingSection = () => {
           highlighted={true}
           cta={
             <Button 
-              className="w-full bg-emerald-500 hover:bg-emerald-600" 
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white" 
               asChild
             >
               <a href="#contact">
@@ -119,8 +118,7 @@ const PricingSection = () => {
           ]}
           cta={
             <Button 
-              className="w-full" 
-              variant="outline"
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white" 
               asChild
             >
               <a href="#contact">

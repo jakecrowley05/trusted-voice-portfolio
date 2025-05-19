@@ -53,7 +53,7 @@ const ServicesSection = () => {
             "Actionable next steps"
           ]}
           cta={
-            <Button className="w-full bg-slate-100 text-slate-800 hover:bg-slate-200" asChild>
+            <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white" asChild>
               <a href="#contact">
                 Book for $499
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -95,7 +95,7 @@ const ServicesSection = () => {
             "Market analysis"
           ]}
           cta={
-            <Button className="w-full bg-slate-100 text-slate-800 hover:bg-slate-200" asChild>
+            <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white" asChild>
               <a href="#contact">
                 Custom Pricing
                 <ArrowRight className="ml-2 h-4 w-4" />
