@@ -37,7 +37,7 @@ const ServicesSection = () => {
         </span>
         <h2 className="text-3xl font-bold text-slate-900 mb-4">Services Offered</h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Tailored solutions to help your startup find product-market fit and scale effectively.
+          Tailored solutions to help your startup find product-market fit, build human-centered systems, and scale effectively.
         </p>
       </div>
       
@@ -45,7 +45,7 @@ const ServicesSection = () => {
         <ServiceCard
           title="Rapid Product Audit"
           icon={<Clock className="h-10 w-10 text-emerald-500" />}
-          description="A focused 45-minute session to evaluate your current product strategy."
+          description="A focused 45-minute session to evaluate your current product strategy and customer experience."
           features={[
             "Product UI/UX evaluation",
             "Engagement funnel analysis",
@@ -65,11 +65,12 @@ const ServicesSection = () => {
         <ServiceCard
           title="PMF Sprint"
           icon={<LineChart className="h-10 w-10 text-emerald-500" />}
-          description="A two-week intensive program focusing on user research, feedback loops, and strategy refinement."
+          description="A two-week intensive program focusing on user research, feedback loops, and custom automations for deeper customer connections."
           features={[
             "Custom user surveys design",
             "User interview facilitation",
             "Feature priority matrix",
+            "Custom automation planning",
             "Implementation roadmap",
             "30-day check-in"
           ]}
@@ -86,10 +87,11 @@ const ServicesSection = () => {
         <ServiceCard
           title="Ongoing Coaching"
           icon={<Users className="h-10 w-10 text-emerald-500" />}
-          description="Monthly sessions to keep your product aligned with market needs."
+          description="Monthly sessions to keep your product aligned with market needs and help you build human-centered systems."
           features={[
             "Regular product review sessions",
             "On-demand strategy calls",
+            "Custom automation implementation",
             "Team workshops",
             "Investor pitch preparation",
             "Market analysis"

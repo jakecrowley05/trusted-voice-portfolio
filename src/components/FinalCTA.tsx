@@ -27,7 +27,7 @@ const FinalCTA = () => {
               <span className="text-emerald-400">You need a product truth-teller.</span>
             </h2>
             <p className="text-slate-300 max-w-xl">
-              Stop wondering why users aren't sticking around. Get clarity on exactly what needs to change in your product strategy.
+              Stop wondering why users aren't sticking around. Get clarity on exactly what needs to change in your product strategy and build custom automations that create deeper customer connections.
             </p>
           </div>
           
