@@ -2,23 +2,27 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import LandingHero from '@/components/LandingHero';
-import ValueProps from '@/components/ValueProps';
-import ServicesOverview from '@/components/ServicesOverview';
-import CaseStudies from '@/components/CaseStudies';
-import FinalCTA from '@/components/FinalCTA';
+import ProductCoachHero from '@/components/ProductCoachHero';
+import AboutSection from '@/components/AboutSection';
+import ServicesSection from '@/components/ServicesSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import PricingSection from '@/components/PricingSection';
+import ContactSection from '@/components/ContactSection';
 
 const ProductCoach = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main>
-        <LandingHero />
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ValueProps />
-          <ServicesOverview />
-          <CaseStudies />
-          <FinalCTA />
+        <ProductCoachHero />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AboutSection />
+          <ServicesSection />
+          <TestimonialsSection />
+          <CaseStudiesSection />
+          <PricingSection />
+          <ContactSection />
         </div>
       </main>
       <Footer />
