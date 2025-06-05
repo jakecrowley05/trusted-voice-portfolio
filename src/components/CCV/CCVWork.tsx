@@ -1,8 +1,16 @@
 
 import React from 'react';
-import { Users, Search, Tool, Package, Mic } from 'lucide-react';
+import { Users, Search, Settings, Package, Mic } from 'lucide-react';
 
-const WorkCard = ({ icon, title, description, price, features }) => {
+interface WorkCardProps {
+  icon: React.ReactElement;
+  title: string;
+  description: string;
+  price?: string;
+  features: string[];
+}
+
+const WorkCard = ({ icon, title, description, price, features }: WorkCardProps) => {
   return (
     <div className="bg-white p-8 rounded-xl border border-stone-200 hover:shadow-lg transition-all duration-300 h-full">
       <div className="mb-6">
@@ -64,7 +72,7 @@ const CCVWork = () => {
           />
           
           <WorkCard
-            icon={<Tool className="h-10 w-10 text-stone-700" />}
+            icon={<Settings className="h-10 w-10 text-stone-700" />}
             title="Embedded Solutions"
             price="via Spoke"
             description="Product + full-stack build support under my strategic lead"

@@ -252,6 +252,50 @@ export type Database = {
         }
         Relationships: []
       }
+      executions: {
+        Row: {
+          duration_ms: number | null
+          error_message: string | null
+          finished_at: string | null
+          id: string
+          payload: Json | null
+          result: Json | null
+          started_at: string
+          status: string
+          workflow_id: string
+        }
+        Insert: {
+          duration_ms?: number | null
+          error_message?: string | null
+          finished_at?: string | null
+          id?: string
+          payload?: Json | null
+          result?: Json | null
+          started_at?: string
+          status: string
+          workflow_id: string
+        }
+        Update: {
+          duration_ms?: number | null
+          error_message?: string | null
+          finished_at?: string | null
+          id?: string
+          payload?: Json | null
+          result?: Json | null
+          started_at?: string
+          status?: string
+          workflow_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "executions_workflow_id_fkey"
+            columns: ["workflow_id"]
+            isOneToOne: false
+            referencedRelation: "workflows"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       follow_up_leads: {
         Row: {
           context: string | null
@@ -604,6 +648,39 @@ export type Database = {
           whatsapp_token?: string | null
           x_username?: string | null
           zapier_webhook_url?: string | null
+        }
+        Relationships: []
+      }
+      integrations: {
+        Row: {
+          access_type: string
+          created_at: string
+          encrypted_secret: string | null
+          id: string
+          meta: Json | null
+          provider: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_type: string
+          created_at?: string
+          encrypted_secret?: string | null
+          id?: string
+          meta?: Json | null
+          provider: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_type?: string
+          created_at?: string
+          encrypted_secret?: string | null
+          id?: string
+          meta?: Json | null
+          provider?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -1441,6 +1518,7 @@ export type Database = {
           status: string
           trigger_type: string
           updated_at: string | null
+          user_id: string | null
         }
         Insert: {
           config?: Json | null
@@ -1452,6 +1530,7 @@ export type Database = {
           status?: string
           trigger_type: string
           updated_at?: string | null
+          user_id?: string | null
         }
         Update: {
           config?: Json | null
@@ -1463,6 +1542,7 @@ export type Database = {
           status?: string
           trigger_type?: string
           updated_at?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }
