@@ -3,8 +3,9 @@ import React from 'react';
 import CCVNavbar from '@/components/CCV/CCVNavbar';
 import CCVHero from '@/components/CCV/CCVHero';
 import CCVAbout from '@/components/CCV/CCVAbout';
-import CCVWork from '@/components/CCV/CCVWork';
-import CCVEcosystem from '@/components/CCV/CCVEcosystem';
+import CCVOfferings from '@/components/CCV/CCVOfferings';
+import CCVBooking from '@/components/CCV/CCVBooking';
+import CCVSpoke from '@/components/CCV/CCVSpoke';
 import CCVNewsletter from '@/components/CCV/CCVNewsletter';
 import CCVFooter from '@/components/CCV/CCVFooter';
 
@@ -15,8 +16,9 @@ const CrowleyCapital = () => {
       <main>
         <CCVHero />
         <CCVAbout />
-        <CCVWork />
-        <CCVEcosystem />
+        <CCVOfferings />
+        <CCVBooking />
+        <CCVSpoke />
         <CCVNewsletter />
       </main>
       <CCVFooter />
