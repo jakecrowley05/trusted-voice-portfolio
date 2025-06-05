@@ -8,7 +8,7 @@ const CCVFooter = () => {
   
   return (
     <footer className="py-20 px-6 lg:px-8 bg-black text-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
@@ -16,11 +16,11 @@ const CCVFooter = () => {
               <span className="text-xl font-light">Crowley Capital Ventures</span>
             </div>
             <p className="text-slate-400 text-lg leading-relaxed max-w-md">
-              Strategy, Product, and Capital Guidance for Builders & Backers in the Austin Tech Ecosystem.
+              Strategy, Product, and Capital Guidance for Builders & Backers in Austin's Tech Ecosystem.
             </p>
             <div className="flex items-center gap-6">
               <a 
-                href="https://linkedin.com/in/jakecrowley" 
+                href="https://linkedin.com/company/crowley-capital-ventures" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -28,7 +28,7 @@ const CCVFooter = () => {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a 
-                href="https://twitter.com/jakecrowley" 
+                href="https://twitter.com/crowleycapital" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -36,7 +36,7 @@ const CCVFooter = () => {
                 <Twitter className="h-6 w-6" />
               </a>
               <a 
-                href="https://youtube.com/@jakecrowley" 
+                href="https://youtube.com/@crowleycapital" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
@@ -55,7 +55,7 @@ const CCVFooter = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Services</h4>
             <ul className="space-y-3">
-              <li><a href="#offerings" className="text-slate-400 hover:text-white transition-colors">Clarity Sessions</a></li>
+              <li><a href="#offerings" className="text-slate-400 hover:text-white transition-colors">Strategy Sessions</a></li>
               <li><a href="#offerings" className="text-slate-400 hover:text-white transition-colors">Fractional Strategy</a></li>
               <li><a href="#spoke" className="text-slate-400 hover:text-white transition-colors">Custom Development</a></li>
               <li><a href="#offerings" className="text-slate-400 hover:text-white transition-colors">Founder OS</a></li>
