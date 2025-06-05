@@ -117,7 +117,7 @@ const CCVOfferings = () => {
             title="Fractional Strategy"
             subtitle="Product & Capital"
             description="Monthly retainers for ongoing strategic guidance and fundraising preparation."
-            features=[
+            features={[
               "Work alongside design/dev teams",
               "Fundraising preparation",
               "Investor deck development",
@@ -132,7 +132,7 @@ const CCVOfferings = () => {
             title="Custom Solutions"
             subtitle="via Spoke Partnership"
             description="Full-stack development and no-code solutions under strategic oversight."
-            features=[
+            features={[
               "MVP builds and prototypes",
               "No-code SaaS dashboards",
               "Internal tools and automation",
@@ -147,7 +147,7 @@ const CCVOfferings = () => {
             title="Founder OS"
             subtitle="Notion-Based System"
             description="Complete toolkit for managing funding, updates, and launch processes."
-            features=[
+            features={[
               "Pitch QA templates",
               "Investor update builder",
               "Deal room organization",
@@ -162,7 +162,7 @@ const CCVOfferings = () => {
             title="Workshops"
             subtitle="Live Training"
             description="Interactive sessions on AI, fundraising, and go-to-market strategy."
-            features=[
+            features={[
               "AI for Legacy Industries",
               "Fundable Pitch in 45min",
               "GTM strategy workshops",
@@ -177,7 +177,7 @@ const CCVOfferings = () => {
             title="VC & Econ Intel"
             subtitle="Weekly Newsletter"
             description="Join 500+ founders reading insights on Austin startup ecosystem and economic trends."
-            features=[
+            features={[
               "Austin startup intelligence",
               "Economic trend analysis",
               "VC activity updates",
