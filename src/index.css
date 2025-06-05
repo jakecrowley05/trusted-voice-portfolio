@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,62 +8,62 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 0 0% 0%;
     
-    /* Primary brand colors */
-    --primary: 235 87% 65%;
+    /* Primary brand colors - Black/White/Stone */
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
     
-    /* Neutral tones */
+    /* Neutral tones using stone palette */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --secondary: 218 27% 94%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 218 27% 94%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 218 27% 94%;
-    --accent-foreground: 222 47% 11%;
-    --sidebar: 220 29% 97%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 0%;
+    --secondary: 20 6% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 20 6% 95%;
+    --muted-foreground: 20 5% 45%;
+    --accent: 20 6% 90%;
+    --accent-foreground: 0 0% 0%;
+    --sidebar: 20 6% 97%;
+    --sidebar-border: 20 6% 91%;
+    --sidebar-foreground: 0 0% 0%;
     
     /* Utility colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 235 87% 65%;
-    --radius: 0.5rem;
+    --border: 20 6% 85%;
+    --input: 20 6% 85%;
+    --ring: 0 0% 0%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     
-    --primary: 235 87% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
     
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217 32% 17%;
-    --accent-foreground: 210 40% 98%;
-    --sidebar: 223 47% 11%;
-    --sidebar-border: 217 32% 17%;
-    --sidebar-foreground: 210 40% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --secondary: 20 6% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 20 6% 10%;
+    --muted-foreground: 20 5% 65%;
+    --accent: 20 6% 10%;
+    --accent-foreground: 0 0% 100%;
+    --sidebar: 20 6% 5%;
+    --sidebar-border: 20 6% 15%;
+    --sidebar-foreground: 0 0% 100%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 235 87% 65%;
+    --border: 20 6% 15%;
+    --input: 20 6% 15%;
+    --ring: 0 0% 100%;
   }
 }
 
@@ -73,53 +73,48 @@
   }
   
   body {
-    @apply bg-background text-foreground antialiased font-inter;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
   
-  /* Transition utilities */
-  .transition-all {
-    @apply duration-200 ease-in-out;
-  }
-  
-  /* Text styles */
+  /* Typography improvements */
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
   }
   
   h1 {
-    @apply text-3xl md:text-4xl;
+    @apply text-4xl md:text-6xl;
   }
   
   h2 {
-    @apply text-2xl md:text-3xl;
+    @apply text-3xl md:text-4xl;
   }
   
   h3 {
-    @apply text-xl md:text-2xl;
+    @apply text-2xl md:text-3xl;
   }
   
-  /* Improved focus styles */
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus styles */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
 
-/* Animation utilities */
+/* Animation utilities for subtle microinteractions */
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-in forwards;
-    opacity: 0;
-  }
-  
-  .animate-slide-in {
-    animation: slideIn 0.5s ease-in forwards;
-    transform: translateX(-10px);
+    animation: fadeIn 0.6s ease-out forwards;
     opacity: 0;
   }
   
   .animate-slide-up {
-    animation: slideUp 0.5s ease-in forwards;
+    animation: slideUp 0.6s ease-out forwards;
     transform: translateY(20px);
     opacity: 0;
   }
@@ -135,17 +130,6 @@
     }
   }
   
-  @keyframes slideIn {
-    from {
-      transform: translateX(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
   @keyframes slideUp {
     from {
       transform: translateY(20px);
@@ -157,24 +141,14 @@
     }
   }
   
-  /* Animation delays */
-  .animation-delay-100 {
-    animation-delay: 100ms;
+  /* Hover effects for premium feel */
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
   }
   
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  
-  .animation-delay-500 {
-    animation-delay: 500ms;
+  .hover-scale:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-out;
   }
 }

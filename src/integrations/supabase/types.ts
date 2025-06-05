@@ -50,6 +50,60 @@ export type Database = {
           },
         ]
       }
+      completed_milestones: {
+        Row: {
+          completed_at: string
+          id: string
+          milestone_id: number
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string
+          id?: string
+          milestone_id: number
+          user_id: string
+        }
+        Update: {
+          completed_at?: string
+          id?: string
+          milestone_id?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      connected_services: {
+        Row: {
+          created_at: string | null
+          id: string
+          last_synced: string | null
+          service_name: string
+          status: string
+          token: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          last_synced?: string | null
+          service_name: string
+          status?: string
+          token?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          last_synced?: string | null
+          service_name?: string
+          status?: string
+          token?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       contacts: {
         Row: {
           alternate_addresses: string[] | null
@@ -131,6 +185,72 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      credit_reports: {
+        Row: {
+          created_at: string
+          id: string
+          report_data: Json
+          score: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          report_data?: Json
+          score: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          report_data?: Json
+          score?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          size: number
+          status: string
+          step_slug: string | null
+          storage_path: string
+          type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          size: number
+          status?: string
+          step_slug?: string | null
+          storage_path: string
+          type: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          size?: number
+          status?: string
+          step_slug?: string | null
+          storage_path?: string
+          type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       follow_up_leads: {
         Row: {
@@ -289,6 +409,204 @@ export type Database = {
           },
         ]
       }
+      integration_tokens: {
+        Row: {
+          bluesky_app_password: string | null
+          bluesky_handle: string | null
+          created_at: string
+          discord_bot_token: string | null
+          discord_server_id: string | null
+          discord_webhook_url: string | null
+          facebook_token: string | null
+          gcal_token: string | null
+          gdocs_token: string | null
+          github_token: string | null
+          github_username: string | null
+          github_webhook_url: string | null
+          gmail_token: string | null
+          gsheets_token: string | null
+          hubspot_api_key: string | null
+          hubspot_portal_id: string | null
+          hubspot_webhook_url: string | null
+          id: string
+          imessage_email: string | null
+          instagram_handle: string | null
+          jira_api_token: string | null
+          jira_domain: string | null
+          jira_email: string | null
+          jira_webhook_url: string | null
+          linkedin_profile: string | null
+          m365_client_id: string | null
+          m365_client_secret: string | null
+          m365_tenant_id: string | null
+          m365_webhook_url: string | null
+          monday_api_token: string | null
+          monday_webhook_url: string | null
+          monday_workspace_id: string | null
+          n8n_webhook_url: string | null
+          netsuite_account_id: string | null
+          netsuite_consumer_key: string | null
+          netsuite_consumer_secret: string | null
+          netsuite_token_id: string | null
+          netsuite_token_secret: string | null
+          netsuite_webhook_url: string | null
+          reddit_client_id: string | null
+          reddit_client_secret: string | null
+          reddit_refresh_token: string | null
+          reddit_username: string | null
+          reddit_webhook_url: string | null
+          salesforce_client_id: string | null
+          salesforce_client_secret: string | null
+          salesforce_password: string | null
+          salesforce_security_token: string | null
+          salesforce_username: string | null
+          salesforce_webhook_url: string | null
+          slack_webhook: string | null
+          substack_rss: string | null
+          teams_client_id: string | null
+          teams_client_secret: string | null
+          teams_tenant_id: string | null
+          teams_webhook_url: string | null
+          telegram_chat_id: string | null
+          telegram_token: string | null
+          updated_at: string
+          user_id: string
+          whatsapp_token: string | null
+          x_username: string | null
+          zapier_webhook_url: string | null
+        }
+        Insert: {
+          bluesky_app_password?: string | null
+          bluesky_handle?: string | null
+          created_at?: string
+          discord_bot_token?: string | null
+          discord_server_id?: string | null
+          discord_webhook_url?: string | null
+          facebook_token?: string | null
+          gcal_token?: string | null
+          gdocs_token?: string | null
+          github_token?: string | null
+          github_username?: string | null
+          github_webhook_url?: string | null
+          gmail_token?: string | null
+          gsheets_token?: string | null
+          hubspot_api_key?: string | null
+          hubspot_portal_id?: string | null
+          hubspot_webhook_url?: string | null
+          id?: string
+          imessage_email?: string | null
+          instagram_handle?: string | null
+          jira_api_token?: string | null
+          jira_domain?: string | null
+          jira_email?: string | null
+          jira_webhook_url?: string | null
+          linkedin_profile?: string | null
+          m365_client_id?: string | null
+          m365_client_secret?: string | null
+          m365_tenant_id?: string | null
+          m365_webhook_url?: string | null
+          monday_api_token?: string | null
+          monday_webhook_url?: string | null
+          monday_workspace_id?: string | null
+          n8n_webhook_url?: string | null
+          netsuite_account_id?: string | null
+          netsuite_consumer_key?: string | null
+          netsuite_consumer_secret?: string | null
+          netsuite_token_id?: string | null
+          netsuite_token_secret?: string | null
+          netsuite_webhook_url?: string | null
+          reddit_client_id?: string | null
+          reddit_client_secret?: string | null
+          reddit_refresh_token?: string | null
+          reddit_username?: string | null
+          reddit_webhook_url?: string | null
+          salesforce_client_id?: string | null
+          salesforce_client_secret?: string | null
+          salesforce_password?: string | null
+          salesforce_security_token?: string | null
+          salesforce_username?: string | null
+          salesforce_webhook_url?: string | null
+          slack_webhook?: string | null
+          substack_rss?: string | null
+          teams_client_id?: string | null
+          teams_client_secret?: string | null
+          teams_tenant_id?: string | null
+          teams_webhook_url?: string | null
+          telegram_chat_id?: string | null
+          telegram_token?: string | null
+          updated_at?: string
+          user_id: string
+          whatsapp_token?: string | null
+          x_username?: string | null
+          zapier_webhook_url?: string | null
+        }
+        Update: {
+          bluesky_app_password?: string | null
+          bluesky_handle?: string | null
+          created_at?: string
+          discord_bot_token?: string | null
+          discord_server_id?: string | null
+          discord_webhook_url?: string | null
+          facebook_token?: string | null
+          gcal_token?: string | null
+          gdocs_token?: string | null
+          github_token?: string | null
+          github_username?: string | null
+          github_webhook_url?: string | null
+          gmail_token?: string | null
+          gsheets_token?: string | null
+          hubspot_api_key?: string | null
+          hubspot_portal_id?: string | null
+          hubspot_webhook_url?: string | null
+          id?: string
+          imessage_email?: string | null
+          instagram_handle?: string | null
+          jira_api_token?: string | null
+          jira_domain?: string | null
+          jira_email?: string | null
+          jira_webhook_url?: string | null
+          linkedin_profile?: string | null
+          m365_client_id?: string | null
+          m365_client_secret?: string | null
+          m365_tenant_id?: string | null
+          m365_webhook_url?: string | null
+          monday_api_token?: string | null
+          monday_webhook_url?: string | null
+          monday_workspace_id?: string | null
+          n8n_webhook_url?: string | null
+          netsuite_account_id?: string | null
+          netsuite_consumer_key?: string | null
+          netsuite_consumer_secret?: string | null
+          netsuite_token_id?: string | null
+          netsuite_token_secret?: string | null
+          netsuite_webhook_url?: string | null
+          reddit_client_id?: string | null
+          reddit_client_secret?: string | null
+          reddit_refresh_token?: string | null
+          reddit_username?: string | null
+          reddit_webhook_url?: string | null
+          salesforce_client_id?: string | null
+          salesforce_client_secret?: string | null
+          salesforce_password?: string | null
+          salesforce_security_token?: string | null
+          salesforce_username?: string | null
+          salesforce_webhook_url?: string | null
+          slack_webhook?: string | null
+          substack_rss?: string | null
+          teams_client_id?: string | null
+          teams_client_secret?: string | null
+          teams_tenant_id?: string | null
+          teams_webhook_url?: string | null
+          telegram_chat_id?: string | null
+          telegram_token?: string | null
+          updated_at?: string
+          user_id?: string
+          whatsapp_token?: string | null
+          x_username?: string | null
+          zapier_webhook_url?: string | null
+        }
+        Relationships: []
+      }
       lead_activities: {
         Row: {
           activity_type: string
@@ -390,6 +708,50 @@ export type Database = {
         }
         Relationships: []
       }
+      message_log: {
+        Row: {
+          channel: string
+          created_at: string | null
+          id: string
+          message: string
+          recipient: string
+          source: string | null
+          timestamp: string | null
+          user_id: string | null
+          workflow_id: string | null
+        }
+        Insert: {
+          channel: string
+          created_at?: string | null
+          id?: string
+          message: string
+          recipient: string
+          source?: string | null
+          timestamp?: string | null
+          user_id?: string | null
+          workflow_id?: string | null
+        }
+        Update: {
+          channel?: string
+          created_at?: string | null
+          id?: string
+          message?: string
+          recipient?: string
+          source?: string | null
+          timestamp?: string | null
+          user_id?: string | null
+          workflow_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "message_log_workflow_id_fkey"
+            columns: ["workflow_id"]
+            isOneToOne: false
+            referencedRelation: "workflow_instances"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       messages: {
         Row: {
           ai_generated: boolean | null
@@ -443,6 +805,72 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      milestone_feedback: {
+        Row: {
+          created_at: string
+          feedback: string | null
+          id: string
+          milestone_id: number
+          rating: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          milestone_id: number
+          rating: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          milestone_id?: number
+          rating?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      milestones: {
+        Row: {
+          completed_at: string | null
+          created_at: string
+          id: string
+          journey_id: string | null
+          required_docs: Json | null
+          status: string
+          step_slug: string
+          updated_at: string
+          uploaded_docs: Json | null
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          journey_id?: string | null
+          required_docs?: Json | null
+          status?: string
+          step_slug: string
+          updated_at?: string
+          uploaded_docs?: Json | null
+          user_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string
+          id?: string
+          journey_id?: string | null
+          required_docs?: Json | null
+          status?: string
+          step_slug?: string
+          updated_at?: string
+          uploaded_docs?: Json | null
+          user_id?: string
+        }
+        Relationships: []
       }
       news_sources: {
         Row: {
@@ -560,6 +988,36 @@ export type Database = {
           },
         ]
       }
+      plaid_accounts: {
+        Row: {
+          access_token: string
+          account_data: Json
+          created_at: string
+          id: string
+          item_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_token: string
+          account_data?: Json
+          created_at?: string
+          id?: string
+          item_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_token?: string
+          account_data?: Json
+          created_at?: string
+          id?: string
+          item_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       platform_connections: {
         Row: {
           created_at: string | null
@@ -645,6 +1103,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      profiles: {
+        Row: {
+          beta_access: boolean | null
+          created_at: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          beta_access?: boolean | null
+          created_at?: string
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          beta_access?: boolean | null
+          created_at?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       properties: {
         Row: {
@@ -918,6 +1397,36 @@ export type Database = {
           updated_at?: string | null
           user_id?: string
           zapier_webhook_url?: string | null
+        }
+        Relationships: []
+      }
+      workflow_instances: {
+        Row: {
+          config_json: Json | null
+          created_at: string | null
+          id: string
+          name: string
+          status: string
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          config_json?: Json | null
+          created_at?: string | null
+          id?: string
+          name: string
+          status?: string
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          config_json?: Json | null
+          created_at?: string | null
+          id?: string
+          name?: string
+          status?: string
+          updated_at?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }

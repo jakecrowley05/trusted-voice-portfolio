@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import PricingPage from "./pages/Pricing";
 import ContactPage from "./pages/Contact";
 import ProductCoach from "./pages/ProductCoach";
+import CrowleyCapital from "./pages/CrowleyCapital";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,7 +32,8 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<CrowleyCapital />} />
+              <Route path="/nobleloop" element={<Index />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/help" element={<HelpCenter />} />
               <Route path="/pricing" element={<PricingPage />} />
