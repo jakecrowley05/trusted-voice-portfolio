@@ -28,7 +28,7 @@ const CCVNavbar = () => {
         ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/50 shadow-sm' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
             <CCVLogo size="sm" />
@@ -38,31 +38,25 @@ const CCVNavbar = () => {
           <nav className="hidden md:flex items-center gap-8">
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-slate-600 hover:text-black transition-all duration-300 font-light"
+              className="text-slate-600 hover:text-black transition-all duration-300 font-medium text-lg"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('offerings')}
-              className="text-slate-600 hover:text-black transition-all duration-300 font-light"
+              className="text-slate-600 hover:text-black transition-all duration-300 font-medium text-lg"
             >
-              Offerings
-            </button>
-            <button 
-              onClick={() => scrollToSection('spoke')}
-              className="text-slate-600 hover:text-black transition-all duration-300 font-light"
-            >
-              Development
+              Services
             </button>
             <button 
               onClick={() => scrollToSection('newsletter')}
-              className="text-slate-600 hover:text-black transition-all duration-300 font-light"
+              className="text-slate-600 hover:text-black transition-all duration-300 font-medium text-lg"
             >
               Newsletter
             </button>
             <Button 
               onClick={handleBookCall}
-              className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
+              className="bg-black text-white hover:bg-slate-800 px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Book Call
             </Button>

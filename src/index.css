@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,11 +10,11 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
     
-    /* Apple-inspired monochrome palette */
+    /* Primary color palette */
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
     
-    /* Subtle grays using slate palette for depth */
+    /* Subtle grays using slate palette */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
@@ -35,7 +35,7 @@
     --border: 210 40% 85%;
     --input: 210 40% 85%;
     --ring: 0 0% 0%;
-    --radius: 1rem;
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -74,20 +74,23 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
     font-optical-sizing: auto;
+    line-height: 1.6;
   }
   
-  /* Apple-inspired typography hierarchy */
+  /* Typography hierarchy with IBM Plex */
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
-    font-weight: 300; /* Default to light weight for Apple aesthetic */
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
   }
   
   h1 {
     @apply text-6xl md:text-8xl;
-    font-weight: 200; /* Ultra-light for hero headlines */
+    font-weight: 200;
     letter-spacing: -0.025em;
   }
   
@@ -103,23 +106,33 @@
     letter-spacing: -0.015em;
   }
   
-  /* Smooth, intentional scrolling */
+  /* Body text refinements */
+  p {
+    line-height: 1.7;
+  }
+  
+  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
   
-  /* Apple-style focus states */
+  /* Enhanced focus states */
   *:focus-visible {
     @apply outline-none ring-2 ring-black ring-offset-2 ring-offset-background;
   }
   
-  /* Enhanced button interactions */
+  /* Button interactions */
   button {
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+  
+  /* Button hover states */
+  button:hover {
+    transform: translateY(-1px);
+  }
 }
 
-/* Premium animation utilities with Apple-like easing */
+/* Animation utilities with refined easing */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -171,7 +184,7 @@
     }
   }
   
-  /* Apple-inspired hover effects */
+  /* Hover effects */
   .hover-lift {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -188,14 +201,14 @@
     transform: scale(1.05);
   }
   
-  /* Premium backdrop blur effects */
+  /* Backdrop blur effects */
   .backdrop-blur-premium {
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 }
 
-/* Scrollbar styling for a premium feel */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
