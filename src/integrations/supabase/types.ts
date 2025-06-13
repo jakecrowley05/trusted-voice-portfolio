@@ -50,6 +50,53 @@ export type Database = {
           },
         ]
       }
+      approval_queue: {
+        Row: {
+          content_type: string
+          context: Json | null
+          created_at: string | null
+          draft_content: string
+          final_content: string | null
+          id: string
+          reviewed_at: string | null
+          status: string
+          user_id: string
+          workflow_execution_id: string | null
+        }
+        Insert: {
+          content_type: string
+          context?: Json | null
+          created_at?: string | null
+          draft_content: string
+          final_content?: string | null
+          id?: string
+          reviewed_at?: string | null
+          status?: string
+          user_id: string
+          workflow_execution_id?: string | null
+        }
+        Update: {
+          content_type?: string
+          context?: Json | null
+          created_at?: string | null
+          draft_content?: string
+          final_content?: string | null
+          id?: string
+          reviewed_at?: string | null
+          status?: string
+          user_id?: string
+          workflow_execution_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "approval_queue_workflow_execution_id_fkey"
+            columns: ["workflow_execution_id"]
+            isOneToOne: false
+            referencedRelation: "executions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       completed_milestones: {
         Row: {
           completed_at: string
@@ -258,6 +305,7 @@ export type Database = {
           error_message: string | null
           finished_at: string | null
           id: string
+          input_data: Json | null
           payload: Json | null
           result: Json | null
           started_at: string
@@ -269,6 +317,7 @@ export type Database = {
           error_message?: string | null
           finished_at?: string | null
           id?: string
+          input_data?: Json | null
           payload?: Json | null
           result?: Json | null
           started_at?: string
@@ -280,6 +329,7 @@ export type Database = {
           error_message?: string | null
           finished_at?: string | null
           id?: string
+          input_data?: Json | null
           payload?: Json | null
           result?: Json | null
           started_at?: string
@@ -1474,6 +1524,27 @@ export type Database = {
           updated_at?: string | null
           user_id?: string
           zapier_webhook_url?: string | null
+        }
+        Relationships: []
+      }
+      voice_settings: {
+        Row: {
+          prompt: string | null
+          sample_files: string[] | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          prompt?: string | null
+          sample_files?: string[] | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          prompt?: string | null
+          sample_files?: string[] | null
+          updated_at?: string | null
+          user_id?: string
         }
         Relationships: []
       }
