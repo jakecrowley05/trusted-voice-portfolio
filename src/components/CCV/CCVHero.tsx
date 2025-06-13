@@ -64,23 +64,6 @@ const CCVHero = () => {
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </Button>
               </div>
-              
-              <div className="pt-8 flex items-center gap-8 text-white/70">
-                <div className="text-sm font-medium">
-                  <div className="text-2xl font-bold text-white">500+</div>
-                  <div>Founders Helped</div>
-                </div>
-                <div className="w-px h-12 bg-white/30"></div>
-                <div className="text-sm font-medium">
-                  <div className="text-2xl font-bold text-white">$50M+</div>
-                  <div>Capital Raised</div>
-                </div>
-                <div className="w-px h-12 bg-white/30"></div>
-                <div className="text-sm font-medium">
-                  <div className="text-2xl font-bold text-white">2x</div>
-                  <div>Avg PMF Speed</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
