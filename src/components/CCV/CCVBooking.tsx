@@ -35,12 +35,14 @@ const CCVBooking = () => {
           
           <div className="rounded-2xl overflow-hidden shadow-inner">
             <iframe
-              src="https://calendly.com/jakecrowley05/30min"
+              src="https://calendly.com/jakecrowley05/30min?hide_event_type_details=1&hide_gdpr_banner=1"
               width="100%"
               height="700"
               frameBorder="0"
+              scrolling="no"
               className="rounded-2xl"
-              title="Schedule a strategy session"
+              title="Schedule a strategy session with Jake Crowley"
+              allow="microphone; camera"
             />
           </div>
           
@@ -56,6 +58,9 @@ const CCVBooking = () => {
                 jakecrowley05@gmail.com
               </a>
             </div>
+            <p className="text-sm text-slate-500 mt-2">
+              If the booking calendar doesn't load, please reach out directly and we'll schedule your session manually.
+            </p>
           </div>
         </div>
       </div>
