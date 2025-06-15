@@ -1,59 +1,73 @@
 
 import React from 'react';
+import { Grid, Column } from '@/components/carbon/Grid';
+import { Card } from '@/components/carbon/Card';
 import { AlertTriangle, TrendingDown, Search } from 'lucide-react';
 
 const PainPointCard = ({ icon, title, description }) => (
-  <div className="flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg group">
-    <div className="flex-shrink-0">
-      <div className="w-14 h-14 bg-red-50 flex items-center justify-center group-hover:bg-red-100 transition-colors duration-300">
-        {icon}
+  <Card elevation="01" padding="lg" className="h-full">
+    <div className="flex gap-6">
+      <div className="flex-shrink-0">
+        <div 
+          className="w-14 h-14 flex items-center justify-center"
+          style={{ backgroundColor: 'var(--c-red-10)' }}
+        >
+          {icon}
+        </div>
+      </div>
+      <div className="space-y-3">
+        <h3 className="cds-type-productive-heading-02 font-medium text-gray-100">{title}</h3>
+        <p className="cds-type-body-02 text-gray-70 leading-relaxed">{description}</p>
       </div>
     </div>
-    <div className="space-y-3">
-      <h3 className="text-xl font-medium text-black">{title}</h3>
-      <p className="text-slate-600 leading-relaxed text-lg">{description}</p>
-    </div>
-  </div>
+  </Card>
 );
 
 const CCVPainPoints = () => {
   return (
-    <section className="py-32 px-6 lg:px-8 bg-slate-50">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-12 gap-8 mb-20">
-          <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
+    <section 
+      className="bg-gray-20"
+      style={{ 
+        paddingTop: 'var(--cds-spacing-13)', // 160px
+        paddingBottom: 'var(--cds-spacing-13)' // 160px
+      }}
+    >
+      <Grid>
+        <Column span={12} spanLg={10} spanMd={8} className="mx-auto">
+          <div className="text-center" style={{ marginBottom: 'var(--cds-spacing-12)' }}>
+            <h2 
+              className="cds-type-expressive-heading-05 font-light text-gray-100 tracking-tight leading-tight"
+              style={{ marginBottom: 'var(--cds-spacing-08)' }}
+            >
               The Challenges We See Every Week
             </h2>
           </div>
-        </div>
+        </Column>
         
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-4">
-            <PainPointCard
-              icon={<TrendingDown className="h-7 w-7 text-red-600" />}
-              title="Early Momentum Stalls"
-              description="Founders struggling to convert initial traction into scalable growth systems that attract quality investors."
-            />
-          </div>
-          
-          <div className="col-span-12 lg:col-span-4">
-            <PainPointCard
-              icon={<AlertTriangle className="h-7 w-7 text-red-600" />}
-              title="Signal vs. Noise Overload"
-              description="Operators buried in tools and data, starving for actionable insights that actually move the business forward."
-            />
-          </div>
-          
-          <div className="col-span-12 lg:col-span-4">
-            <PainPointCard
-              icon={<Search className="h-7 w-7 text-red-600" />}
-              title="Pre-Seed Blind Spots"
-              description="VCs missing exceptional early-stage opportunities because companies are too early for standard diligence processes."
-            />
-          </div>
-        </div>
-      </div>
+        <Column span={12} spanLg={4} spanMd={4}>
+          <PainPointCard
+            icon={<TrendingDown className="h-7 w-7 text-red-60" />}
+            title="Early Momentum Stalls"
+            description="Founders struggling to convert initial traction into scalable growth systems that attract quality investors."
+          />
+        </Column>
+        
+        <Column span={12} spanLg={4} spanMd={4}>
+          <PainPointCard
+            icon={<AlertTriangle className="h-7 w-7 text-red-60" />}
+            title="Signal vs. Noise Overload"
+            description="Operators buried in tools and data, starving for actionable insights that actually move the business forward."
+          />
+        </Column>
+        
+        <Column span={12} spanLg={4} spanMd={4}>
+          <PainPointCard
+            icon={<Search className="h-7 w-7 text-red-60" />}
+            title="Pre-Seed Blind Spots"
+            description="VCs missing exceptional early-stage opportunities because companies are too early for standard diligence processes."
+          />
+        </Column>
+      </Grid>
     </section>
   );
 };

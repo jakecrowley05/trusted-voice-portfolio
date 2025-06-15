@@ -1,0 +1,137 @@
+
+/* IBM Plex Sans Font Import */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Base Reset and Typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: var(--cds-type-body-02);
+  color: var(--c-gray-100);
+  background-color: var(--c-gray-10);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Typography Classes */
+.cds-type-productive-heading-01 { font: var(--cds-type-productive-heading-01); }
+.cds-type-productive-heading-02 { font: var(--cds-type-productive-heading-02); }
+.cds-type-productive-heading-03 { font: var(--cds-type-productive-heading-03); }
+.cds-type-productive-heading-04 { font: var(--cds-type-productive-heading-04); }
+.cds-type-productive-heading-05 { font: var(--cds-type-productive-heading-05); }
+
+.cds-type-expressive-heading-01 { font: var(--cds-type-expressive-heading-01); }
+.cds-type-expressive-heading-02 { font: var(--cds-type-expressive-heading-02); }
+.cds-type-expressive-heading-03 { font: var(--cds-type-expressive-heading-03); }
+.cds-type-expressive-heading-04 { font: var(--cds-type-expressive-heading-04); }
+.cds-type-expressive-heading-05 { font: var(--cds-type-expressive-heading-05); }
+.cds-type-expressive-heading-06 { font: var(--cds-type-expressive-heading-06); }
+
+.cds-type-body-01 { font: var(--cds-type-body-01); }
+.cds-type-body-02 { font: var(--cds-type-body-02); }
+.cds-type-body-compact-01 { font: var(--cds-type-body-compact-01); }
+.cds-type-body-compact-02 { font: var(--cds-type-body-compact-02); }
+
+/* Focus Ring */
+*:focus-visible {
+  outline: 2px solid var(--c-blue-60);
+  outline-offset: 2px;
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Grid System */
+.cds-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--cds-spacing-05);
+  max-width: 1584px;
+  margin: 0 auto;
+  padding: 0 var(--cds-spacing-05);
+}
+
+@media (max-width: 671px) {
+  .cds-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--cds-spacing-03);
+    padding: 0 var(--cds-spacing-03);
+  }
+}
+
+@media (min-width: 672px) and (max-width: 1055px) {
+  .cds-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--cds-spacing-05);
+    padding: 0 var(--cds-spacing-05);
+  }
+}
+
+/* Column spans */
+.cds-col-span-1 { grid-column: span 1; }
+.cds-col-span-2 { grid-column: span 2; }
+.cds-col-span-3 { grid-column: span 3; }
+.cds-col-span-4 { grid-column: span 4; }
+.cds-col-span-5 { grid-column: span 5; }
+.cds-col-span-6 { grid-column: span 6; }
+.cds-col-span-7 { grid-column: span 7; }
+.cds-col-span-8 { grid-column: span 8; }
+.cds-col-span-9 { grid-column: span 9; }
+.cds-col-span-10 { grid-column: span 10; }
+.cds-col-span-11 { grid-column: span 11; }
+.cds-col-span-12 { grid-column: span 12; }
+
+/* Responsive column spans */
+@media (max-width: 671px) {
+  .cds-col-span-sm-1 { grid-column: span 1; }
+  .cds-col-span-sm-2 { grid-column: span 2; }
+  .cds-col-span-sm-3 { grid-column: span 3; }
+  .cds-col-span-sm-4 { grid-column: span 4; }
+}
+
+@media (min-width: 672px) and (max-width: 1055px) {
+  .cds-col-span-md-1 { grid-column: span 1; }
+  .cds-col-span-md-2 { grid-column: span 2; }
+  .cds-col-span-md-3 { grid-column: span 3; }
+  .cds-col-span-md-4 { grid-column: span 4; }
+  .cds-col-span-md-5 { grid-column: span 5; }
+  .cds-col-span-md-6 { grid-column: span 6; }
+  .cds-col-span-md-7 { grid-column: span 7; }
+  .cds-col-span-md-8 { grid-column: span 8; }
+}
+
+/* Elevation/Shadows */
+.cds-elevation-01 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.cds-elevation-02 {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cds-elevation-03 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
