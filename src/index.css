@@ -1,65 +1,69 @@
 
-/* Import Carbon Design System Styles */
-@import './styles/carbon-tokens.css';
-@import './styles/carbon-base.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
 
-/* Tailwind CSS - Configured with 8px spacing scale */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Remove Google Fonts - Using IBM Plex Sans instead */
-
 @layer base {
   :root {
-    --background: var(--c-gray-10);
-    --foreground: var(--c-gray-100);
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
     
-    --primary: var(--c-blue-60);
-    --primary-foreground: var(--c-white);
+    /* Primary color palette */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
     
-    --card: var(--c-white);
-    --card-foreground: var(--c-gray-100);
-    --popover: var(--c-white);
-    --popover-foreground: var(--c-gray-100);
-    --secondary: var(--c-gray-20);
-    --secondary-foreground: var(--c-gray-100);
-    --muted: var(--c-gray-20);
-    --muted-foreground: var(--c-gray-60);
-    --accent: var(--c-gray-20);
-    --accent-foreground: var(--c-gray-100);
+    /* Subtle grays using slate palette */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 210 40% 97%;
+    --muted-foreground: 210 6% 45%;
+    --accent: 210 40% 95%;
+    --accent-foreground: 0 0% 0%;
+    --sidebar: 210 40% 98%;
+    --sidebar-border: 210 40% 90%;
+    --sidebar-foreground: 0 0% 0%;
     
-    --destructive: #da1e28;
-    --destructive-foreground: var(--c-white);
-    --border: var(--c-gray-20);
-    --input: var(--c-gray-20);
-    --ring: var(--c-blue-60);
-    --radius: 2px; /* Carbon uses 2px border radius */
+    /* Utility colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 40% 85%;
+    --input: 210 40% 85%;
+    --ring: 0 0% 0%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: var(--c-gray-100);
-    --foreground: var(--c-gray-10);
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     
-    --primary: var(--c-blue-60);
-    --primary-foreground: var(--c-white);
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
     
-    --card: var(--c-gray-90);
-    --card-foreground: var(--c-gray-10);
-    --popover: var(--c-gray-90);
-    --popover-foreground: var(--c-gray-10);
-    --secondary: var(--c-gray-80);
-    --secondary-foreground: var(--c-gray-10);
-    --muted: var(--c-gray-80);
-    --muted-foreground: var(--c-gray-40);
-    --accent: var(--c-gray-80);
-    --accent-foreground: var(--c-gray-10);
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --secondary: 210 40% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 10%;
+    --muted-foreground: 210 40% 65%;
+    --accent: 210 40% 10%;
+    --accent-foreground: 0 0% 100%;
+    --sidebar: 210 40% 5%;
+    --sidebar-border: 210 40% 15%;
+    --sidebar-foreground: 0 0% 100%;
     
-    --destructive: #fa4d56;
-    --destructive-foreground: var(--c-white);
-    --border: var(--c-gray-80);
-    --input: var(--c-gray-80);
-    --ring: var(--c-blue-60);
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 40% 15%;
+    --input: 210 40% 15%;
+    --ring: 0 0% 100%;
   }
 }
 
@@ -70,81 +74,102 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
     font-optical-sizing: auto;
-    line-height: 1.5;
+    line-height: 1.6;
     scroll-behavior: smooth;
   }
   
-  /* Typography hierarchy with IBM Plex Sans */
+  /* Typography hierarchy with modern font pairings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    @apply tracking-tight;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
   }
   
   h1 {
-    font: var(--cds-type-expressive-heading-05);
-    font-weight: 600;
+    @apply text-6xl md:text-8xl;
+    font-weight: 200;
+    letter-spacing: -0.025em;
+    font-family: 'DM Serif Display', serif;
   }
   
   h2 {
-    font: var(--cds-type-expressive-heading-04);
-    font-weight: 600;
+    @apply text-4xl md:text-5xl;
+    font-weight: 300;
+    letter-spacing: -0.02em;
   }
   
   h3 {
-    font: var(--cds-type-productive-heading-03);
-    font-weight: 600;
+    @apply text-2xl md:text-3xl;
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
   
-  h4 {
-    font: var(--cds-type-productive-heading-02);
-    font-weight: 600;
-  }
-  
-  h5 {
-    font: var(--cds-type-productive-heading-01);
-    font-weight: 600;
-  }
-  
+  /* Enhanced body text */
   p {
-    font: var(--cds-type-body-02);
-    line-height: 1.375;
+    line-height: 1.7;
+    font-weight: 400;
   }
   
-  /* Enhanced focus states using Carbon specs */
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Section scroll-snap */
+  main {
+    scroll-snap-type: y mandatory;
+  }
+  
+  section {
+    scroll-snap-align: start;
+  }
+  
+  /* Enhanced focus states */
   *:focus-visible {
-    outline: 2px solid var(--c-blue-60);
-    outline-offset: 2px;
+    @apply outline-none ring-2 ring-black ring-offset-2 ring-offset-background;
   }
   
-  /* Motion with reduced motion support */
-  * {
-    transition-duration: var(--cds-motion-duration-moderate-01);
-    transition-timing-function: var(--cds-motion-easing-productive);
+  /* Button interactions with microinteractions */
+  button {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
   }
 }
 
-/* Enhanced animation utilities with Carbon motion */
+/* Enhanced animation utilities */
 @layer utilities {
   .animate-fade-in {
-    animation: carbonFadeIn var(--cds-motion-duration-moderate-02) var(--cds-motion-easing-productive) forwards;
+    animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     opacity: 0;
   }
   
   .animate-slide-up {
-    animation: carbonSlideUp var(--cds-motion-duration-moderate-02) var(--cds-motion-easing-productive) forwards;
-    transform: translateY(16px);
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    transform: translateY(40px);
     opacity: 0;
   }
   
-  @keyframes carbonFadeIn {
+  .animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(8px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -152,9 +177,9 @@
     }
   }
   
-  @keyframes carbonSlideUp {
+  @keyframes slideUp {
     from {
-      transform: translateY(16px);
+      transform: translateY(40px);
       opacity: 0;
     }
     to {
@@ -162,71 +187,90 @@
       opacity: 1;
     }
   }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Premium backdrop blur effects */
+  .backdrop-blur-premium {
+    backdrop-filter: blur(24px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(110%);
+  }
+  
+  /* Custom gradient backgrounds */
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .bg-gradient-founder {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+  }
 }
 
-/* IBM specific color utilities */
-.text-gray-10 { color: var(--c-gray-10); }
-.text-gray-20 { color: var(--c-gray-20); }
-.text-gray-30 { color: var(--c-gray-30); }
-.text-gray-40 { color: var(--c-gray-40); }
-.text-gray-50 { color: var(--c-gray-50); }
-.text-gray-60 { color: var(--c-gray-60); }
-.text-gray-70 { color: var(--c-gray-70); }
-.text-gray-80 { color: var(--c-gray-80); }
-.text-gray-90 { color: var(--c-gray-90); }
-.text-gray-100 { color: var(--c-gray-100); }
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
 
-.text-blue-10 { color: var(--c-blue-10); }
-.text-blue-20 { color: var(--c-blue-20); }
-.text-blue-30 { color: var(--c-blue-30); }
-.text-blue-40 { color: var(--c-blue-40); }
-.text-blue-50 { color: var(--c-blue-50); }
-.text-blue-60 { color: var(--c-blue-60); }
-.text-blue-70 { color: var(--c-blue-70); }
-.text-blue-80 { color: var(--c-blue-80); }
-.text-blue-90 { color: var(--c-blue-90); }
-.text-blue-100 { color: var(--c-blue-100); }
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
 
-.bg-gray-10 { background-color: var(--c-gray-10); }
-.bg-gray-20 { background-color: var(--c-gray-20); }
-.bg-gray-30 { background-color: var(--c-gray-30); }
-.bg-gray-40 { background-color: var(--c-gray-40); }
-.bg-gray-50 { background-color: var(--c-gray-50); }
-.bg-gray-60 { background-color: var(--c-gray-60); }
-.bg-gray-70 { background-color: var(--c-gray-70); }
-.bg-gray-80 { background-color: var(--c-gray-80); }
-.bg-gray-90 { background-color: var(--c-gray-90); }
-.bg-gray-100 { background-color: var(--c-gray-100); }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
 
-.bg-blue-10 { background-color: var(--c-blue-10); }
-.bg-blue-20 { background-color: var(--c-blue-20); }
-.bg-blue-30 { background-color: var(--c-blue-30); }
-.bg-blue-40 { background-color: var(--c-blue-40); }
-.bg-blue-50 { background-color: var(--c-blue-50); }
-.bg-blue-60 { background-color: var(--c-blue-60); }
-.bg-blue-70 { background-color: var(--c-blue-70); }
-.bg-blue-80 { background-color: var(--c-blue-80); }
-.bg-blue-90 { background-color: var(--c-blue-90); }
-.bg-blue-100 { background-color: var(--c-blue-100); }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
 
-.border-gray-10 { border-color: var(--c-gray-10); }
-.border-gray-20 { border-color: var(--c-gray-20); }
-.border-gray-30 { border-color: var(--c-gray-30); }
-.border-gray-40 { border-color: var(--c-gray-40); }
-.border-gray-50 { border-color: var(--c-gray-50); }
-.border-gray-60 { border-color: var(--c-gray-60); }
-.border-gray-70 { border-color: var(--c-gray-70); }
-.border-gray-80 { border-color: var(--c-gray-80); }
-.border-gray-90 { border-color: var(--c-gray-90); }
-.border-gray-100 { border-color: var(--c-gray-100); }
+/* Enhanced mobile touch targets */
+@media (max-width: 768px) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
 
-.border-blue-10 { border-color: var(--c-blue-10); }
-.border-blue-20 { border-color: var(--c-blue-20); }
-.border-blue-30 { border-color: var(--c-blue-30); }
-.border-blue-40 { border-color: var(--c-blue-40); }
-.border-blue-50 { border-color: var(--c-blue-50); }
-.border-blue-60 { border-color: var(--c-blue-60); }
-.border-blue-70 { border-color: var(--c-blue-70); }
-.border-blue-80 { border-color: var(--c-blue-80); }
-.border-blue-90 { border-color: var(--c-blue-90); }
-.border-blue-100 { border-color: var(--c-blue-100); }
+/* Premium shadow utilities */
+.shadow-premium {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.2);
+}

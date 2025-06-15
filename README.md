@@ -1,196 +1,69 @@
+# Welcome to your Lovable project
 
-# Crowley Capital - IBM Carbon Design System Implementation
+## Project info
 
-This project has been refactored to align 1-for-1 with IBM Design Language and Carbon Design System specifications.
+**URL**: https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9
 
-## 🎨 Design System Implementation
+## How can I edit this code?
 
-### Typography
-- **Primary Font**: IBM Plex Sans for all UI text
-- **Heading Font**: IBM Plex Sans Bold for headings
-- **Type Tokens**: Carbon's productive set (base 14px) for app-like pages; expressive set (base 16px) for marketing/hero areas
+There are several ways of editing your application.
 
-### Grid & Spacing
-- **8-pixel grid system**: All spacing snaps to 8px increments
-- **12-column responsive grid**: 16px gutters, follows Carbon specifications
-- **IBM 2× grid**: Used for logo spacing
+**Use Lovable**
 
-### Color System
-- **Primary Palette**: Carbon Gray 10 background with Gray 100 text
-- **Brand Colors**: IBM Blue 60 (#0F62FE) for primary actions
-- **Contrast**: All text meets ≥4.5:1 WCAG contrast requirements
+Simply visit the [Lovable Project](https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9) and start prompting.
 
-### Components
-- **Buttons**: 48px height, 2px radius, Carbon-compliant styling
-- **Cards**: Carbon Tile pattern with 1dp elevation
-- **Navigation**: 64px Carbon Masthead pattern
-- **Forms**: Carbon TextInput/TextArea components
+Changes made via Lovable will be committed automatically to this repo.
 
-## 🚀 Getting Started
+**Use your preferred IDE**
 
-### Prerequisites
-```bash
-npm install
-```
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-### Development
-```bash
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-### Build
-```bash
-npm run build
-```
+**Edit a file directly in GitHub**
 
-## 📁 Project Structure
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```
-src/
-├── styles/
-│   ├── carbon-tokens.css     # IBM Carbon design tokens
-│   └── carbon-base.css       # Base typography and grid
-├── components/
-│   └── carbon/
-│       ├── Button.tsx        # Carbon-compliant button component
-│       ├── Grid.tsx          # 12-column responsive grid
-│       ├── Masthead.tsx      # Carbon navigation header
-│       ├── Footer.tsx        # Carbon footer pattern
-│       └── Card.tsx          # Carbon tile component
-└── pages/
-    └── [refactored pages]    # All pages updated to Carbon specs
-```
+**Use GitHub Codespaces**
 
-## 🛠 Customizing Carbon Tokens
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-### Color Tokens
-Update CSS variables in `src/styles/carbon-tokens.css`:
-```css
-:root {
-  --c-gray-10: #f4f4f4;
-  --c-blue-60: #0f62fe;
-  /* Add your custom colors */
-}
-```
+## What technologies are used for this project?
 
-### Typography Tokens
-Modify type scales in `src/styles/carbon-tokens.css`:
-```css
-:root {
-  --cds-type-body-02: 400 1rem/1.375rem 'IBM Plex Sans', sans-serif;
-  /* Customize as needed */
-}
-```
+This project is built with .
 
-### Spacing Scale
-All spacing uses 8px increments defined in Tailwind config:
-```typescript
-spacing: {
-  '3': '0.5rem',    // 8px
-  '5': '1rem',      // 16px
-  '6': '1.5rem',    // 24px
-  // etc.
-}
-```
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## 🎯 Adding New Components
+## How can I deploy this project?
 
-### Creating Carbon-Compliant Components
-1. Use IBM Plex Sans typography
-2. Follow 8px spacing grid
-3. Use Carbon color tokens
-4. Implement proper focus states
-5. Include motion with reduced-motion support
+Simply open [Lovable](https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9) and click on Share -> Publish.
 
-Example:
-```tsx
-import { CarbonButton } from '@/components/carbon/Button';
-import { Grid, Column } from '@/components/carbon/Grid';
+## I want to use a custom domain - is that possible?
 
-const MyComponent = () => (
-  <Grid>
-    <Column span={6}>
-      <h2 className="cds-type-productive-heading-03">Heading</h2>
-      <p className="cds-type-body-02">Body text</p>
-      <CarbonButton variant="primary">Primary Action</CarbonButton>
-    </Column>
-  </Grid>
-);
-```
-
-## ♿ Accessibility Testing
-
-### Focus Management
-- All interactive elements are keyboard accessible
-- Focus rings use 2px IBM Blue 60 outline
-- Proper tab order maintained
-
-### Color Contrast
-- All text meets WCAG AA standards (4.5:1 minimum)
-- Use Carbon color tokens to ensure compliance
-
-### Motion
-- Respects `prefers-reduced-motion` media query
-- Subtle 150ms transitions with Carbon easing
-
-### Testing Tools
-```bash
-# Install accessibility testing tools
-npm install --save-dev @axe-core/react
-npm install --save-dev @testing-library/jest-dom
-```
-
-## 📐 Design Specifications
-
-### Button Specifications
-- **Primary**: 48px height, #0F62FE background, 2px radius
-- **Secondary**: Outline #0F62FE, transparent background
-- **Touch Targets**: 24px minimum on all sides
-
-### Icon Specifications
-- **Sizes**: 16px, 20px, 24px, 32px (Carbon standard)
-- **Stroke Width**: Scales with icon size
-- **Color**: Follows Carbon color tokens
-
-### Layout Specifications
-- **Masthead**: 64px height, sticky positioning
-- **Hero**: 96px top/bottom padding, expressive heading-05
-- **Sections**: 24px margin-bottom for headings
-- **Cards**: 1dp shadow (rgba(0,0,0,0.07))
-
-## 🔧 ESLint Rules
-
-Custom rules prevent non-Carbon patterns:
-```javascript
-// .eslintrc.js additions
-rules: {
-  'no-hardcoded-spacing': 'error',  // Prevents non-8px spacing
-  'ibm-plex-only': 'error',         // Enforces IBM Plex Sans usage
-  'carbon-colors-only': 'error',    // Requires Carbon color tokens
-}
-```
-
-## 📱 Responsive Breakpoints
-
-Following Carbon's responsive system:
-- **Small**: < 672px (4 columns)
-- **Medium**: 672px - 1055px (8 columns)  
-- **Large**: > 1056px (12 columns)
-
-## 🎨 Design Assets
-
-### Screenshots Required for PRs
-- Desktop: 1280px viewport
-- Mobile: 375px viewport
-- Focus states demonstration
-- Dark mode (if applicable)
-
-### Brand Guidelines
-- IBM Plex Sans font loading
-- Proper Carbon color usage
-- 8px grid alignment
-- Accessibility compliance
-
----
-
-For questions about Carbon Design System implementation, refer to the [official Carbon documentation](https://carbondesignsystem.com/) or open an issue in this repository.
+We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
