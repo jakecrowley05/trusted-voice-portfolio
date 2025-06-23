@@ -1,0 +1,17 @@
+
+/* === Task 1 — equal-height tiles === */
+.cc-card-grid {
+  display: grid;           /* keeps existing gap/columns */
+  grid-auto-rows: 1fr;     /* 🔑 every child = same row height */
+}
+
+.cc-card {
+  display: flex;           /* vertical stack */
+  flex-direction: column;
+  min-height: 280px;       /* adjust if tallest blurb exceeds */
+  padding: 2rem;
+  border: 1px solid #E5E8EC;
+  background: #fff;
+}
+
+.cc-card__body { flex: 1 1 auto; }

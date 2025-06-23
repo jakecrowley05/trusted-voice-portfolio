@@ -3,13 +3,13 @@ import React from 'react';
 import { CheckCircle, BarChart3, Users, TrendingUp } from 'lucide-react';
 
 const OfferCard = ({ icon, title, description }) => (
-  <div className="flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300 group">
+  <div className="cc-card flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300 group">
     <div className="flex-shrink-0">
       <div className="w-14 h-14 bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors duration-300">
         {icon}
       </div>
     </div>
-    <div className="space-y-3">
+    <div className="cc-card__body space-y-3">
       <h3 className="text-xl font-medium text-black">{title}</h3>
       <p className="text-slate-600 leading-relaxed text-lg">{description}</p>
     </div>
@@ -28,7 +28,7 @@ const CCVWhatWeOffer = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-12 gap-8">
+        <div className="cc-card-grid grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-6">
             <OfferCard
               icon={<BarChart3 className="h-7 w-7 text-green-600" />}
