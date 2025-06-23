@@ -1,18 +1,1 @@
-
 project_id = "xopzwbximpioksrnmdyi"
-
-[functions.connect-email]
-verify_jwt = true
-
-[functions.create-sample-message]
-verify_jwt = true
-
-[functions.generate-content]
-verify_jwt = true
-
-[functions.help-search]
-verify_jwt = true
-
-[functions.ai-assistant]
-verify_jwt = true
-
