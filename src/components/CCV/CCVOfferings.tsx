@@ -27,39 +27,43 @@ const OfferingCard = ({
   isHighlighted = false 
 }: OfferingCardProps) => {
   return (
-    <div className={`bg-white p-8 border transition-all duration-300 hover:shadow-lg ${
+    <div className={`cc-offering-card ${
       isHighlighted ? 'border-black' : 'border-slate-200'
     }`}>
-      <div className="space-y-6">
-        <div className="space-y-4">
-          <div className="w-16 h-16 bg-slate-100 flex items-center justify-center">
-            {icon}
+      <div className="cc-offering-card__content">
+        <div className="cc-offering-card__body space-y-6">
+          <div className="space-y-4">
+            <div className="w-16 h-16 bg-slate-100 flex items-center justify-center">
+              {icon}
+            </div>
+            <div>
+              <h3 className="text-2xl font-medium text-black tracking-tight">{title}</h3>
+              {subtitle && <p className="text-lg text-slate-500 mt-1">{subtitle}</p>}
+              {price && <p className="text-3xl font-light text-black mt-2">{price}</p>}
+            </div>
           </div>
-          <div>
-            <h3 className="text-2xl font-medium text-black tracking-tight">{title}</h3>
-            {subtitle && <p className="text-lg text-slate-500 mt-1">{subtitle}</p>}
-            {price && <p className="text-3xl font-light text-black mt-2">{price}</p>}
-          </div>
+          
+          <p className="text-lg text-slate-600 leading-relaxed">{description}</p>
+          
+          <ul className="space-y-3">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-slate-400 mt-3 flex-shrink-0"></div>
+                <span className="text-slate-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         
-        <p className="text-lg text-slate-600 leading-relaxed">{description}</p>
-        
-        <ul className="space-y-3">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-slate-400 mt-3 flex-shrink-0"></div>
-              <span className="text-slate-700">{feature}</span>
-            </li>
-          ))}
-        </ul>
-        
-        <Button 
-          onClick={ctaAction}
-          className="w-full bg-black text-white hover:bg-slate-800 py-4 text-lg font-medium rounded-none"
-        >
-          {ctaText}
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        <div className="cc-offering-card__cta">
+          <Button 
+            onClick={ctaAction}
+            className="w-full bg-black text-white hover:bg-slate-800 py-4 text-lg font-medium rounded-none"
+          >
+            {ctaText}
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -95,7 +99,7 @@ const CCVOfferings = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="cc-offering-grid">
           <OfferingCard
             icon={<Calendar className="h-8 w-8 text-slate-700" />}
             title="Strategy Sessions"

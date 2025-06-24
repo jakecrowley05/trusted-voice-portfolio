@@ -1,4 +1,5 @@
 
+
 /* === Task 1 — equal-height tiles === */
 .cc-card-grid {
   display: grid;           /* keeps existing gap/columns */
@@ -14,4 +15,43 @@
   background: #fff;
 }
 
-.cc-card__body { flex: 1 1 auto; }
+.cc-card__body { 
+  flex: 1 1 auto; 
+}
+
+/* === Task 2 — equal-height offering cards with aligned CTAs === */
+.cc-offering-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.cc-offering-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  min-height: 100%;
+}
+
+.cc-offering-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cc-offering-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.cc-offering-card__body {
+  flex: 1;
+}
+
+.cc-offering-card__cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
