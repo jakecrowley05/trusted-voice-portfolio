@@ -74,10 +74,6 @@ const CCVOfferings = () => {
     window.open('https://calendly.com/jakecrowley05/30min', '_blank');
   };
 
-  const handleStripePayment = () => {
-    window.open('https://dashboard.stripe.com/invoices/in_1RVLru02HOfGwRJGx5MOq3in', '_blank');
-  };
-
   const handleSpokeQuote = () => {
     window.open('https://gospoke.co/', '_blank');
   };
@@ -196,10 +192,10 @@ const CCVOfferings = () => {
           <div className="inline-flex items-center gap-4 bg-slate-50 px-8 py-4">
             <span className="text-lg text-slate-600">Ready to get started?</span>
             <Button 
-              onClick={handleStripePayment}
+              onClick={handleBookCall}
               className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-none font-medium"
             >
-              Pay Securely via Stripe
+              Schedule a Call
             </Button>
           </div>
         </div>
