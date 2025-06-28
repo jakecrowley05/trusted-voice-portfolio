@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, TrendingUp } from 'lucide-react';
+import { ArrowRight, Mail, TrendingUp, ExternalLink } from 'lucide-react';
 
 const CCVNewsletter = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +15,11 @@ const CCVNewsletter = () => {
   };
 
   const handleSubstackRedirect = () => {
-    window.open('https://substack.com', '_blank');
+    window.open('https://jakecrowley05.substack.com/publish/home', '_blank');
+  };
+
+  const handleViewLatestPost = () => {
+    window.open('https://jakecrowley05.substack.com', '_blank');
   };
 
   return (
@@ -47,6 +51,38 @@ const CCVNewsletter = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Substack Embed Preview */}
+        <div className="bg-white rounded-3xl p-8 shadow-2xl border border-slate-200 mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold text-black mb-4">Latest from Future Cash-Flow</h3>
+            <p className="text-slate-600">See what 500+ founders are reading about PMF and startup strategy</p>
+          </div>
+          
+          <div className="relative bg-slate-50 rounded-xl overflow-hidden">
+            <iframe 
+              src="https://jakecrowley05.substack.com/embed" 
+              width="100%" 
+              height="320" 
+              style={{ border: 'none', background: 'white' }}
+              frameBorder="0" 
+              scrolling="no"
+              title="Future Cash-Flow Newsletter Preview"
+              className="rounded-xl"
+            />
+          </div>
+          
+          <div className="flex justify-center mt-6">
+            <Button 
+              onClick={handleViewLatestPost}
+              variant="outline"
+              className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+            >
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Read Latest Posts
+            </Button>
           </div>
         </div>
         
@@ -104,7 +140,8 @@ const CCVNewsletter = () => {
                 onClick={handleSubstackRedirect}
                 className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-10 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105"
               >
-                Preview on Substack
+                <ExternalLink className="mr-2 h-5 w-5" />
+                Visit Substack
               </Button>
             </div>
           </form>
