@@ -15,7 +15,7 @@ const CCVNewsletter = () => {
   };
 
   const handleSubstackRedirect = () => {
-    window.open('https://jakecrowley05.substack.com/publish/home', '_blank');
+    window.open('https://jakecrowley05.substack.com', '_blank');
   };
 
   const handleViewLatestPost = () => {
