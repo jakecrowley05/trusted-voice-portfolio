@@ -32,8 +32,8 @@ const CCVAbout = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-12 gap-12 mb-20">
-          <div className="col-span-12 lg:col-span-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
+          <div>
             <PillarCard
               icon={<Target className="h-10 w-10 text-slate-700" />}
               title="Strategy"
@@ -41,7 +41,7 @@ const CCVAbout = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-4">
+          <div>
             <PillarCard
               icon={<Package className="h-10 w-10 text-slate-700" />}
               title="Product"
@@ -49,7 +49,7 @@ const CCVAbout = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-4">
+          <div>
             <PillarCard
               icon={<DollarSign className="h-10 w-10 text-slate-700" />}
               title="Capital"

@@ -28,8 +28,8 @@ const CCVPainPoints = () => {
           </div>
         </div>
         
-        <div className="cc-card-grid grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-4">
+        <div className="cc-card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div>
             <PainPointCard
               icon={<TrendingDown className="h-7 w-7 text-red-600" />}
               title="Early Momentum Stalls"
@@ -37,7 +37,7 @@ const CCVPainPoints = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-4">
+          <div>
             <PainPointCard
               icon={<AlertTriangle className="h-7 w-7 text-red-600" />}
               title="Signal vs. Noise Overload"
@@ -45,7 +45,7 @@ const CCVPainPoints = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-4">
+          <div>
             <PainPointCard
               icon={<Search className="h-7 w-7 text-red-600" />}
               title="Pre-Seed Blind Spots"

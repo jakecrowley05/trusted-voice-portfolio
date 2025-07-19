@@ -86,8 +86,9 @@ const CCVNavbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2"
+              className="md:hidden p-3 rounded-lg hover:bg-white/10 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
                 <X className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
@@ -103,29 +104,29 @@ const CCVNavbar = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-xl">
-            <nav className="px-6 py-8 space-y-6">
+          <div className="absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-xl animate-slide-up">
+            <nav className="px-6 py-6 space-y-4">
               <button 
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-xl font-medium text-slate-800 hover:text-black transition-colors py-2"
+                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('offerings')}
-                className="block w-full text-left text-xl font-medium text-slate-800 hover:text-black transition-colors py-2"
+                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('newsletter')}
-                className="block w-full text-left text-xl font-medium text-slate-800 hover:text-black transition-colors py-2"
+                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
               >
                 Newsletter
               </button>
               <Button 
                 onClick={handleBookCall}
-                className="w-full bg-black text-white hover:bg-slate-800 px-8 py-4 text-lg font-semibold mt-6"
+                className="w-full bg-black text-white hover:bg-slate-800 px-8 py-4 text-lg font-semibold mt-4 rounded-lg"
               >
                 Book a Session
               </Button>

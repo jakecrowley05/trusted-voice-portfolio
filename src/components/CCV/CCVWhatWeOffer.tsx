@@ -28,8 +28,8 @@ const CCVWhatWeOffer = () => {
           </div>
         </div>
         
-        <div className="cc-card-grid grid grid-cols-12 gap-8">
-          <div className="col-span-12 lg:col-span-6">
+        <div className="cc-card-grid grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div>
             <OfferCard
               icon={<BarChart3 className="h-7 w-7 text-green-600" />}
               title="Real-Time Signal Reports"
@@ -37,7 +37,7 @@ const CCVWhatWeOffer = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-6">
+          <div>
             <OfferCard
               icon={<Users className="h-7 w-7 text-green-600" />}
               title="Tailored Ecosystem Digests"
@@ -45,7 +45,7 @@ const CCVWhatWeOffer = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-6">
+          <div>
             <OfferCard
               icon={<TrendingUp className="h-7 w-7 text-green-600" />}
               title="Performance Tracking Systems"
@@ -53,7 +53,7 @@ const CCVWhatWeOffer = () => {
             />
           </div>
           
-          <div className="col-span-12 lg:col-span-6">
+          <div>
             <OfferCard
               icon={<CheckCircle className="h-7 w-7 text-green-600" />}
               title="Strategic Advisory Support"

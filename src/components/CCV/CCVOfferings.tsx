@@ -95,7 +95,7 @@ const CCVOfferings = () => {
           </p>
         </div>
         
-        <div className="cc-offering-grid">
+        <div className="cc-offering-grid grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
             icon={<Calendar className="h-8 w-8 text-slate-700" />}
             title="Strategy Sessions"
