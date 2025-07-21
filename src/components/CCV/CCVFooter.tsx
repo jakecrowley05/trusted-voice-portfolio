@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CCVLogo from './CCVLogo';
-import { Linkedin, Twitter, Youtube, FileText, Mail, Calendar } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, FileText, Mail, Calendar } from 'lucide-react';
 
 const CCVFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -45,37 +45,44 @@ const CCVFooter = () => {
             <p className="text-slate-300 text-lg leading-relaxed max-w-md">
               Helping startup founders cut through the noise with strategic clarity, tactical execution, and capital guidance in Austin's tech ecosystem.
             </p>
-            <div className="flex items-center gap-6">
-              <a 
-                href="https://linkedin.com/company/crowley-capital-ventures" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110"
-              >
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://twitter.com/crowleycapital" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110"
-              >
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://youtube.com/@crowleycapital" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110"
-              >
-                <Youtube className="h-6 w-6" />
-              </a>
+            <div className="flex items-center justify-between">
               <button 
                 onClick={() => scrollToSection('newsletter')}
-                className="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110"
+                className="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-1"
+                aria-label="View newsletter section"
               >
                 <FileText className="h-6 w-6" />
               </button>
+              
+              <div className="flex items-center gap-6">
+                <a 
+                  href="https://www.linkedin.com/company/crowleycapital/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow Crowley Capital on LinkedIn"
+                  className="text-[#AAAAAA] hover:text-[#0077B5] transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-1"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/crowleycapitalventures/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow Crowley Capital on Instagram"
+                  className="text-[#AAAAAA] hover:text-[#E4405F] transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-1"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61563906492918" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow Crowley Capital on Facebook"
+                  className="text-[#AAAAAA] hover:text-[#1877F2] transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-1"
+                >
+                  <Facebook className="h-6 w-6" />
+                </a>
+              </div>
             </div>
           </div>
           
