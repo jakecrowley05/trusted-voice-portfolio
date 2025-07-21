@@ -1,5 +1,5 @@
 
-/* Fonts imported in index.html for better performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,36 +7,34 @@
 
 @layer base {
   :root {
-    /* Crowley Capital Brand Colors */
-    --midnight: 210 61% 11%;         /* #0A1329 */
-    --gold: 36 46% 56%;              /* #CF9D53 */
-    --cloud: 214 20% 96%;            /* #F4F5F7 */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
     
-    /* Design System Tokens */
-    --background: var(--cloud);
-    --foreground: var(--midnight);
-    --primary: var(--gold);
-    --primary-foreground: var(--midnight);
-    --secondary: var(--cloud);
-    --secondary-foreground: var(--midnight);
-    --muted: 214 20% 93%;
-    --muted-foreground: 210 61% 45%;
-    --accent: var(--gold);
-    --accent-foreground: var(--midnight);
+    /* Primary color palette */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Subtle grays using slate palette */
     --card: 0 0% 100%;
-    --card-foreground: var(--midnight);
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: var(--midnight);
-    --sidebar: var(--cloud);
-    --sidebar-border: 214 20% 85%;
-    --sidebar-foreground: var(--midnight);
+    --popover-foreground: 0 0% 0%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 210 40% 97%;
+    --muted-foreground: 210 6% 45%;
+    --accent: 210 40% 95%;
+    --accent-foreground: 0 0% 0%;
+    --sidebar: 210 40% 98%;
+    --sidebar-border: 210 40% 90%;
+    --sidebar-foreground: 0 0% 0%;
     
     /* Utility colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 20% 85%;
-    --input: 214 20% 85%;
-    --ring: var(--gold);
+    --border: 210 40% 85%;
+    --input: 210 40% 85%;
+    --ring: 0 0% 0%;
     --radius: 0.75rem;
   }
 
@@ -83,37 +81,37 @@
     scroll-behavior: smooth;
   }
   
-  /* Typography hierarchy with Crowley Capital fonts */
+  /* Typography hierarchy with modern font pairings */
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
     line-height: 1.1;
   }
   
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
-    font-weight: 600;
+    @apply text-6xl md:text-8xl;
+    font-weight: 200;
     letter-spacing: -0.025em;
+    font-family: 'DM Serif Display', serif;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-    font-weight: 600;
+    @apply text-4xl md:text-5xl;
+    font-weight: 300;
     letter-spacing: -0.02em;
   }
   
   h3 {
     @apply text-2xl md:text-3xl;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: -0.015em;
   }
   
-  /* Enhanced body text with Inter */
-  p, body, input, textarea, button {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 400;
+  /* Enhanced body text */
+  p {
     line-height: 1.7;
+    font-weight: 400;
   }
   
   /* Smooth scrolling */
@@ -130,14 +128,14 @@
     scroll-snap-align: start;
   }
   
-  /* Enhanced focus states with gold ring */
+  /* Enhanced focus states */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-black ring-offset-2 ring-offset-background;
   }
   
-  /* Button interactions with Crowley Capital motion system */
+  /* Button interactions with microinteractions */
   button {
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   button:hover {
@@ -146,20 +144,6 @@
   
   button:active {
     transform: translateY(0);
-  }
-  
-  /* Hero fade-slide animation */
-  .hero-fade-slide {
-    animation: heroFadeSlide 0.4s ease-in-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  @keyframes heroFadeSlide {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }
 
@@ -239,9 +223,13 @@
     -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(110%);
   }
   
-  /* Crowley Capital gradient backgrounds */
-  .bg-gradient-radial {
-    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  /* Custom gradient backgrounds */
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .bg-gradient-founder {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
   }
 }
 
