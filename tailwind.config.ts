@@ -20,11 +20,18 @@ export default {
     },
     extend: {
       fontFamily: {
-        inter: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['DM Serif Display', 'serif'],
+        'playfair': ['Playfair Display', 'serif'],
+        'inter': ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // Crowley Capital Brand Colors
+        midnight: "hsl(var(--midnight))",
+        gold: "hsl(var(--gold))",
+        cloud: "hsl(var(--cloud))",
+        
+        // Standard design tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -107,6 +114,17 @@ export default {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+      },
+      // Crowley Capital 12-column grid system
+      gridTemplateColumns: {
+        '12': 'repeat(12, minmax(0, 72px))',
+        'cc-main': 'repeat(12, 72px)',
+      },
+      gap: {
+        'cc-gutter': '32px',
+      },
+      maxWidth: {
+        'cc-container': '1152px', // 12 * 72px + 11 * 32px gutters
       }
     },
   },
