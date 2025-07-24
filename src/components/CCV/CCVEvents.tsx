@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import happyHourImage from '@/assets/osa-happy-hour.jpg';
+import roundtableImage from '@/assets/osa-roundtable.jpg';
+import demoNightImage from '@/assets/osa-demo-night.jpg';
 
 interface Event {
   id: string;
@@ -22,7 +25,7 @@ const sampleEvents: Event[] = [
     title: 'OSA Happy Hour',
     date: 'Aug 14 2025',
     description: 'Founders & Equity networking at The Austin Club.',
-    image: '/placeholder.svg',
+    image: happyHourImage,
     rsvpLink: '#'
   },
   {
@@ -30,7 +33,7 @@ const sampleEvents: Event[] = [
     title: 'OSA Roundtable',
     date: 'Sep 11 2025',
     description: 'Small‑group mastermind on GTM and AI automation.',
-    image: '/placeholder.svg',
+    image: roundtableImage,
     rsvpLink: '#'
   },
   {
@@ -38,7 +41,7 @@ const sampleEvents: Event[] = [
     title: 'OSA Demo Night',
     date: 'Oct 9 2025',
     description: 'Austin founders pitch tools to investors.',
-    image: '/placeholder.svg',
+    image: demoNightImage,
     rsvpLink: '#'
   }
 ];
@@ -125,12 +128,16 @@ const CCVEvents = () => {
             <CarouselContent className="-ml-4">
               {events.map((event) => (
                 <CarouselItem key={event.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg">
-                    <CardContent className="p-0">
-                      <div className="aspect-video bg-gradient-to-br from-blue-50 to-slate-100 rounded-t-lg flex items-center justify-center">
-                        <Users className="h-12 w-12 text-blue-600" />
+                  <Card className="h-full bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg flex flex-col">
+                    <CardContent className="p-0 flex flex-col h-full">
+                      <div className="aspect-video bg-gradient-to-br from-blue-50 to-slate-100 rounded-t-lg overflow-hidden">
+                        <img 
+                          src={event.image} 
+                          alt={event.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <div className="p-6 space-y-4">
+                      <div className="p-6 space-y-4 flex flex-col flex-grow">
                         <div className="flex items-center gap-3 text-blue-600">
                           <Calendar className="h-5 w-5" />
                           <span className="font-semibold">{event.date}</span>
@@ -140,7 +147,7 @@ const CCVEvents = () => {
                           {event.title}
                         </h3>
                         
-                        <p className="text-slate-600 text-lg leading-relaxed">
+                        <p className="text-slate-600 text-lg leading-relaxed flex-grow">
                           {event.description}
                         </p>
                         
@@ -151,7 +158,7 @@ const CCVEvents = () => {
                         
                         <Button
                           onClick={() => handleRequestInvite(event.title)}
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500/50 mt-auto"
                         >
                           Request Invite
                         </Button>
