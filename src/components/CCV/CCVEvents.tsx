@@ -23,7 +23,7 @@ const sampleEvents: Event[] = [
   {
     id: '1',
     title: 'OSA Happy Hour',
-    date: 'Aug 14 2025',
+    date: 'Oct 25 2024',
     description: 'Founders & Equity networking at The Austin Club.',
     image: happyHourImage,
     rsvpLink: '#'
@@ -31,7 +31,7 @@ const sampleEvents: Event[] = [
   {
     id: '2',
     title: 'OSA Roundtable',
-    date: 'Sep 11 2025',
+    date: 'Nov 28 2024',
     description: 'Small‑group mastermind on GTM and AI automation.',
     image: roundtableImage,
     rsvpLink: '#'
@@ -39,7 +39,7 @@ const sampleEvents: Event[] = [
   {
     id: '3',
     title: 'OSA Demo Night',
-    date: 'Oct 9 2025',
+    date: 'Dec 15 2024',
     description: 'Austin founders pitch tools to investors.',
     image: demoNightImage,
     rsvpLink: '#'
@@ -110,7 +110,7 @@ const CCVEvents = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-light text-black mb-6">
-            Upcoming Events — <span className="text-blue-600">Open Source Austin</span>
+            Upcoming Events <span className="text-blue-600">Open Source Austin</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Join Austin's most connected founders for networking, learning, and growth opportunities.

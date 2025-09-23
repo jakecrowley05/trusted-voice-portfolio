@@ -53,7 +53,7 @@ const CCVAbout = () => {
             <PillarCard
               icon={<DollarSign className="h-10 w-10 text-slate-700" />}
               title="Capital"
-              description="Fundraising preparation and investor relations designed to attract quality capital partners."
+              description="Comprehensive fundraising support across VC, family offices, PE, and Angel investing to connect founders with the right capital partners."
             />
           </div>
         </div>
