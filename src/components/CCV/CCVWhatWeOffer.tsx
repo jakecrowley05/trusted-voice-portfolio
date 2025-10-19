@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, BarChart3, Users, TrendingUp } from 'lucide-react';
+import { Briefcase, LineChart, Users, Building2 } from 'lucide-react';
 
 const OfferCard = ({ icon, title, description }) => (
   <div className="cc-card flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300 group">
@@ -23,7 +23,7 @@ const CCVWhatWeOffer = () => {
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
-              What We Offer
+              Our Investment Solutions
             </h2>
           </div>
         </div>
@@ -31,33 +31,33 @@ const CCVWhatWeOffer = () => {
         <div className="cc-card-grid grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <div>
             <OfferCard
-              icon={<BarChart3 className="h-7 w-7 text-green-600" />}
-              title="Real-Time Signal Reports"
-              description="Human-curated intelligence built from Austin's most active startup nodes—cutting through noise to deliver actionable insights."
+              icon={<Briefcase className="h-7 w-7 text-blue-600" />}
+              title="Direct Equity Investments"
+              description="Strategic capital deployment in high-potential private companies with a focus on operational value creation and long-term partnership."
             />
           </div>
           
           <div>
             <OfferCard
-              icon={<Users className="h-7 w-7 text-green-600" />}
-              title="Tailored Ecosystem Digests"
-              description="Founder, VC, and Economic digests designed for clarity, not clutter—each tailored to your specific role in the ecosystem."
+              icon={<LineChart className="h-7 w-7 text-blue-600" />}
+              title="Portfolio Advisory"
+              description="Hands-on strategic guidance and operational support to accelerate growth, optimize performance, and build sustainable competitive advantages."
             />
           </div>
           
           <div>
             <OfferCard
-              icon={<TrendingUp className="h-7 w-7 text-green-600" />}
-              title="Performance Tracking Systems"
-              description="A comprehensive system to track what worked, what mattered, and what's coming next in your journey."
+              icon={<Building2 className="h-7 w-7 text-blue-600" />}
+              title="Co-Investment Opportunities"
+              description="Collaborative investment structures alongside family offices, institutional partners, and seasoned operators aligned on value creation."
             />
           </div>
           
           <div>
             <OfferCard
-              icon={<CheckCircle className="h-7 w-7 text-green-600" />}
-              title="Strategic Advisory Support"
-              description="Direct access to experienced operators who understand the unique challenges of building in Austin's tech ecosystem."
+              icon={<Users className="h-7 w-7 text-blue-600" />}
+              title="Network & Resources"
+              description="Access to an extensive network of industry experts, strategic partners, and capital sources to support portfolio company growth."
             />
           </div>
         </div>

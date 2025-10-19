@@ -88,100 +88,99 @@ const CCVOfferings = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-black mb-6 tracking-tight">
-            Services & Advisory
+            Investment & Advisory Services
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive support for founders at every stage of their journey
+            Comprehensive capital solutions and strategic guidance for high-growth businesses
           </p>
         </div>
         
         <div className="cc-offering-grid grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
             icon={<Calendar className="h-8 w-8 text-slate-700" />}
-            title="Strategy Sessions"
-            price="$250 / $600"
-            description="Individual sessions or 3-pack bundles for deeper strategic engagement and roadmap development."
+            title="Investment Consultation"
+            description="Initial assessment to explore investment fit, capital requirements, and strategic partnership opportunities."
             features={[
-              "Strategic roadmap planning",
-              "MVP development guidance", 
-              "Go-to-market strategy",
-              "Quick async follow-ups"
+              "Investment thesis evaluation",
+              "Capital structure planning", 
+              "Growth roadmap assessment",
+              "Partnership alignment review"
             ]}
-            ctaText="Schedule Session"
+            ctaText="Schedule Consultation"
             ctaAction={handleBookCall}
             isHighlighted={true}
           />
           
           <OfferingCard
             icon={<Zap className="h-8 w-8 text-slate-700" />}
-            title="Fractional Strategy"
-            subtitle="Product & Capital"
-            description="Monthly retainers for ongoing strategic guidance and fundraising preparation."
+            title="Direct Investment"
+            subtitle="Equity & Structured Capital"
+            description="Strategic capital deployment with flexible structures to support sustainable growth and value creation."
             features={[
-              "Work alongside design/dev teams",
-              "Fundraising preparation",
-              "Investor deck development",
-              "SAFE and equity guidance"
+              "Primary equity investments",
+              "Revenue-based financing options",
+              "Convertible structures",
+              "Patient, aligned capital"
+            ]}
+            ctaText="Explore Investment"
+            ctaAction={handleBookCall}
+          />
+          
+          <OfferingCard
+            icon={<Users className="h-8 w-8 text-slate-700" />}
+            title="Portfolio Advisory"
+            subtitle="Strategic Operating Partner"
+            description="Hands-on operational guidance for portfolio companies and growth-stage businesses."
+            features={[
+              "Strategic planning & execution",
+              "Go-to-market optimization",
+              "Operational efficiency programs",
+              "Performance measurement systems"
             ]}
             ctaText="Learn More"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
-            icon={<Users className="h-8 w-8 text-slate-700" />}
-            title="Custom Development"
-            subtitle="via Spoke Partnership"
-            description="Full-stack development and no-code solutions under strategic oversight."
-            features={[
-              "MVP builds and prototypes",
-              "No-code SaaS dashboards",
-              "Internal tools and automation",
-              "AI-powered workflows"
-            ]}
-            ctaText="Request Quote"
-            ctaAction={handleSpokeQuote}
-          />
-          
-          <OfferingCard
             icon={<FileText className="h-8 w-8 text-slate-700" />}
-            title="Founder Operating System"
-            subtitle="Notion-Based Toolkit"
-            description="Complete toolkit for managing funding, updates, and launch processes."
+            title="Co-Investment Network"
+            subtitle="Family Office & Institutional"
+            description="Access to co-investment opportunities alongside aligned institutional and family office partners."
             features={[
-              "Pitch QA templates",
-              "Investor update builder",
-              "Deal room organization",
-              "Weekly system updates"
+              "Curated deal flow access",
+              "Collaborative due diligence",
+              "Syndicate participation",
+              "Network expansion opportunities"
             ]}
-            ctaText="Preview System"
+            ctaText="Join Network"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<ExternalLink className="h-8 w-8 text-slate-700" />}
-            title="Workshops & Training"
-            subtitle="Live Sessions"
-            description="Interactive workshops on AI, fundraising, and go-to-market strategy."
+            title="Executive Workshops"
+            subtitle="Leadership Development"
+            description="Strategic workshops focused on operational excellence, value creation, and growth acceleration."
             features={[
-              "AI for Legacy Industries",
-              "Fundable Pitch in 45min",
-              "GTM strategy workshops",
-              "Custom session hosting"
+              "Executive strategic planning",
+              "Operational efficiency training",
+              "Capital markets education",
+              "Custom program development"
             ]}
-            ctaText="Book Workshop"
+            ctaText="Schedule Workshop"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<FileText className="h-8 w-8 text-slate-700" />}
-            title="Weekly Intelligence"
-            subtitle="VC & Economic Digest"
-            description="Join 500+ founders reading insights on Austin startup ecosystem and economic trends."
+            title="Market Intelligence"
+            subtitle="Private Markets Digest"
+            description="Institutional-grade insights on private equity, capital markets, and strategic investment opportunities."
             features={[
-              "Austin startup intelligence",
-              "Economic trend analysis",
-              "VC activity updates",
-              "Founder community access"
+              "Private market trends",
+              "Deal activity analysis",
+              "Economic outlook reports",
+              "Exclusive investor network"
             ]}
             ctaText="Subscribe Now"
             ctaAction={handleNewsletter}
@@ -190,12 +189,12 @@ const CCVOfferings = () => {
 
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-4 bg-slate-50 px-8 py-4">
-            <span className="text-lg text-slate-600">Ready to get started?</span>
+            <span className="text-lg text-slate-600">Ready to explore partnership opportunities?</span>
             <Button 
               onClick={handleBookCall}
               className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-none font-medium"
             >
-              Schedule a Call
+              Schedule Consultation
             </Button>
           </div>
         </div>

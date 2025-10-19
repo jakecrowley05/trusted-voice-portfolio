@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Package, DollarSign } from 'lucide-react';
+import { Target, Lightbulb, DollarSign } from 'lucide-react';
 
 const PillarCard = ({ icon, title, description }) => (
   <div className="group text-center space-y-6">
@@ -24,10 +24,10 @@ const CCVAbout = () => {
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
-              Our Mission
+              Our Investment Philosophy
             </h2>
             <p className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed">
-              We bridge the gap between brilliant ideas and market reality for Austin's startup ecosystem.
+              Strategic capital meets operational excellence to drive sustainable value creation.
             </p>
           </div>
         </div>
@@ -36,32 +36,32 @@ const CCVAbout = () => {
           <div>
             <PillarCard
               icon={<Target className="h-10 w-10 text-slate-700" />}
-              title="Strategy"
-              description="Strategic roadmap planning and go-to-market guidance that transforms vision into executable plans."
+              title="Strategic Capital"
+              description="Patient, flexible capital structures designed to support long-term value creation and sustainable competitive advantages."
             />
           </div>
           
           <div>
             <PillarCard
-              icon={<Package className="h-10 w-10 text-slate-700" />}
-              title="Product"
-              description="MVP development and product-market fit optimization built for sustainable growth."
+              icon={<Lightbulb className="h-10 w-10 text-slate-700" />}
+              title="Operational Excellence"
+              description="Hands-on partnership to optimize operations, accelerate growth, and build scalable systems that drive market leadership."
             />
           </div>
           
           <div>
             <PillarCard
               icon={<DollarSign className="h-10 w-10 text-slate-700" />}
-              title="Capital"
-              description="Comprehensive fundraising support across VC, family offices, PE, and Angel investing to connect founders with the right capital partners."
+              title="Network & Partnership"
+              description="Deep relationships across family offices, institutional investors, and strategic partners to unlock growth opportunities and maximize value."
             />
           </div>
         </div>
         
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
-            <p className="text-lg text-slate-700 leading-relaxed">
-              Our team combines strategic product thinking with practical capital guidance, ensuring founders build something people actually want while positioning for sustainable growth. Based in Austin, we understand the unique dynamics of building in one of America's fastest-growing tech ecosystems.
+            <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto">
+              Based in Austin, we partner with exceptional operators building category-defining businesses. Our approach combines institutional capital with operational expertise—delivering the strategic guidance and resources necessary for sustainable, long-term value creation.
             </p>
           </div>
         </div>
