@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Lightbulb, DollarSign } from 'lucide-react';
+import { Target, Lightbulb, Globe } from 'lucide-react';
 
 const PillarCard = ({ icon, title, description }) => (
   <div className="group text-center space-y-6">
@@ -51,7 +51,7 @@ const CCVAbout = () => {
           
           <div>
             <PillarCard
-              icon={<DollarSign className="h-10 w-10 text-slate-700" />}
+              icon={<Globe className="h-10 w-10 text-slate-700" />}
               title="Multi-Stage Support"
               description="Comprehensive capital deployment from pre-seed through Series B+, with flexible structures designed to scale alongside portfolio companies."
             />

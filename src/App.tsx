@@ -13,6 +13,8 @@ import PricingPage from "./pages/Pricing";
 import ContactPage from "./pages/Contact";
 import ProductCoach from "./pages/ProductCoach";
 import CrowleyCapital from "./pages/CrowleyCapital";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +41,8 @@ const App = () => {
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/product-coach" element={<ProductCoach />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Target, Shield } from 'lucide-react';
+import { TrendingUp, Target, Network, Building2 } from 'lucide-react';
 
 const PainPointCard = ({ icon, title, description }) => (
   <div className="cc-card flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg group">
@@ -47,7 +47,7 @@ const CCVPainPoints = () => {
           
           <div>
             <PainPointCard
-              icon={<Shield className="h-7 w-7 text-blue-600" />}
+              icon={<Building2 className="h-7 w-7 text-blue-600" />}
               title="Pre-Seed to Series B+"
               description="Flexible capital structures supporting companies from initial formation through growth stages, with capacity for lead, co-lead, and follow-on investments."
             />

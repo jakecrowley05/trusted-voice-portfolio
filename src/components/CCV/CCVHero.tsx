@@ -14,15 +14,19 @@ const CCVHero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Full-width background image with overlay */}
+      {/* Cinematic video background with Monaco/financial imagery */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=90" 
-          alt="Founder working strategically on product development" 
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent"></div>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://cdn.pixabay.com/video/2023/08/25/177162-859128632_large.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
       </div>
       
       {/* Content container */}
@@ -30,38 +34,38 @@ const CCVHero = () => {
         <div className="grid grid-cols-12 gap-8 items-center">
           <div className="col-span-12 lg:col-span-7 space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white/90 font-medium">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                Strategic Capital Partner • Pre-Seed to Growth Stage
+              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 text-white/80 font-light text-sm tracking-wide">
+                <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
+                STRATEGIC INVESTMENT BANKING • PRE-SEED TO GROWTH STAGE
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-white leading-[0.95] drop-shadow-2xl">
-                Strategic Capital.
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-white leading-[0.95] drop-shadow-2xl">
+                Global Capital.
                 <br />
-                <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                  Global Deployment.
+                <span className="font-normal bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent">
+                  Strategic Execution.
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed max-w-3xl font-light drop-shadow-lg">
-                Crowley Capital deploys strategic capital from pre-seed through Series B+ across AI, deep-tech, and infrastructure sectors, combining capital markets expertise with a founder-first approach.
+              <p className="text-lg md:text-xl lg:text-2xl text-white/85 leading-relaxed max-w-3xl font-light drop-shadow-lg">
+                Crowley Capital structures and deploys institutional capital across AI, deep-tech, and critical infrastructure. The firm combines capital markets expertise with operational support for pre-seed through Series B+ stage companies.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 pt-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
                 <Button 
                   onClick={handleBookCall}
-                  className="bg-white text-black hover:bg-white/90 px-8 py-5 text-base md:text-lg h-auto font-semibold transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-white/25 group"
+                  className="bg-white text-black hover:bg-white/95 px-8 py-6 text-base h-auto font-medium transition-all duration-300 hover:scale-[1.02] shadow-2xl hover:shadow-white/30 group tracking-wide"
                 >
-                  <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
-                  Engage with Our Capital Desk
+                  <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                  Engage Capital Desk
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('offerings')}
                   variant="outline" 
-                  className="border-2 border-white/50 text-white hover:bg-white hover:text-black px-8 py-5 text-base md:text-lg h-auto font-semibold transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm bg-white/10"
+                  className="border border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-8 py-6 text-base h-auto font-light transition-all duration-300 hover:scale-[1.02] backdrop-blur-md bg-white/5 tracking-wide"
                 >
-                  Explore Partnership Opportunities
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                  Investment Approach
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
