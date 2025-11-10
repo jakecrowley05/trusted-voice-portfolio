@@ -1,18 +1,15 @@
 
 import React from 'react';
-import { Briefcase, LineChart, Users, Building2 } from 'lucide-react';
 
-const OfferCard = ({ icon, title, description }) => (
-  <div className="cc-card flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300 group">
-    <div className="flex-shrink-0">
-      <div className="w-14 h-14 bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors duration-300">
-        {icon}
-      </div>
+const OfferCard = ({ number, title, description }) => (
+  <div className="group space-y-6 p-10 bg-muted/30 hover:bg-muted/50 transition-all duration-300">
+    <div className="flex items-baseline gap-4">
+      <span className="text-4xl font-light text-muted-foreground/30 group-hover:text-muted-foreground/50 transition-colors duration-300" style={{ fontFamily: "'DM Serif Display', serif" }}>
+        {number}
+      </span>
+      <h3 className="text-2xl font-light text-foreground tracking-tight">{title}</h3>
     </div>
-    <div className="cc-card__body space-y-3">
-      <h3 className="text-xl font-medium text-black">{title}</h3>
-      <p className="text-slate-600 leading-relaxed text-lg">{description}</p>
-    </div>
+    <p className="text-muted-foreground leading-relaxed text-lg font-light pl-12">{description}</p>
   </div>
 );
 
@@ -28,10 +25,10 @@ const CCVWhatWeOffer = () => {
           </div>
         </div>
         
-        <div className="cc-card-grid grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <div>
             <OfferCard
-              icon={<Briefcase className="h-7 w-7 text-blue-600" />}
+              number="01"
               title="Direct Capital Deployment"
               description="Primary equity investments across pre-seed through Series B+ with focus on sustainable growth and operational value creation in target sectors."
             />
@@ -39,7 +36,7 @@ const CCVWhatWeOffer = () => {
           
           <div>
             <OfferCard
-              icon={<LineChart className="h-7 w-7 text-blue-600" />}
+              number="02"
               title="Strategic Value Creation"
               description="Active partnership with portfolio companies through strategic guidance, operational support, and capital markets advisory to accelerate scaling."
             />
@@ -47,7 +44,7 @@ const CCVWhatWeOffer = () => {
           
           <div>
             <OfferCard
-              icon={<Building2 className="h-7 w-7 text-blue-600" />}
+              number="03"
               title="Syndication & Networks"
               description="Access to extensive capital networks spanning venture capital, family offices, private equity, and angel groups across North America and Europe."
             />
@@ -55,7 +52,7 @@ const CCVWhatWeOffer = () => {
           
           <div>
             <OfferCard
-              icon={<Users className="h-7 w-7 text-blue-600" />}
+              number="04"
               title="Flexible Structures"
               description="Customized investment structures tailored to company stage, capital requirements, and strategic objectives with capacity for follow-on deployment."
             />

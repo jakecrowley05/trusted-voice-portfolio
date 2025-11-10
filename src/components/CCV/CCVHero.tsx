@@ -14,7 +14,7 @@ const CCVHero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Cinematic video background with Monaco/financial imagery */}
+      {/* Cinematic Monaco video background with luxury overlay */}
       <div className="absolute inset-0 z-0">
         <video 
           autoPlay 
@@ -23,10 +23,10 @@ const CCVHero = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://cdn.pixabay.com/video/2023/08/25/177162-859128632_large.mp4" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/video/2022/04/01/113128-693851080_large.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
       
       {/* Content container */}
@@ -39,10 +39,10 @@ const CCVHero = () => {
                 STRATEGIC INVESTMENT BANKING • PRE-SEED TO GROWTH STAGE
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-white leading-[0.95] drop-shadow-2xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white leading-[0.95] drop-shadow-2xl" style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 300, letterSpacing: '-0.025em' }}>
                 Global Capital.
                 <br />
-                <span className="font-normal bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent" style={{ fontWeight: 400 }}>
                   Strategic Execution.
                 </span>
               </h1>

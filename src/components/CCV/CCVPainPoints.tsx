@@ -1,18 +1,15 @@
 
 import React from 'react';
-import { TrendingUp, Target, Network, Building2 } from 'lucide-react';
 
-const PainPointCard = ({ icon, title, description }) => (
-  <div className="cc-card flex gap-6 p-8 bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg group">
-    <div className="flex-shrink-0">
-      <div className="w-14 h-14 bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-300">
-        {icon}
-      </div>
+const PainPointCard = ({ number, title, description }) => (
+  <div className="group space-y-6 p-8 border-l-2 border-border hover:border-foreground transition-all duration-300">
+    <div className="flex items-baseline gap-4">
+      <span className="text-5xl font-light text-muted-foreground/40 group-hover:text-foreground/60 transition-colors duration-300" style={{ fontFamily: "'DM Serif Display', serif" }}>
+        {number}
+      </span>
+      <h3 className="text-2xl font-light text-foreground tracking-tight">{title}</h3>
     </div>
-    <div className="cc-card__body space-y-3">
-      <h3 className="text-xl font-medium text-black">{title}</h3>
-      <p className="text-slate-600 leading-relaxed text-lg">{description}</p>
-    </div>
+    <p className="text-muted-foreground leading-relaxed text-lg font-light pl-16">{description}</p>
   </div>
 );
 
@@ -28,10 +25,10 @@ const CCVPainPoints = () => {
           </div>
         </div>
         
-        <div className="cc-card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <div>
             <PainPointCard
-              icon={<TrendingUp className="h-7 w-7 text-blue-600" />}
+              number="01"
               title="AI & Deep-Tech"
               description="Strategic capital deployment in artificial intelligence, machine learning, and emerging technology companies driving fundamental market transformation."
             />
@@ -39,7 +36,7 @@ const CCVPainPoints = () => {
           
           <div>
             <PainPointCard
-              icon={<Target className="h-7 w-7 text-blue-600" />}
+              number="02"
               title="Infrastructure & Enterprise"
               description="Growth capital for infrastructure and enterprise software companies building scalable, mission-critical platforms across B2B and B2B2C markets."
             />
@@ -47,7 +44,7 @@ const CCVPainPoints = () => {
           
           <div>
             <PainPointCard
-              icon={<Building2 className="h-7 w-7 text-blue-600" />}
+              number="03"
               title="Pre-Seed to Series B+"
               description="Flexible capital structures supporting companies from initial formation through growth stages, with capacity for lead, co-lead, and follow-on investments."
             />

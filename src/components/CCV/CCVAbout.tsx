@@ -1,18 +1,16 @@
 
 import React from 'react';
-import { Target, Lightbulb, Globe } from 'lucide-react';
 
-const PillarCard = ({ icon, title, description }) => (
-  <div className="group text-center space-y-6">
-    <div className="w-20 h-20 bg-slate-100 flex items-center justify-center mx-auto group-hover:bg-slate-200 transition-all duration-300 group-hover:scale-110">
-      {icon}
-    </div>
+const PillarCard = ({ number, title, description }) => (
+  <div className="group text-center space-y-6 p-8">
     <div className="space-y-4">
-      <h3 className="text-2xl font-medium text-black group-hover:text-slate-700 transition-colors duration-300 relative">
+      <span className="text-6xl font-light text-muted-foreground/20 group-hover:text-muted-foreground/40 transition-colors duration-300 block" style={{ fontFamily: "'DM Serif Display', serif" }}>
+        {number}
+      </span>
+      <h3 className="text-2xl font-light text-foreground tracking-tight relative">
         {title}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></div>
       </h3>
-      <p className="text-lg text-slate-600 leading-relaxed max-w-sm mx-auto">{description}</p>
+      <p className="text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto font-light">{description}</p>
     </div>
   </div>
 );
@@ -35,7 +33,7 @@ const CCVAbout = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
           <div>
             <PillarCard
-              icon={<Target className="h-10 w-10 text-slate-700" />}
+              number="I"
               title="Capital Markets Expertise"
               description="Deep experience in strategic capital advisory across venture capital, family offices, private equity, and angel investing networks."
             />
@@ -43,7 +41,7 @@ const CCVAbout = () => {
           
           <div>
             <PillarCard
-              icon={<Lightbulb className="h-10 w-10 text-slate-700" />}
+              number="II"
               title="Founder-First Mindset"
               description="Crowley Capital prioritizes operator success through patient capital structures and strategic guidance tailored to each growth stage."
             />
@@ -51,7 +49,7 @@ const CCVAbout = () => {
           
           <div>
             <PillarCard
-              icon={<Globe className="h-10 w-10 text-slate-700" />}
+              number="III"
               title="Multi-Stage Support"
               description="Comprehensive capital deployment from pre-seed through Series B+, with flexible structures designed to scale alongside portfolio companies."
             />
