@@ -76,6 +76,16 @@ const CCVNavbar = () => {
               >
                 Newsletter
               </button>
+              <button 
+                onClick={() => window.location.href = '/articles'}
+                className={`font-medium text-lg transition-all duration-300 hover:scale-105 ${
+                  isScrolled 
+                    ? 'text-slate-700 hover:text-black' 
+                    : 'text-white/90 hover:text-white'
+                }`}
+              >
+                Articles
+              </button>
               <Button 
                 onClick={handleBookCall}
                 className="bg-black text-white hover:bg-slate-800 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
@@ -123,6 +133,12 @@ const CCVNavbar = () => {
                 className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
               >
                 Newsletter
+              </button>
+              <button 
+                onClick={() => window.location.href = '/articles'}
+                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
+              >
+                Articles
               </button>
               <Button 
                 onClick={handleBookCall}

@@ -14,8 +14,8 @@ const CCVLogo = ({ size = 'md', variant = 'dark' }: CCVLogoProps) => {
   };
   
   const colorClasses = variant === 'dark' 
-    ? 'border-black text-black' 
-    : 'border-white text-white';
+    ? 'border-[#D4AF37] text-[#D4AF37]' 
+    : 'border-[#D4AF37] text-[#D4AF37]';
 
   return (
     <div className={`${sizeClasses[size]} ${colorClasses} border-2 rounded-full flex items-center justify-center font-bold tracking-tight`}>
