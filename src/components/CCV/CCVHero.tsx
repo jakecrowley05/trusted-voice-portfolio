@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar } from 'lucide-react';
+import monacoEstate from '@/assets/monaco-luxury-estate.jpg';
 
 const CCVHero = () => {
   const handleBookCall = () => {
@@ -14,17 +15,13 @@ const CCVHero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Cinematic Monaco video background with luxury overlay */}
+      {/* Cinematic Monaco estate background with luxury overlay */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+        <img 
+          src={monacoEstate}
+          alt="Luxury Monaco estate overlooking Monte Carlo"
           className="w-full h-full object-cover"
-        >
-          <source src="https://cdn.pixabay.com/video/2022/04/01/113128-693851080_large.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/70"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
