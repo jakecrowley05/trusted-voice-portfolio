@@ -88,113 +88,113 @@ const CCVOfferings = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-black mb-6 tracking-tight">
-            Investment & Advisory Services
+            Capabilities
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive capital solutions and strategic guidance for high-growth businesses
+            Strategic capital deployment and advisory services for growth-stage companies
           </p>
         </div>
         
         <div className="cc-offering-grid grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <OfferingCard
             icon={<Calendar className="h-8 w-8 text-slate-700" />}
-            title="Investment Consultation"
-            description="Initial assessment to explore investment fit, capital requirements, and strategic partnership opportunities."
+            title="Capital Raising & Syndication"
+            description="Strategic capital deployment across pre-seed through Series B+ rounds, leveraging extensive networks across venture capital, family offices, and institutional partners."
             features={[
-              "Investment thesis evaluation",
-              "Capital structure planning", 
-              "Growth roadmap assessment",
-              "Partnership alignment review"
+              "Primary equity placements",
+              "Syndicate formation and management",
+              "Strategic investor introductions",
+              "Capital structure optimization"
             ]}
-            ctaText="Schedule Consultation"
+            ctaText="Explore Capital Solutions"
             ctaAction={handleBookCall}
             isHighlighted={true}
           />
           
           <OfferingCard
             icon={<Zap className="h-8 w-8 text-slate-700" />}
-            title="Direct Investment"
-            subtitle="Equity & Structured Capital"
-            description="Strategic capital deployment with flexible structures to support sustainable growth and value creation."
+            title="Growth Stage Deployment"
+            subtitle="Series A through Series B+"
+            description="Direct capital deployment in high-growth companies across AI, deep-tech, and infrastructure sectors with focus on sustainable scaling."
             features={[
-              "Primary equity investments",
-              "Revenue-based financing options",
-              "Convertible structures",
-              "Patient, aligned capital"
+              "Lead and co-lead investments",
+              "Follow-on capital reserves",
+              "Flexible investment structures",
+              "Long-term partnership orientation"
             ]}
-            ctaText="Explore Investment"
+            ctaText="Discuss Investment Opportunity"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<Users className="h-8 w-8 text-slate-700" />}
-            title="Portfolio Advisory"
-            subtitle="Strategic Operating Partner"
-            description="Hands-on operational guidance for portfolio companies and growth-stage businesses."
+            title="Strategic Advisory for Founders & Funds"
+            subtitle="Capital Markets Guidance"
+            description="Strategic advisory services for founders navigating fundraising, capital markets positioning, and investor relations across all growth stages."
             features={[
-              "Strategic planning & execution",
-              "Go-to-market optimization",
-              "Operational efficiency programs",
-              "Performance measurement systems"
+              "Fundraising strategy and positioning",
+              "Investor relations and communications",
+              "Capital markets navigation",
+              "Strategic partnership development"
             ]}
-            ctaText="Learn More"
+            ctaText="Engage Advisory Services"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<FileText className="h-8 w-8 text-slate-700" />}
-            title="Co-Investment Network"
-            subtitle="Family Office & Institutional"
-            description="Access to co-investment opportunities alongside aligned institutional and family office partners."
+            title="Co-Investment Syndication"
+            subtitle="Family Office & Institutional Partners"
+            description="Collaborative investment structures with vetted family offices, institutional investors, and strategic partners across target sectors."
             features={[
-              "Curated deal flow access",
-              "Collaborative due diligence",
-              "Syndicate participation",
-              "Network expansion opportunities"
+              "Curated co-investment opportunities",
+              "Collaborative due diligence processes",
+              "Institutional-grade deal terms",
+              "Strategic partner introductions"
             ]}
-            ctaText="Join Network"
+            ctaText="Explore Co-Investment"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<ExternalLink className="h-8 w-8 text-slate-700" />}
-            title="Executive Workshops"
-            subtitle="Leadership Development"
-            description="Strategic workshops focused on operational excellence, value creation, and growth acceleration."
+            title="Executive Advisory Sessions"
+            subtitle="Strategic Leadership Guidance"
+            description="Tailored advisory sessions for founders and executive teams focused on capital strategy, organizational scaling, and value creation."
             features={[
-              "Executive strategic planning",
-              "Operational efficiency training",
-              "Capital markets education",
-              "Custom program development"
+              "Executive strategic planning sessions",
+              "Capital markets positioning",
+              "Growth stage transition guidance",
+              "Board and investor relations advisory"
             ]}
-            ctaText="Schedule Workshop"
+            ctaText="Schedule Advisory Session"
             ctaAction={handleBookCall}
           />
           
           <OfferingCard
             icon={<FileText className="h-8 w-8 text-slate-700" />}
             title="Market Intelligence"
-            subtitle="Private Markets Digest"
-            description="Institutional-grade insights on private equity, capital markets, and strategic investment opportunities."
+            subtitle="Private Markets Research"
+            description="Institutional-grade insights on private markets, capital deployment trends, and sector-specific investment opportunities delivered through regular research publications."
             features={[
-              "Private market trends",
-              "Deal activity analysis",
-              "Economic outlook reports",
-              "Exclusive investor network"
+              "Private market trend analysis",
+              "Sector-specific investment insights",
+              "Capital markets commentary",
+              "Quarterly outlook reports"
             ]}
-            ctaText="Subscribe Now"
+            ctaText="Subscribe to Research"
             ctaAction={handleNewsletter}
           />
         </div>
 
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-4 bg-slate-50 px-8 py-4">
-            <span className="text-lg text-slate-600">Ready to explore partnership opportunities?</span>
+            <span className="text-lg text-slate-600">Explore strategic capital partnership opportunities</span>
             <Button 
               onClick={handleBookCall}
               className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-none font-medium"
             >
-              Schedule Consultation
+              Engage Capital Desk
             </Button>
           </div>
         </div>

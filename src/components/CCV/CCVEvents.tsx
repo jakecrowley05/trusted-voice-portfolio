@@ -113,7 +113,7 @@ const CCVEvents = () => {
             Upcoming Events <span className="text-blue-600">Open Source Austin</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Join Austin's most connected founders for networking, learning, and growth opportunities.
+            Industry events and networking opportunities for founders, investors, and operators in the Austin technology ecosystem.
           </p>
         </div>
 

@@ -31,23 +31,23 @@ const CCVNewsletter = () => {
           </div>
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black tracking-tight leading-tight">
-              Future Cash-Flow Newsletter
+              Private Markets Research
             </h2>
             <div className="space-y-4">
               <p className="text-2xl text-slate-700 font-light">
-                Join 500+ founders getting PMF insights 2x/month
+                Institutional-grade insights delivered quarterly
               </p>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Strategic insights, tactical frameworks, and real-world case studies from the Austin tech ecosystem
+                Market commentary, sector analysis, and capital deployment trends across AI, deep-tech, and infrastructure sectors
               </p>
               <div className="flex items-center justify-center gap-4 pt-4">
-                <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 text-sm text-slate-700 bg-slate-100 px-4 py-2 rounded-full">
                   <TrendingUp className="h-4 w-4" />
-                  <span className="font-medium">2x faster PMF</span>
+                  <span className="font-medium">Quarterly Reports</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-blue-700 bg-blue-50 px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 text-sm text-slate-700 bg-slate-100 px-4 py-2 rounded-full">
                   <Mail className="h-4 w-4" />
-                  <span className="font-medium">No spam, ever</span>
+                  <span className="font-medium">Qualified Investors Only</span>
                 </div>
               </div>
             </div>
@@ -57,8 +57,8 @@ const CCVNewsletter = () => {
         {/* Substack Embed Preview */}
         <div className="bg-white rounded-3xl p-8 shadow-2xl border border-slate-200 mb-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold text-black mb-4">Latest from Future Cash-Flow</h3>
-            <p className="text-slate-600">See what 500+ founders are reading about PMF and startup strategy</p>
+            <h3 className="text-2xl font-semibold text-black mb-4">Recent Market Commentary</h3>
+            <p className="text-slate-600">Access investment insights and private markets analysis</p>
           </div>
           
           <div className="relative bg-slate-50 rounded-xl overflow-hidden">
@@ -69,7 +69,7 @@ const CCVNewsletter = () => {
               style={{ border: 'none', background: 'white' }}
               frameBorder="0" 
               scrolling="no"
-              title="Future Cash-Flow Newsletter Preview"
+              title="Crowley Capital Research Preview"
               className="rounded-xl"
             />
           </div>
@@ -81,7 +81,7 @@ const CCVNewsletter = () => {
               className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
-              Read Latest Posts
+              View Recent Publications
             </Button>
           </div>
         </div>
@@ -118,11 +118,11 @@ const CCVNewsletter = () => {
                 onChange={(e) => setInterests(e.target.value)}
                 className="w-full px-6 py-4 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all text-lg font-medium hover:border-slate-300"
               >
-                <option value="">Choose your focus area</option>
-                <option value="product-strategy">Product Strategy & PMF</option>
-                <option value="fundraising">Fundraising & Capital</option>
-                <option value="growth">Growth & Scaling</option>
-                <option value="all">Everything (Recommended)</option>
+                <option value="">Select primary interest</option>
+                <option value="ai-deeptech">AI & Deep-Tech Investments</option>
+                <option value="infrastructure">Infrastructure & Enterprise</option>
+                <option value="capital-markets">Capital Markets Insights</option>
+                <option value="all">All Sectors</option>
               </select>
             </div>
             
@@ -131,7 +131,7 @@ const CCVNewsletter = () => {
                 type="submit"
                 className="bg-black text-white hover:bg-slate-800 px-10 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
               >
-                Join 500+ Founders
+                Subscribe to Research
                 <ArrowRight className="ml-3 h-5 w-5" />
               </Button>
               <Button 

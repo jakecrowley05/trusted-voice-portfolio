@@ -23,7 +23,7 @@ const CCVPainPoints = () => {
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
-              The Market Opportunity
+              Investment Focus
             </h2>
           </div>
         </div>
@@ -32,24 +32,24 @@ const CCVPainPoints = () => {
           <div>
             <PainPointCard
               icon={<TrendingUp className="h-7 w-7 text-blue-600" />}
-              title="Private Market Access"
-              description="Institutional-grade investment opportunities with attractive return potential and enhanced diversification benefits across private equity and credit markets."
+              title="AI & Deep-Tech"
+              description="Strategic capital deployment in artificial intelligence, machine learning, and emerging technology companies driving fundamental market transformation."
             />
           </div>
           
           <div>
             <PainPointCard
               icon={<Target className="h-7 w-7 text-blue-600" />}
-              title="Operational Value Creation"
-              description="Strategic capital deployment paired with hands-on operational expertise to drive sustainable growth and maximize enterprise value."
+              title="Infrastructure & Enterprise"
+              description="Growth capital for infrastructure and enterprise software companies building scalable, mission-critical platforms across B2B and B2B2C markets."
             />
           </div>
           
           <div>
             <PainPointCard
               icon={<Shield className="h-7 w-7 text-blue-600" />}
-              title="Long-Term Partnership"
-              description="Patient capital and experienced guidance aligned with operators building durable, category-defining businesses over extended time horizons."
+              title="Pre-Seed to Series B+"
+              description="Flexible capital structures supporting companies from initial formation through growth stages, with capacity for lead, co-lead, and follow-on investments."
             />
           </div>
         </div>

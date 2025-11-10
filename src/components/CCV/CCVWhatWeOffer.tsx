@@ -23,7 +23,7 @@ const CCVWhatWeOffer = () => {
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
-              Our Investment Solutions
+              Investment Approach
             </h2>
           </div>
         </div>
@@ -32,32 +32,32 @@ const CCVWhatWeOffer = () => {
           <div>
             <OfferCard
               icon={<Briefcase className="h-7 w-7 text-blue-600" />}
-              title="Direct Equity Investments"
-              description="Strategic capital deployment in high-potential private companies with a focus on operational value creation and long-term partnership."
+              title="Direct Capital Deployment"
+              description="Primary equity investments across pre-seed through Series B+ with focus on sustainable growth and operational value creation in target sectors."
             />
           </div>
           
           <div>
             <OfferCard
               icon={<LineChart className="h-7 w-7 text-blue-600" />}
-              title="Portfolio Advisory"
-              description="Hands-on strategic guidance and operational support to accelerate growth, optimize performance, and build sustainable competitive advantages."
+              title="Strategic Value Creation"
+              description="Active partnership with portfolio companies through strategic guidance, operational support, and capital markets advisory to accelerate scaling."
             />
           </div>
           
           <div>
             <OfferCard
               icon={<Building2 className="h-7 w-7 text-blue-600" />}
-              title="Co-Investment Opportunities"
-              description="Collaborative investment structures alongside family offices, institutional partners, and seasoned operators aligned on value creation."
+              title="Syndication & Networks"
+              description="Access to extensive capital networks spanning venture capital, family offices, private equity, and angel groups across North America and Europe."
             />
           </div>
           
           <div>
             <OfferCard
               icon={<Users className="h-7 w-7 text-blue-600" />}
-              title="Network & Resources"
-              description="Access to an extensive network of industry experts, strategic partners, and capital sources to support portfolio company growth."
+              title="Flexible Structures"
+              description="Customized investment structures tailored to company stage, capital requirements, and strategic objectives with capacity for follow-on deployment."
             />
           </div>
         </div>

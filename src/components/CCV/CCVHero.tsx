@@ -32,19 +32,19 @@ const CCVHero = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white/90 font-medium">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                Private Equity • Strategic Capital • Operational Excellence
+                Strategic Capital Partner • Pre-Seed to Growth Stage
               </div>
               
               <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-white leading-[0.95] drop-shadow-2xl">
-                Empowering Operators.
+                Strategic Capital.
                 <br />
                 <span className="font-semibold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                  Unlocking Value.
+                  Global Deployment.
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed max-w-3xl font-light drop-shadow-lg">
-                Strategic capital deployment combined with operational expertise to drive sustainable growth and exceptional returns across the private markets.
+                Crowley Capital deploys strategic capital from pre-seed through Series B+ across AI, deep-tech, and infrastructure sectors, combining capital markets expertise with a founder-first approach.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 pt-6">
@@ -53,14 +53,14 @@ const CCVHero = () => {
                   className="bg-white text-black hover:bg-white/90 px-8 py-5 text-base md:text-lg h-auto font-semibold transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-white/25 group"
                 >
                   <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
-                  Schedule Consultation
+                  Engage with Our Capital Desk
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('offerings')}
                   variant="outline" 
                   className="border-2 border-white/50 text-white hover:bg-white hover:text-black px-8 py-5 text-base md:text-lg h-auto font-semibold transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm bg-white/10"
                 >
-                  Investment Approach
+                  Explore Partnership Opportunities
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </Button>
               </div>

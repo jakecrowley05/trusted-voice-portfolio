@@ -19,9 +19,9 @@ const CCVFooter = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl">
               <Mail className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-3xl font-light">Join 500+ founders getting PMF insights 2x/month</h3>
+            <h3 className="text-3xl font-light">Private Markets Research & Commentary</h3>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Future Cash-Flow Newsletter: Strategic insights that turn confusion into unstoppable momentum.
+              Institutional-grade insights on capital markets, investment trends, and strategic opportunities delivered directly to qualified investors.
             </p>
             <button
               onClick={() => scrollToSection('newsletter')}
@@ -39,11 +39,11 @@ const CCVFooter = () => {
               <CCVLogo size="md" variant="light" />
               <div>
                 <h4 className="text-2xl font-semibold">Crowley Capital</h4>
-                <p className="text-slate-400">Strategy • Product • Capital</p>
+                <p className="text-slate-400">Strategic Capital Partner</p>
               </div>
             </div>
             <p className="text-slate-300 text-lg leading-relaxed max-w-md">
-              Helping startup founders cut through the noise with strategic clarity, tactical execution, and capital guidance in Austin's tech ecosystem.
+              Crowley Capital deploys strategic capital from pre-seed through Series B+ across AI, deep-tech, and infrastructure sectors with a founder-first approach.
             </p>
             <div className="flex items-center justify-between">
               <button 
@@ -94,7 +94,7 @@ const CCVFooter = () => {
                   onClick={() => scrollToSection('about')}
                   className="text-slate-400 hover:text-white transition-colors text-lg hover:underline"
                 >
-                  About Jake
+                  Our Firm
                 </button>
               </li>
               <li>
@@ -102,7 +102,7 @@ const CCVFooter = () => {
                   onClick={() => scrollToSection('offerings')}
                   className="text-slate-400 hover:text-white transition-colors text-lg hover:underline"
                 >
-                  Services & Offerings
+                  Capabilities
                 </button>
               </li>
               <li>
@@ -110,7 +110,7 @@ const CCVFooter = () => {
                   onClick={() => scrollToSection('booking')}
                   className="text-slate-400 hover:text-white transition-colors text-lg hover:underline"
                 >
-                  Book Strategy Session
+                  Engage Capital Desk
                 </button>
               </li>
               <li>
@@ -118,7 +118,7 @@ const CCVFooter = () => {
                   onClick={() => scrollToSection('newsletter')}
                   className="text-slate-400 hover:text-white transition-colors text-lg hover:underline"
                 >
-                  Newsletter
+                  Market Research
                 </button>
               </li>
             </ul>
@@ -146,7 +146,7 @@ const CCVFooter = () => {
                 </button>
               </li>
               <li className="text-slate-400 text-lg">
-                📍 Based in Austin, TX
+                Based in Austin, TX
               </li>
             </ul>
           </div>
@@ -155,12 +155,11 @@ const CCVFooter = () => {
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-400 text-lg">
-              © {currentYear} Crowley Capital Ventures – Clarity for Founders. Traction for Products.
+              © {currentYear} Crowley Capital. All rights reserved.
             </p>
             <div className="flex items-center gap-8">
-              <a href="/terms" className="text-slate-400 hover:text-white transition-colors">Terms</a>
-              <a href="/privacy" className="text-slate-400 hover:text-white transition-colors">Privacy</a>
-              <a href="/press-kit" className="text-slate-400 hover:text-white transition-colors">Press Kit</a>
+              <a href="/terms" className="text-slate-400 hover:text-white transition-colors">Terms & Conditions</a>
+              <a href="/privacy" className="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
             </div>
           </div>
         </div>

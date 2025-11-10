@@ -100,10 +100,10 @@ const CCVBooking = () => {
           </div>
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-light text-black tracking-tight">
-              Ready to Build Smarter?
+              Engage with Our Capital Desk
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Book a 30-minute strategy session to discuss your product challenges and get immediate clarity on your next steps.
+              Schedule a confidential consultation to discuss capital requirements, strategic positioning, and partnership opportunities.
             </p>
             <div className="flex items-center justify-center gap-2 text-sm text-slate-500 bg-slate-100 inline-block px-4 py-2 rounded-full">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -115,9 +115,9 @@ const CCVBooking = () => {
         {/* Enhanced Calendly Booking Widget */}
         <div className="bg-white rounded-3xl p-4 shadow-2xl border border-slate-200 hover:shadow-3xl transition-shadow duration-500">
           <div className="bg-slate-50 rounded-2xl p-8 mb-6">
-            <h3 className="text-2xl font-semibold text-center mb-4">Schedule Your Strategy Session</h3>
+            <h3 className="text-2xl font-semibold text-center mb-4">Schedule Confidential Consultation</h3>
             <p className="text-center text-slate-600 mb-6">
-              Choose a time that works best for you. All sessions include follow-up resources and actionable next steps.
+              Select a convenient time for a strategic discussion regarding capital deployment opportunities and partnership structures.
             </p>
             
             {/* Quick Action Buttons */}
@@ -159,7 +159,7 @@ const CCVBooking = () => {
                 frameBorder="0"
                 scrolling="no"
                 className="rounded-2xl"
-                title="Schedule a strategy session with Jake Crowley"
+                title="Schedule a consultation with Crowley Capital"
                 allow="microphone; camera"
                 onLoad={handleIframeLoad}
                 onError={handleIframeError}

@@ -24,10 +24,10 @@ const CCVAbout = () => {
         <div className="grid grid-cols-12 gap-8 mb-20">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8 tracking-tight leading-tight">
-              Our Investment Philosophy
+              Our Firm
             </h2>
             <p className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed">
-              Strategic capital meets operational excellence to drive sustainable value creation.
+              Crowley Capital combines capital markets expertise with a founder-first mindset, providing multi-stage support from initial funding through growth-stage deployment.
             </p>
           </div>
         </div>
@@ -36,24 +36,24 @@ const CCVAbout = () => {
           <div>
             <PillarCard
               icon={<Target className="h-10 w-10 text-slate-700" />}
-              title="Strategic Capital"
-              description="Patient, flexible capital structures designed to support long-term value creation and sustainable competitive advantages."
+              title="Capital Markets Expertise"
+              description="Deep experience in strategic capital advisory across venture capital, family offices, private equity, and angel investing networks."
             />
           </div>
           
           <div>
             <PillarCard
               icon={<Lightbulb className="h-10 w-10 text-slate-700" />}
-              title="Operational Excellence"
-              description="Hands-on partnership to optimize operations, accelerate growth, and build scalable systems that drive market leadership."
+              title="Founder-First Mindset"
+              description="Crowley Capital prioritizes operator success through patient capital structures and strategic guidance tailored to each growth stage."
             />
           </div>
           
           <div>
             <PillarCard
               icon={<DollarSign className="h-10 w-10 text-slate-700" />}
-              title="Network & Partnership"
-              description="Deep relationships across family offices, institutional investors, and strategic partners to unlock growth opportunities and maximize value."
+              title="Multi-Stage Support"
+              description="Comprehensive capital deployment from pre-seed through Series B+, with flexible structures designed to scale alongside portfolio companies."
             />
           </div>
         </div>
@@ -61,7 +61,7 @@ const CCVAbout = () => {
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
             <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto">
-              Based in Austin, we partner with exceptional operators building category-defining businesses. Our approach combines institutional capital with operational expertise—delivering the strategic guidance and resources necessary for sustainable, long-term value creation.
+              Based in Austin, Crowley Capital partners with exceptional operators building category-defining businesses across AI, deep-tech, and infrastructure sectors. The firm's approach combines institutional capital with strategic advisory, delivering the guidance and resources necessary for sustainable value creation across all growth stages.
             </p>
           </div>
         </div>
