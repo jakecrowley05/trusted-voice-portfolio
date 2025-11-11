@@ -2,16 +2,14 @@
 import React from 'react';
 
 const PillarCard = ({ number, title, description }) => (
-  <div className="group text-center space-y-6 p-8">
-    <div className="space-y-4">
-      <span className="text-6xl font-light text-muted-foreground/20 group-hover:text-muted-foreground/40 transition-colors duration-300 block" style={{ fontFamily: "'DM Serif Display', serif" }}>
+  <div className="flex flex-col items-center text-center space-y-6 p-8 h-full">
+    <div className="w-24 h-24 border-2 border-muted-foreground/20 flex items-center justify-center flex-shrink-0">
+      <span className="text-5xl font-light text-muted-foreground" style={{ fontFamily: "'DM Serif Display', serif" }}>
         {number}
       </span>
-      <h3 className="text-2xl font-light text-foreground tracking-tight relative">
-        {title}
-      </h3>
-      <p className="text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto font-light">{description}</p>
     </div>
+    <h3 className="text-2xl font-medium text-foreground tracking-tight">{title}</h3>
+    <p className="text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto flex-grow">{description}</p>
   </div>
 );
 
@@ -30,30 +28,24 @@ const CCVAbout = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
-          <div>
-            <PillarCard
-              number="I"
-              title="Capital Markets Expertise"
-              description="Deep experience in strategic capital advisory across venture capital, family offices, private equity, and angel investing networks."
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20 items-start">
+          <PillarCard
+            number="I"
+            title="Capital Markets Expertise"
+            description="Deep experience in strategic capital advisory across venture capital, family offices, private equity, and angel investing networks."
+          />
           
-          <div>
-            <PillarCard
-              number="II"
-              title="Founder-First Mindset"
-              description="Crowley Capital prioritizes operator success through patient capital structures and strategic guidance tailored to each growth stage."
-            />
-          </div>
+          <PillarCard
+            number="II"
+            title="Founder-First Mindset"
+            description="Crowley Capital prioritizes operator success through patient capital structures and strategic guidance tailored to each growth stage."
+          />
           
-          <div>
-            <PillarCard
-              number="III"
-              title="Multi-Stage Support"
-              description="Comprehensive capital deployment from pre-seed through Series B+, with flexible structures designed to scale alongside portfolio companies."
-            />
-          </div>
+          <PillarCard
+            number="III"
+            title="Multi-Stage Support"
+            description="Comprehensive capital deployment from pre-seed through Series B+, with flexible structures designed to scale alongside portfolio companies."
+          />
         </div>
         
         <div className="grid grid-cols-12 gap-8">

@@ -8,18 +8,14 @@ interface CCVLogoProps {
 
 const CCVLogo = ({ size = 'md', variant = 'dark' }: CCVLogoProps) => {
   const sizeClasses = {
-    sm: 'w-8 h-8 text-sm',
-    md: 'w-12 h-12 text-lg',
-    lg: 'w-16 h-16 text-xl'
+    sm: 'w-10 h-10 text-xs',
+    md: 'w-12 h-12 text-sm',
+    lg: 'w-16 h-16 text-base'
   };
-  
-  const colorClasses = variant === 'dark' 
-    ? 'border-[#D4AF37] text-[#D4AF37]' 
-    : 'border-[#D4AF37] text-[#D4AF37]';
 
   return (
-    <div className={`${sizeClasses[size]} ${colorClasses} border-2 rounded-full flex items-center justify-center font-bold tracking-tight`}>
-      CCV
+    <div className={`${sizeClasses[size]} bg-black rounded-full flex items-center justify-center font-bold tracking-tight`}>
+      <span className="text-[#D4AF37]">CCV</span>
     </div>
   );
 };

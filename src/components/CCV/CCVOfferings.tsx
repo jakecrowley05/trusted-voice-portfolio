@@ -122,7 +122,7 @@ const CCVOfferings = () => {
               "Flexible investment structures",
               "Long-term partnership orientation"
             ]}
-            ctaText="Discuss Investment Opportunity"
+            ctaText="Discuss Opportunities"
             ctaAction={handleBookCall}
           />
           
@@ -187,12 +187,12 @@ const CCVOfferings = () => {
           />
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-slate-50 px-8 py-4">
-            <span className="text-lg text-slate-600">Explore strategic capital partnership opportunities</span>
+        <div className="mt-16 text-center px-4">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-slate-50 px-8 py-4 max-w-full">
+            <span className="text-lg text-slate-600 text-center sm:text-left">Explore strategic capital partnership opportunities</span>
             <Button 
               onClick={handleBookCall}
-              className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-none font-medium"
+              className="bg-black text-white hover:bg-slate-800 px-6 py-2 rounded-none font-medium whitespace-nowrap flex-shrink-0"
             >
               Engage Capital Desk
             </Button>
