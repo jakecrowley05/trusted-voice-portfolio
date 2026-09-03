@@ -38,11 +38,18 @@ const CCVHero = () => (
       <div className="cc-reveal cc-reveal-delay mt-20 border-t border-cc-brass lg:mt-28">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="border-b border-cc-hairline py-6 lg:col-span-4 lg:border-b-0 lg:border-r lg:pr-10">
-            <p className="font-sans text-xs font-light text-cc-ash">{site.aum.label}</p>
-            <p className="mt-2 font-serif text-5xl font-light leading-none text-cc-bone lg:text-6xl">{site.aum.value}</p>
+            <p className="font-sans text-xs font-light text-cc-ash">{site.deployments.label}</p>
+            <p className="mt-2 font-serif text-3xl font-light leading-tight text-cc-bone lg:text-4xl">
+              {site.deployments.lanes.map((lane, i) => (
+                <span key={lane} className="block">
+                  {lane}
+                  {i < site.deployments.lanes.length - 1 ? ' and' : ''}
+                </span>
+              ))}
+            </p>
             <p className="mt-3 inline-flex items-center gap-2 font-sans text-sm font-light text-cc-brass-light">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-cc-brass" aria-hidden="true" />
-              {site.aum.status}
+              {site.deployments.status}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:col-span-8 lg:pl-10">

@@ -8,12 +8,11 @@ export const site = {
     "Crowley Capital allocates family office capital across venture capital, private equity and hedge funds, with emphasis in infrastructure, data centers, commodities, secondaries, sports franchises, defense and dual use.",
   url: "https://crowley-capital.com",
 
-  // Assets under management. Replace the value with the figure you want shown on the site.
-  // Example: "$1.2B". Leave the status line as is while actively allocating.
-  aum: {
-    value: "[AUM]",
-    label: "Assets under management",
-    status: "Currently allocating",
+  // Where capital is going right now. Shown in the hero ledger.
+  deployments: {
+    label: "Current deployments",
+    lanes: ["Venture capital", "Private equity"],
+    status: "Actively allocating",
   },
 
   offices: ["Austin", "London", "Monaco"],

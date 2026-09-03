@@ -35,7 +35,7 @@ const CCVNavbar = () => {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? 'bg-cc-charcoal/95 backdrop-blur border-b border-cc-hairline' : 'bg-transparent'
+        scrolled || open ? 'bg-cc-charcoal border-b border-cc-hairline' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">

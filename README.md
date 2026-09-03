@@ -10,7 +10,7 @@ Almost everything you will ever change lives in `src/content/`. Edit the text be
 
 | To change | Edit |
 |---|---|
-| Firm name, AUM figure, offices, contact email, social links, principal title | `src/content/site.ts` |
+| Firm name, current deployments, offices, contact email, social links, principal title | `src/content/site.ts` |
 | Homepage headline, lead paragraph, button labels, the three allocation lanes | `src/content/hero.ts` |
 | Fields of emphasis (Infrastructure, Data centers, and so on) | `src/content/emphasis.ts` |
 | Innovation arm sectors and stage | `src/content/innovation.ts` |
@@ -23,7 +23,7 @@ Almost everything you will ever change lives in `src/content/`. Edit the text be
 | Link-preview image, favicon | `public/og-image.png`, `public/favicon.ico` |
 | Colors and fonts | `src/index.css` (brand variables) and `tailwind.config.ts` |
 
-The AUM figure is in `src/content/site.ts` under `aum.value`. Replace the placeholder with the number you want shown.
+The "Current deployments" block in the hero is set in `src/content/site.ts` under `deployments`. Edit the lanes list to change what is shown.
 
 ### Adding a gathering
 
