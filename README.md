@@ -1,69 +1,60 @@
-# Welcome to your Lovable project
+# crowley-capital.com
 
-## Project info
+Family office allocator across venture capital, private equity and hedge funds.
 
-**URL**: https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9
+Stack: Vite, React, TypeScript, Tailwind. Hosted on Render (static site, auto-deploys from `main`). Domain and DNS on Cloudflare.
 
-## How can I edit this code?
+## Editing the site
 
-There are several ways of editing your application.
+Almost everything you will ever change lives in `src/content/`. Edit the text between the quotes, commit to `main`, and Render publishes it within a few minutes.
 
-**Use Lovable**
+| To change | Edit |
+|---|---|
+| Firm name, AUM figure, offices, contact email, social links, principal title | `src/content/site.ts` |
+| Homepage headline, lead paragraph, button labels, the three allocation lanes | `src/content/hero.ts` |
+| Fields of emphasis (Infrastructure, Data centers, and so on) | `src/content/emphasis.ts` |
+| Innovation arm sectors and stage | `src/content/innovation.ts` |
+| Long-term outlook statement and the flywheels | `src/content/outlook.ts` |
+| About the firm, principles | `src/content/firm.ts` |
+| Gatherings and the request-invitation button label | `src/content/events.ts` |
+| Footer blurb, legal links, disclaimer | `src/content/footer.ts` |
+| Section order on the homepage | `src/pages/CrowleyCapital.tsx` |
+| Browser tab title, Google description, link previews | `index.html` |
+| Link-preview image, favicon | `public/og-image.png`, `public/favicon.ico` |
+| Colors and fonts | `src/index.css` (brand variables) and `tailwind.config.ts` |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9) and start prompting.
+The AUM figure is in `src/content/site.ts` under `aum.value`. Replace the placeholder with the number you want shown.
 
-Changes made via Lovable will be committed automatically to this repo.
+### Adding a gathering
 
-**Use your preferred IDE**
+Open `src/content/events.ts` and add an entry to `list`:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```ts
+{
+  title: "Spring gathering",
+  date: "April 2027",
+  location: "London",
+  description: "One line about the room.",
+},
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Where invitation requests go
 
-Follow these steps:
+The request form posts to whatever URL is set as `VITE_EVENTS_WEBHOOK_URL` in Render's Environment tab (a Zoho form endpoint, a Zapier or Make webhook, or a Supabase function). If that variable is not set, the form opens a pre-filled email to the address in `site.contact.email`, so no request is ever lost.
+
+## Running locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deploying
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Push to `main`. Render builds with `npm install && npm run build` and serves the `dist` folder. `render.yaml` in this repo carries that configuration plus the rewrite rule that lets `/privacy` and `/terms` load on refresh.
 
-**Use GitHub Codespaces**
+For anything larger than a text edit, work on a branch, open a pull request, review the Render preview URL, then merge.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Environment
 
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7ebc0cfb-2fde-486e-8449-3803aca5a6c9) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Copy `.env.example` to `.env` for local work. Never commit `.env`.

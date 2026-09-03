@@ -1,156 +1,99 @@
-
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import CCVLogo from './CCVLogo';
+import { hero } from '@/content/hero';
+
+const links = [
+  { label: 'Allocation', id: 'allocation' },
+  { label: 'Emphasis', id: 'emphasis' },
+  { label: 'Innovation', id: 'innovation' },
+  { label: 'Outlook', id: 'outlook' },
+  { label: 'Firm', id: 'firm' },
+  { label: 'Gatherings', id: 'gatherings' },
+];
+
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+};
 
 const CCVNavbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleBookCall = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
+  const go = (id: string) => {
+    setOpen(false);
+    scrollTo(id);
   };
 
   return (
-    <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-lg' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform" onClick={() => scrollToSection('hero')}>
-              <CCVLogo size="sm" variant={isScrolled ? 'dark' : 'light'} />
-              <span className={`text-lg font-semibold tracking-tight hidden sm:block transition-colors ${
-                isScrolled ? 'text-black' : 'text-white'
-              }`}>
-                Crowley Capital
-              </span>
-            </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled || open ? 'bg-cc-charcoal/95 backdrop-blur border-b border-cc-hairline' : 'bg-transparent'
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
+        <CCVLogo />
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
-              <button 
-                onClick={() => scrollToSection('about')}
-                className={`font-medium text-lg transition-all duration-300 hover:scale-105 ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-black' 
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('offerings')}
-                className={`font-medium text-lg transition-all duration-300 hover:scale-105 ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-black' 
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('newsletter')}
-                className={`font-medium text-lg transition-all duration-300 hover:scale-105 ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-black' 
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                Newsletter
-              </button>
-              <button 
-                onClick={() => window.location.href = '/articles'}
-                className={`font-medium text-lg transition-all duration-300 hover:scale-105 ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-black' 
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                Articles
-              </button>
-              <Button 
-                onClick={handleBookCall}
-                className="bg-black text-white hover:bg-slate-800 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Book a Session
-              </Button>
-            </nav>
-
-            {/* Mobile Menu Button */}
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
+          {links.map((l) => (
             <button
-              className="md:hidden p-3 rounded-lg hover:bg-white/10 transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              key={l.id}
+              onClick={() => go(l.id)}
+              className="font-sans text-sm font-light text-cc-bone/80 transition-colors hover:text-cc-bone focus:outline-none focus-visible:text-cc-brass"
             >
-              {isMobileMenuOpen ? (
-                <X className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
-              ) : (
-                <Menu className={`h-6 w-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
-              )}
+              {l.label}
             </button>
-          </div>
-        </div>
-      </header>
+          ))}
+          <button
+            onClick={() => go('contact')}
+            className="border border-cc-brass px-5 py-2 font-sans text-sm font-normal text-cc-brass transition-colors hover:bg-cc-brass hover:text-cc-charcoal focus:outline-none focus-visible:bg-cc-brass focus-visible:text-cc-charcoal"
+          >
+            {hero.primaryCta}
+          </button>
+        </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <div className="absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-xl animate-slide-up">
-            <nav className="px-6 py-6 space-y-4">
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
+        <button
+          className="text-cc-bone lg:hidden"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {open && (
+        <nav className="border-t border-cc-hairline bg-cc-charcoal px-6 pb-8 pt-4 lg:hidden" aria-label="Mobile">
+          <ul className="flex flex-col">
+            {links.map((l) => (
+              <li key={l.id}>
+                <button
+                  onClick={() => go(l.id)}
+                  className="w-full border-b border-cc-hairline py-4 text-left font-serif text-2xl font-light text-cc-bone"
+                >
+                  {l.label}
+                </button>
+              </li>
+            ))}
+            <li>
+              <button
+                onClick={() => go('contact')}
+                className="mt-6 w-full border border-cc-brass py-3 font-sans text-sm text-cc-brass"
               >
-                About
+                {hero.primaryCta}
               </button>
-              <button 
-                onClick={() => scrollToSection('offerings')}
-                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('newsletter')}
-                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
-              >
-                Newsletter
-              </button>
-              <button 
-                onClick={() => window.location.href = '/articles'}
-                className="block w-full text-left text-lg font-medium text-slate-800 hover:text-black transition-colors py-3 px-2 rounded-lg hover:bg-slate-50"
-              >
-                Articles
-              </button>
-              <Button 
-                onClick={handleBookCall}
-                className="w-full bg-black text-white hover:bg-slate-800 px-8 py-4 text-lg font-semibold mt-4 rounded-lg"
-              >
-                Book a Session
-              </Button>
-            </nav>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </nav>
       )}
-    </>
+    </header>
   );
 };
 

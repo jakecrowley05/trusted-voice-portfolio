@@ -1,76 +1,65 @@
-
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar } from 'lucide-react';
-import monacoEstate from '@/assets/monaco-luxury-estate.jpg';
+import { hero, pillars } from '@/content/hero';
+import { site } from '@/content/site';
 
-const CCVHero = () => {
-  const handleBookCall = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-  };
+const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Cinematic Monaco estate background with luxury overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={monacoEstate}
-          alt="Luxury Monaco estate overlooking Monte Carlo"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+const CCVHero = () => (
+  <section id="hero" className="relative flex min-h-screen flex-col justify-end bg-cc-charcoal pt-32 pb-16 lg:pb-20">
+    <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
+      <div className="cc-reveal max-w-4xl">
+        <h1 className="font-serif text-[2.9rem] font-light leading-[1.02] tracking-[-0.01em] text-cc-bone sm:text-6xl lg:text-[5.4rem]">
+          {hero.headline.map((line, i) => (
+            <span key={i} className="block">
+              {line}
+            </span>
+          ))}
+        </h1>
+        <p className="mt-8 max-w-2xl font-sans text-lg font-light leading-relaxed text-cc-bone/80 lg:text-xl">
+          {hero.lead}
+        </p>
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <button
+            onClick={() => scrollTo('contact')}
+            className="bg-cc-brass px-7 py-3.5 font-sans text-sm font-normal text-cc-charcoal transition-colors hover:bg-cc-brass-light focus:outline-none focus-visible:ring-2 focus-visible:ring-cc-bone"
+          >
+            {hero.primaryCta}
+          </button>
+          <button
+            onClick={() => scrollTo('allocation')}
+            className="border border-cc-hairline px-7 py-3.5 font-sans text-sm font-light text-cc-bone transition-colors hover:border-cc-brass hover:text-cc-brass focus:outline-none focus-visible:border-cc-brass"
+          >
+            {hero.secondaryCta}
+          </button>
+        </div>
       </div>
-      
-      {/* Content container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-12 gap-8 items-center">
-          <div className="col-span-12 lg:col-span-7 space-y-8 animate-fade-in">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 text-white/80 font-light text-sm tracking-wide">
-                <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-                STRATEGIC INVESTMENT BANKING • PRE-SEED TO GROWTH STAGE
+
+      {/* Allocation ledger */}
+      <div className="cc-reveal cc-reveal-delay mt-20 border-t border-cc-brass lg:mt-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="border-b border-cc-hairline py-6 lg:col-span-4 lg:border-b-0 lg:border-r lg:pr-10">
+            <p className="font-sans text-xs font-light text-cc-ash">{site.aum.label}</p>
+            <p className="mt-2 font-serif text-5xl font-light leading-none text-cc-bone lg:text-6xl">{site.aum.value}</p>
+            <p className="mt-3 inline-flex items-center gap-2 font-sans text-sm font-light text-cc-brass-light">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-cc-brass" aria-hidden="true" />
+              {site.aum.status}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:col-span-8 lg:pl-10">
+            {pillars.map((p, i) => (
+              <div
+                key={p.name}
+                className={`py-6 sm:pr-8 ${i > 0 ? 'border-t border-cc-hairline sm:border-t-0 sm:border-l sm:pl-8' : ''}`}
+              >
+                <p className="font-serif text-2xl font-normal text-cc-bone">{p.name}</p>
+                <p className="mt-2 font-sans text-sm font-light leading-relaxed text-cc-ash">{p.summary}</p>
               </div>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white leading-[0.95] drop-shadow-2xl" style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 300, letterSpacing: '-0.025em' }}>
-                Global Capital.
-                <br />
-                <span className="bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent" style={{ fontWeight: 400 }}>
-                  Strategic Execution.
-                </span>
-              </h1>
-              
-              <p className="text-lg md:text-xl lg:text-2xl text-white/85 leading-relaxed max-w-3xl font-light drop-shadow-lg">
-                Crowley Capital structures and deploys institutional capital across AI, deep-tech, and critical infrastructure. The firm combines capital markets expertise with operational support for pre-seed through Series B+ stage companies.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                <Button 
-                  onClick={handleBookCall}
-                  className="bg-white text-black hover:bg-white/95 px-8 py-6 text-base h-auto font-medium transition-all duration-300 hover:scale-[1.02] shadow-2xl hover:shadow-white/30 group tracking-wide"
-                >
-                  <Calendar className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-                  Engage Capital Desk
-                </Button>
-                <Button 
-                  onClick={() => scrollToSection('offerings')}
-                  variant="outline" 
-                  className="border border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-8 py-6 text-base h-auto font-light transition-all duration-300 hover:scale-[1.02] backdrop-blur-md bg-white/5 tracking-wide"
-                >
-                  Investment Approach
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default CCVHero;
