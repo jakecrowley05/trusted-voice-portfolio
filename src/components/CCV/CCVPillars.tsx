@@ -1,50 +1,28 @@
 import React from 'react';
-import CCVSection from './CCVSection';
+import { Link } from 'react-router-dom';
 import { pillars } from '@/content/hero';
 
-const detail: Record<string, string[]> = {
-  'Venture capital': [
-    'Series A and later, through the innovation arm.',
-    'Deep tech, fintech, health tech and prop tech.',
-    'Lead, co-lead and follow-on positions alongside aligned partners.',
-  ],
-  'Private equity': [
-    'Infrastructure, data centers and sports franchises.',
-    'Secondaries in quality funds and direct positions.',
-    'Control and significant minority structures with long hold periods.',
-  ],
-  'Hedge funds': [
-    'Commodities through a dedicated trade desk.',
-    'Specialist managers with disciplined risk frameworks.',
-    'Liquidity and diversification alongside the private book.',
-  ],
-};
-
 const CCVPillars = () => (
-  <CCVSection
-    id="allocation"
-    heading="How we allocate"
-    intro="Three lanes, one book. Each allocation is sized for the family's horizon, not a fund's."
-  >
-    <div className="divide-y divide-cc-hairline border-t border-cc-hairline">
-      {pillars.map((p) => (
-        <div key={p.name} className="grid grid-cols-1 gap-4 py-8 sm:grid-cols-12">
-          <h3 className="font-serif text-3xl font-normal text-cc-bone sm:col-span-4">{p.name}</h3>
-          <div className="sm:col-span-8">
-            <p className="font-sans text-base font-light leading-relaxed text-cc-bone/85">{p.summary}</p>
-            <ul className="mt-4 space-y-2">
-              {(detail[p.name] ?? []).map((line) => (
-                <li key={line} className="flex gap-3 font-sans text-sm font-light text-cc-ash">
-                  <span className="mt-[0.6em] h-px w-4 flex-shrink-0 bg-cc-brass" aria-hidden="true" />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
+  <section id="pillars" className="bg-cc-charcoal py-20 lg:py-28" aria-labelledby="pillars-heading">
+    <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+      <h2 id="pillars-heading" className="sr-only">Three investment pillars</h2>
+      <div className="grid grid-cols-1 gap-px bg-cc-hairline lg:grid-cols-3">
+        {pillars.map((p) => (
+          <article key={p.slug} className="bg-cc-charcoal py-10 lg:px-10 lg:py-4 first:lg:pl-0 last:lg:pr-0">
+            <p className="font-sans text-sm font-light text-cc-brass">{p.number}</p>
+            <h3 className="mt-4 font-serif text-3xl font-light leading-tight text-cc-bone lg:text-[2.1rem]">{p.name}</h3>
+            <p className="mt-5 font-sans text-base font-light leading-relaxed text-cc-ash">{p.summary}</p>
+            <Link
+              to={p.slug === 'family-offices' ? '/family-offices' : `/strategies#${p.slug}`}
+              className="mt-6 inline-block font-sans text-sm font-light text-cc-brass-light hover:text-cc-brass"
+            >
+              Learn More
+            </Link>
+          </article>
+        ))}
+      </div>
     </div>
-  </CCVSection>
+  </section>
 );
 
 export default CCVPillars;

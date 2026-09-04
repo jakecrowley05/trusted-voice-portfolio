@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import CCVLogo from './CCVLogo';
-import { hero } from '@/content/hero';
+import { site } from '@/content/site';
 
 const links = [
-  { label: 'Allocation', id: 'allocation' },
-  { label: 'Emphasis', id: 'emphasis' },
-  { label: 'Innovation', id: 'innovation' },
-  { label: 'Outlook', id: 'outlook' },
-  { label: 'Firm', id: 'firm' },
-  { label: 'Gatherings', id: 'gatherings' },
+  { label: 'Home', to: '/' },
+  { label: 'Investment Strategies', to: '/strategies' },
+  { label: 'Family Offices', to: '/family-offices' },
+  { label: 'Portfolio and Projects', to: '/portfolio' },
+  { label: 'Insights', to: '/insights' },
+  { label: 'About', to: '/about' },
 ];
-
-const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-};
 
 const CCVNavbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -27,68 +25,48 @@ const CCVNavbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const go = (id: string) => {
-    setOpen(false);
-    scrollTo(id);
-  };
+  useEffect(() => setOpen(false), [pathname]);
+
+  const contactHref = pathname === '/' ? '#contact' : '/#contact';
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? 'bg-cc-charcoal border-b border-cc-hairline' : 'bg-transparent'
-      }`}
-    >
+    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled || open || pathname !== '/' ? 'bg-black border-b border-cc-hairline' : 'bg-transparent'}`}>
       <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
-        <CCVLogo />
+        <Link to="/" className="flex items-center gap-3" aria-label="Crowley Capital home">
+          <CCVLogo size="sm" variant="light" />
+          <span className="font-serif text-xl font-normal text-white">Crowley Capital</span>
+        </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {links.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => go(l.id)}
-              className="font-sans text-sm font-light text-cc-bone/80 transition-colors hover:text-cc-bone focus:outline-none focus-visible:text-cc-brass"
+            <Link
+              key={l.to}
+              to={l.to}
+              className={`font-sans text-sm font-light transition-colors hover:text-white ${pathname === l.to ? 'text-white' : 'text-white/70'}`}
             >
               {l.label}
-            </button>
+            </Link>
           ))}
-          <button
-            onClick={() => go('contact')}
-            className="border border-cc-brass px-5 py-2 font-sans text-sm font-normal text-cc-brass transition-colors hover:bg-cc-brass hover:text-cc-charcoal focus:outline-none focus-visible:bg-cc-brass focus-visible:text-cc-charcoal"
-          >
-            {hero.primaryCta}
-          </button>
+          <a href={contactHref} className="border border-cc-brass px-5 py-2 font-sans text-sm text-cc-brass transition-colors hover:bg-cc-brass hover:text-black">
+            Contact
+          </a>
         </nav>
 
-        <button
-          className="text-cc-bone lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-        >
+        <button className="text-white lg:hidden" onClick={() => setOpen((v) => !v)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-cc-hairline bg-cc-charcoal px-6 pb-8 pt-4 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-cc-hairline bg-black px-6 pb-8 pt-2 lg:hidden" aria-label="Mobile">
           <ul className="flex flex-col">
             {links.map((l) => (
-              <li key={l.id}>
-                <button
-                  onClick={() => go(l.id)}
-                  className="w-full border-b border-cc-hairline py-4 text-left font-serif text-2xl font-light text-cc-bone"
-                >
-                  {l.label}
-                </button>
+              <li key={l.to}>
+                <Link to={l.to} className="block border-b border-cc-hairline py-4 font-serif text-2xl font-light text-white">{l.label}</Link>
               </li>
             ))}
             <li>
-              <button
-                onClick={() => go('contact')}
-                className="mt-6 w-full border border-cc-brass py-3 font-sans text-sm text-cc-brass"
-              >
-                {hero.primaryCta}
-              </button>
+              <a href={contactHref} className="mt-6 block w-full border border-cc-brass py-3 text-center font-sans text-sm text-cc-brass">Contact</a>
             </li>
           </ul>
         </nav>

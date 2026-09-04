@@ -10,37 +10,43 @@ Almost everything you will ever change lives in `src/content/`. Edit the text be
 
 | To change | Edit |
 |---|---|
-| Firm name, current deployments, offices, contact email, social links, principal title | `src/content/site.ts` |
-| Homepage headline, lead paragraph, button labels, the three allocation lanes | `src/content/hero.ts` |
-| Fields of emphasis (Infrastructure, Data centers, and so on) | `src/content/emphasis.ts` |
-| Innovation arm sectors and stage | `src/content/innovation.ts` |
-| Long-term outlook statement and the flywheels | `src/content/outlook.ts` |
-| About the firm, principles | `src/content/firm.ts` |
-| Gatherings and the request-invitation button label | `src/content/events.ts` |
-| Footer blurb, legal links, disclaimer | `src/content/footer.ts` |
+| Firm name, offices, contact email, social links, principal title, button labels | `src/content/site.ts` |
+| Homepage headline, pillars line, lead paragraph, the three pillars | `src/content/hero.ts` |
+| Investment focus grid labels | `src/content/focus.ts` |
+| How we invest | `src/content/philosophy.ts` |
+| Investment Strategies page (venture, private equity, family offices sections) | `src/content/strategies.ts` |
+| Family Offices page and the homepage family office section | `src/content/family-offices.ts` |
+| Private Capital Convenings copy and participants | `src/content/convenings.ts` |
+| Portfolio and Projects (add a project here) | `src/content/portfolio.ts` |
+| About page and homepage leadership section, Jake's biography | `src/content/about.ts` |
+| Insights page heading and intro | `src/content/insights.ts` |
+| Footer disclaimer text | `src/content/footer.ts` |
 | Section order on the homepage | `src/pages/CrowleyCapital.tsx` |
-| Browser tab title, Google description, link previews | `index.html` |
+| Browser tab title, Google description, link previews, structured data | `index.html` |
 | Link-preview image, favicon | `public/og-image.png`, `public/favicon.ico` |
 | Colors and fonts | `src/index.css` (brand variables) and `tailwind.config.ts` |
 
-The "Current deployments" block in the hero is set in `src/content/site.ts` under `deployments`. Edit the lanes list to change what is shown.
+Pages: `/` home, `/strategies`, `/family-offices`, `/portfolio`, `/insights` (articles), `/about`, `/privacy`, `/terms`. `/articles` redirects to `/insights`.
 
-### Adding a gathering
+### Adding a project
 
-Open `src/content/events.ts` and add an entry to `list`:
+Open `src/content/portfolio.ts` and add an entry to `projects`:
 
 ```ts
 {
-  title: "Spring gathering",
-  date: "April 2027",
-  location: "London",
-  description: "One line about the room.",
+  name: "Project name or a general description",
+  category: "Infrastructure",
+  summary: "One line on the thesis.",
+  location: "Texas",
+  confidential: true,
 },
 ```
 
+Categories are fixed in `portfolioCategories` in the same file. A category with no projects shows as "Active."
+
 ### Where invitation requests go
 
-The request form posts to whatever URL is set as `VITE_EVENTS_WEBHOOK_URL` in Render's Environment tab (a Zoho form endpoint, a Zapier or Make webhook, or a Supabase function). If that variable is not set, the form opens a pre-filled email to the address in `site.contact.email`, so no request is ever lost.
+The convenings request form posts to whatever URL is set as `VITE_EVENTS_WEBHOOK_URL` in Render's Environment tab (a Zoho form endpoint, a Zapier or Make webhook, or a Supabase function). If that variable is not set, the form opens a pre-filled email to the address in `site.contact.email`, so no request is ever lost.
 
 ## Running locally
 
@@ -51,7 +57,7 @@ npm run dev
 
 ## Deploying
 
-Push to `main`. Render builds with `npm install && npm run build` and serves the `dist` folder. `render.yaml` in this repo carries that configuration plus the rewrite rule that lets `/privacy` and `/terms` load on refresh.
+Push to `main`. Render builds with `npm run build` and serves the `dist` folder. Subpages (`/strategies`, `/about` and so on) need a rewrite rule in the Render dashboard (Redirects/Rewrites: source `/*`, destination `/index.html`, type Rewrite) so they load on refresh and direct link.
 
 For anything larger than a text edit, work on a branch, open a pull request, review the Render preview URL, then merge.
 
