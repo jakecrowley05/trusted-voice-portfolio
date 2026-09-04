@@ -6,29 +6,29 @@ import { Button } from '@/components/ui/button';
 
 const Terms = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-cc-charcoal text-cc-bone">
       <CCVNavbar />
       <main className="py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <Button
             onClick={() => window.history.back()}
             variant="outline"
-            className="mb-8 border-slate-300 text-slate-700 hover:bg-slate-50"
+            className="mb-8 border-cc-hairline text-cc-ash hover:bg-cc-deep"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back
           </Button>
 
-          <h1 className="text-4xl md:text-5xl font-light text-black mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-light text-cc-bone mb-4 tracking-tight">
             Terms & Conditions
           </h1>
-          <p className="text-lg text-slate-600 mb-12">
+          <p className="text-lg text-cc-ash mb-12">
             Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
 
-          <div className="space-y-12 text-slate-700 leading-relaxed">
+          <div className="space-y-12 text-cc-ash leading-relaxed">
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">1. Website Usage Terms</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">1. Website Usage Terms</h2>
               <p className="mb-4">
                 This website is operated by Crowley Capital ("the Firm"). By accessing and using this website, you accept and agree to be bound by the terms and conditions outlined herein. If you do not agree to these terms, please do not use this website.
               </p>
@@ -38,7 +38,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">2. Confidentiality</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">2. Confidentiality</h2>
               <p className="mb-4">
                 All information contained on this website, including but not limited to investment strategies, portfolio composition, research reports, and market commentary, is confidential and proprietary to Crowley Capital.
               </p>
@@ -48,7 +48,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">3. Investment Disclaimers</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">3. Investment Disclaimers</h2>
               <p className="mb-4">
                 <strong>No Investment Advice:</strong> The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice. Nothing on this website should be construed as a recommendation to buy, sell, or hold any security or investment product.
               </p>
@@ -64,7 +64,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">4. Investor Eligibility</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">4. Investor Eligibility</h2>
               <p className="mb-4">
                 The investment opportunities referenced on this website are generally available only to accredited investors as defined under Rule 501 of Regulation D of the Securities Act of 1933, as amended, or qualified purchasers as defined under Section 2(a)(51) of the Investment Company Act of 1940, as amended.
               </p>
@@ -74,7 +74,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">5. Jurisdiction and Governing Law</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">5. Jurisdiction and Governing Law</h2>
               <p className="mb-4">
                 This website is controlled and operated from the State of Texas, United States. The Firm makes no representation that materials on this website are appropriate or available for use in other locations. Access to this website from jurisdictions where its contents are illegal is prohibited.
               </p>
@@ -84,7 +84,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">6. Limitation of Liability</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">6. Limitation of Liability</h2>
               <p className="mb-4">
                 Crowley Capital shall not be liable for any direct, indirect, incidental, consequential, special, or punitive damages arising out of or relating to the use of this website or the information contained herein, including but not limited to investment losses, lost profits, or business interruption.
               </p>
@@ -94,7 +94,7 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">7. Intellectual Property</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">7. Intellectual Property</h2>
               <p className="mb-4">
                 All content on this website, including text, graphics, logos, images, audio clips, digital downloads, data compilations, and software, is the property of Crowley Capital or its content suppliers and is protected by United States and international copyright, trademark, and other intellectual property laws.
               </p>
@@ -104,14 +104,14 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">8. Third-Party Links</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">8. Third-Party Links</h2>
               <p>
                 This website may contain links to third-party websites or resources. Crowley Capital does not endorse and is not responsible for the content, products, services, or practices of any third-party websites. Users access third-party links at their own risk and should review the applicable terms and privacy policies of such websites.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">9. Modifications to Terms</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">9. Modifications to Terms</h2>
               <p className="mb-4">
                 Crowley Capital reserves the right to modify, amend, or update these Terms & Conditions at any time without prior notice. Continued use of this website following any changes constitutes acceptance of the modified terms.
               </p>
@@ -121,19 +121,19 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">10. Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">10. Contact Information</h2>
               <p className="mb-4">
                 For questions regarding these Terms & Conditions or any other matters related to this website, please contact:
               </p>
-              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                <p className="font-semibold text-black mb-2">Crowley Capital</p>
+              <div className="bg-cc-deep p-6  border border-cc-hairline">
+                <p className="font-semibold text-cc-bone mb-2">Crowley Capital</p>
                 <p>Email: <a href="mailto:jakecrowley05@gmail.com" className="text-blue-600 hover:underline">jakecrowley05@gmail.com</a></p>
                 <p>Location: Austin, Texas</p>
               </div>
             </section>
 
-            <section className="pt-8 border-t border-slate-200">
-              <p className="text-sm text-slate-500 italic">
+            <section className="pt-8 border-t border-cc-hairline">
+              <p className="text-sm text-cc-ash italic">
                 These Terms & Conditions constitute the entire agreement between users and Crowley Capital regarding the use of this website. If any provision of these terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
               </p>
             </section>

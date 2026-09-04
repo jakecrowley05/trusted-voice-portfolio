@@ -6,29 +6,29 @@ import { Button } from '@/components/ui/button';
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-cc-charcoal text-cc-bone">
       <CCVNavbar />
       <main className="py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <Button
             onClick={() => window.history.back()}
             variant="outline"
-            className="mb-8 border-slate-300 text-slate-700 hover:bg-slate-50"
+            className="mb-8 border-cc-hairline text-cc-ash hover:bg-cc-deep"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back
           </Button>
 
-          <h1 className="text-4xl md:text-5xl font-light text-black mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-light text-cc-bone mb-4 tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-lg text-slate-600 mb-12">
+          <p className="text-lg text-cc-ash mb-12">
             Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
 
-          <div className="space-y-12 text-slate-700 leading-relaxed">
+          <div className="space-y-12 text-cc-ash leading-relaxed">
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">1. Introduction</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">1. Introduction</h2>
               <p className="mb-4">
                 Crowley Capital ("the Firm," "we," "us," or "our") is committed to protecting the privacy and security of personal information collected through this website. This Privacy Policy describes how we collect, use, store, share, and protect information about visitors and users of our website.
               </p>
@@ -38,9 +38,9 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">2. Information We Collect</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">2. Information We Collect</h2>
               
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">2.1 Information You Provide</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">2.1 Information You Provide</h3>
               <p className="mb-4">
                 We collect information that you voluntarily provide when you:
               </p>
@@ -55,7 +55,7 @@ const Privacy = () => {
                 This information may include: name, email address, company name, job title, phone number, investment interests, and any other information you choose to provide.
               </p>
 
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">2.2 Automatically Collected Information</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">2.2 Automatically Collected Information</h3>
               <p className="mb-4">
                 When you visit our website, we automatically collect certain technical information, including:
               </p>
@@ -69,14 +69,14 @@ const Privacy = () => {
                 <li>Date and time of access</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">2.3 Cookies and Tracking Technologies</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">2.3 Cookies and Tracking Technologies</h3>
               <p>
                 We use cookies, web beacons, and similar technologies to enhance user experience, analyze website traffic, and track user behavior. You may disable cookies through your browser settings, though this may limit certain website functionality.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">3. How We Use Your Information</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">3. How We Use Your Information</h2>
               <p className="mb-4">
                 Crowley Capital uses collected information for the following purposes:
               </p>
@@ -92,7 +92,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">4. Information Retention</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">4. Information Retention</h2>
               <p className="mb-4">
                 We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
               </p>
@@ -108,12 +108,12 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">5. Information Sharing and Disclosure</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">5. Information Sharing and Disclosure</h2>
               <p className="mb-4">
                 Crowley Capital does not sell, rent, or trade personal information to third parties. We may share information in the following circumstances:
               </p>
 
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">5.1 Service Providers</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">5.1 Service Providers</h3>
               <p className="mb-4">
                 We engage trusted third-party service providers to support website operations, including:
               </p>
@@ -127,19 +127,19 @@ const Privacy = () => {
                 These service providers are contractually obligated to protect your information and use it only for the purposes we specify.
               </p>
 
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">5.2 Business Transfers</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">5.2 Business Transfers</h3>
               <p className="mb-4">
                 In the event of a merger, acquisition, reorganization, or sale of assets, personal information may be transferred as part of the transaction. Users will be notified of any such change in ownership or control.
               </p>
 
-              <h3 className="text-xl font-semibold text-black mb-3 mt-6">5.3 Legal Requirements</h3>
+              <h3 className="text-xl font-semibold text-cc-bone mb-3 mt-6">5.3 Legal Requirements</h3>
               <p>
                 We may disclose personal information when required by law, regulation, legal process, or governmental request, or when necessary to protect the rights, property, or safety of Crowley Capital, our users, or others.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">6. Third-Party Services</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">6. Third-Party Services</h2>
               <p className="mb-4">
                 Our website integrates with third-party services, including:
               </p>
@@ -155,7 +155,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">7. Data Security</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">7. Data Security</h2>
               <p className="mb-4">
                 Crowley Capital implements industry-standard security measures to protect personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
               </p>
@@ -171,7 +171,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">8. Your Rights and Choices</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">8. Your Rights and Choices</h2>
               <p className="mb-4">
                 Depending on your jurisdiction, you may have certain rights regarding your personal information:
               </p>
@@ -189,7 +189,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">9. GDPR Compliance (European Users)</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">9. GDPR Compliance (European Users)</h2>
               <p className="mb-4">
                 For users in the European Economic Area (EEA), Crowley Capital complies with the General Data Protection Regulation (GDPR). Our legal basis for processing personal information includes:
               </p>
@@ -205,7 +205,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">10. CCPA Compliance (California Users)</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">10. CCPA Compliance (California Users)</h2>
               <p className="mb-4">
                 For California residents, Crowley Capital complies with the California Consumer Privacy Act (CCPA). California users have specific rights regarding their personal information:
               </p>
@@ -221,14 +221,14 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">11. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">11. Children's Privacy</h2>
               <p>
                 This website is not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected information from a child, we will take steps to delete such information promptly.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">12. International Data Transfers</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">12. International Data Transfers</h2>
               <p className="mb-4">
                 Your information may be transferred to, stored, and processed in the United States or other countries where our service providers operate. These countries may have data protection laws that differ from those in your jurisdiction.
               </p>
@@ -238,7 +238,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">13. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">13. Changes to This Privacy Policy</h2>
               <p className="mb-4">
                 Crowley Capital reserves the right to update this Privacy Policy periodically to reflect changes in our practices, technologies, legal requirements, or business operations. Material changes will be communicated through website notice or direct communication.
               </p>
@@ -248,22 +248,22 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-black mb-4">14. Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-cc-bone mb-4">14. Contact Information</h2>
               <p className="mb-4">
                 For questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact:
               </p>
-              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                <p className="font-semibold text-black mb-2">Crowley Capital</p>
+              <div className="bg-cc-deep p-6  border border-cc-hairline">
+                <p className="font-semibold text-cc-bone mb-2">Crowley Capital</p>
                 <p>Email: <a href="mailto:jakecrowley05@gmail.com" className="text-blue-600 hover:underline">jakecrowley05@gmail.com</a></p>
                 <p>Location: Austin, Texas</p>
-                <p className="mt-4 text-sm text-slate-600">
+                <p className="mt-4 text-sm text-cc-ash">
                   We will respond to privacy inquiries within 30 days of receipt.
                 </p>
               </div>
             </section>
 
-            <section className="pt-8 border-t border-slate-200">
-              <p className="text-sm text-slate-500 italic">
+            <section className="pt-8 border-t border-cc-hairline">
+              <p className="text-sm text-cc-ash italic">
                 This Privacy Policy is designed to comply with applicable data protection laws, including GDPR and CCPA. Users should consult with legal counsel regarding specific privacy concerns or compliance requirements in their jurisdiction.
               </p>
             </section>

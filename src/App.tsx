@@ -1,57 +1,41 @@
-
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { StrictMode } from "react";
-import Index from "./pages/Index";
-import Dashboard from "./pages/Dashboard";
-import HelpCenter from "./pages/HelpCenter";
-import NotFound from "./pages/NotFound";
-import PricingPage from "./pages/Pricing";
-import ContactPage from "./pages/Contact";
-import ProductCoach from "./pages/ProductCoach";
 import CrowleyCapital from "./pages/CrowleyCapital";
-import Articles from "./pages/Articles";
+import Strategies from "./pages/Strategies";
+import FamilyOffices from "./pages/FamilyOffices";
+import Insights from "./pages/Insights";
+import About from "./pages/About";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000,
-      retry: 1,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
-const App = () => {
-  return (
-    <StrictMode>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<CrowleyCapital />} />
-              <Route path="/nobleloop" element={<Index />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/help" element={<HelpCenter />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/product-coach" element={<ProductCoach />} />
-              <Route path="/articles" element={<Articles />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </StrictMode>
-  );
-};
+// Public routes. Add a page here and it becomes reachable at that path.
+const App = () => (
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<CrowleyCapital />} />
+            <Route path="/strategies" element={<Strategies />} />
+            <Route path="/family-offices" element={<FamilyOffices />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/articles" element={<Navigate to="/insights" replace />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </StrictMode>
+);
 
 export default App;
