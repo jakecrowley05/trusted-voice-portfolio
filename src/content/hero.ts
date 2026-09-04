@@ -28,6 +28,6 @@ export const pillars = [
     name: "Family Offices and Private Capital",
     slug: "family-offices",
     summary:
-      "We work alongside single and multi-family offices, institutional investors and strategic partners as a principal, evaluating, structuring and building opportunities together. Capital follows trust.",
+      "We work alongside single and multi-family offices, sovereign wealth, institutional investors and strategic partners as a principal, evaluating, structuring and building opportunities together. Capital follows trust.",
   },
 ];

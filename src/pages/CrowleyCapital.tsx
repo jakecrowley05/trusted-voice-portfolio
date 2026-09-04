@@ -5,7 +5,6 @@ import CCVHero from '@/components/CCV/CCVHero';
 import CCVPillars from '@/components/CCV/CCVPillars';
 import CCVFocus from '@/components/CCV/CCVFocus';
 import CCVPhilosophy from '@/components/CCV/CCVPhilosophy';
-import CCVPortfolioPreview from '@/components/CCV/CCVPortfolioPreview';
 import CCVFamilyOfficeEcosystem from '@/components/CCV/CCVFamilyOfficeEcosystem';
 import CCVConvenings from '@/components/CCV/CCVConvenings';
 import CCVLeadership from '@/components/CCV/CCVLeadership';
@@ -33,7 +32,6 @@ const CrowleyCapital = () => {
         <CCVPillars />
         <CCVFocus />
         <CCVPhilosophy />
-        <CCVPortfolioPreview />
         <CCVFamilyOfficeEcosystem />
         <CCVConvenings />
         <CCVLeadership />

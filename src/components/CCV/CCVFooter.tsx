@@ -100,11 +100,6 @@ const CCVFooter = () => {
                 </a>
               </li>
               <li>
-                <a href="/portfolio" className="text-slate-400 hover:text-white transition-colors text-lg hover:underline">
-                  Portfolio and Projects
-                </a>
-              </li>
-              <li>
                 <a href="/insights" className="text-slate-400 hover:text-white transition-colors text-lg hover:underline">
                   Insights
                 </a>
@@ -134,7 +129,7 @@ const CCVFooter = () => {
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-400 text-lg">
-              © {currentYear} Crowley Capital. All rights reserved.
+              © 2022 Crowley Capital. All rights reserved.
             </p>
             <div className="flex items-center gap-8">
               <a href="/terms" className="text-slate-400 hover:text-white transition-colors">Terms & Conditions</a>

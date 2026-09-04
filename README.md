@@ -16,8 +16,7 @@ Almost everything you will ever change lives in `src/content/`. Edit the text be
 | How we invest | `src/content/philosophy.ts` |
 | Investment Strategies page (venture, private equity, family offices sections) | `src/content/strategies.ts` |
 | Family Offices page and the homepage family office section | `src/content/family-offices.ts` |
-| Private Capital Convenings copy and participants | `src/content/convenings.ts` |
-| Portfolio and Projects (add a project here) | `src/content/portfolio.ts` |
+| Private Capital Convenings copy and participants | `src/content/convenings.ts` (photographs are in `src/components/CCV/CCVConvenings.tsx`) |
 | About page and homepage leadership section, Jake's biography | `src/content/about.ts` |
 | Insights page heading and intro | `src/content/insights.ts` |
 | Footer disclaimer text | `src/content/footer.ts` |
@@ -26,27 +25,11 @@ Almost everything you will ever change lives in `src/content/`. Edit the text be
 | Link-preview image, favicon | `public/og-image.png`, `public/favicon.ico` |
 | Colors and fonts | `src/index.css` (brand variables) and `tailwind.config.ts` |
 
-Pages: `/` home, `/strategies`, `/family-offices`, `/portfolio`, `/insights` (articles), `/about`, `/privacy`, `/terms`. `/articles` redirects to `/insights`.
+Pages: `/` home, `/strategies`, `/family-offices`, `/insights` (articles), `/about`, `/privacy`, `/terms`. `/articles` redirects to `/insights`.
 
-### Adding a project
+### Where requests go
 
-Open `src/content/portfolio.ts` and add an entry to `projects`:
-
-```ts
-{
-  name: "Project name or a general description",
-  category: "Infrastructure",
-  summary: "One line on the thesis.",
-  location: "Texas",
-  confidential: true,
-},
-```
-
-Categories are fixed in `portfolioCategories` in the same file. A category with no projects shows as "Active."
-
-### Where invitation requests go
-
-The convenings request form posts to whatever URL is set as `VITE_EVENTS_WEBHOOK_URL` in Render's Environment tab (a Zoho form endpoint, a Zapier or Make webhook, or a Supabase function). If that variable is not set, the form opens a pre-filled email to the address in `site.contact.email`, so no request is ever lost.
+Discuss an Opportunity, Contact and Request an Invitation all open a pre-filled email to the address in `site.contact.email`.
 
 ## Running locally
 

@@ -6,7 +6,6 @@ import { StrictMode } from "react";
 import CrowleyCapital from "./pages/CrowleyCapital";
 import Strategies from "./pages/Strategies";
 import FamilyOffices from "./pages/FamilyOffices";
-import Portfolio from "./pages/Portfolio";
 import Insights from "./pages/Insights";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
@@ -26,7 +25,6 @@ const App = () => (
             <Route path="/" element={<CrowleyCapital />} />
             <Route path="/strategies" element={<Strategies />} />
             <Route path="/family-offices" element={<FamilyOffices />} />
-            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/articles" element={<Navigate to="/insights" replace />} />
             <Route path="/about" element={<About />} />

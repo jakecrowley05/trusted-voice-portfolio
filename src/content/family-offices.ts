@@ -7,7 +7,7 @@ export const familyOffices = {
   worksWith: [
     "Single-family offices", "Multi-family offices", "UHNW investors", "Institutional investors",
     "Private equity firms", "Venture capital firms", "Hedge funds",
-    "Sovereign and international capital relationships", "Strategic investors",
+    "Sovereign wealth funds", "Sovereign and international capital relationships", "Strategic investors",
   ],
   paragraphs: [
     "Our role is that of a principal, not an intermediary. We evaluate, structure, participate in and help build opportunities alongside aligned long-term capital: co-investments and direct investments, private equity and venture, secondaries, strategic projects and alternative assets, with depth in infrastructure, defense and dual-use, space, sports and real assets.",
@@ -22,5 +22,5 @@ export const familyOffices = {
   ],
   ecosystemHeading: "Family office ecosystem",
   ecosystemText:
-    "Family offices think in generations, not fund cycles. We work alongside them as a principal: co-investing directly, participating in secondaries, evaluating strategic projects and building long-term portfolios across infrastructure, defense and dual-use, space, sports and real assets. The relationships come first. The transactions follow.",
+    "Family offices and sovereign wealth think in generations, not fund cycles. We work alongside them as a principal: co-investing directly, participating in secondaries, evaluating strategic projects and building long-term portfolios across infrastructure, defense and dual-use, space, sports and real assets. The relationships come first. The transactions follow.",
 };

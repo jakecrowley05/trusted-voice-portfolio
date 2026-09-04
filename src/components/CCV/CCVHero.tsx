@@ -4,7 +4,7 @@ import monacoEstate from '@/assets/monaco-luxury-estate.jpg';
 import { hero } from '@/content/hero';
 import { site } from '@/content/site';
 
-const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+const mailto = `mailto:${site.contact.email}?subject=${encodeURIComponent(site.contact.introductionSubject)}`;
 
 const CCVHero = () => (
   <section id="hero" className="relative flex min-h-screen items-end overflow-hidden">
@@ -33,12 +33,12 @@ const CCVHero = () => (
           >
             {site.cta.secondary}
           </Link>
-          <button
-            onClick={() => scrollTo('contact')}
-            className="border border-white/40 px-7 py-3.5 font-sans text-sm font-light text-white transition-colors hover:border-white hover:bg-white/10"
+          <a
+            href={mailto}
+            className="inline-flex justify-center border border-white/40 px-7 py-3.5 font-sans text-sm font-light text-white transition-colors hover:border-white hover:bg-white/10"
           >
             {site.cta.primary}
-          </button>
+          </a>
         </div>
       </div>
     </div>

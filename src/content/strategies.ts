@@ -34,8 +34,12 @@ export const strategies = {
   familyOffices: {
     heading: "Family Offices and Private Capital",
     paragraphs: [
-      "We work alongside family offices, private investors, institutional capital, hedge funds and strategic partners as a principal, evaluating, structuring and building opportunities together.",
+      "We work alongside family offices, sovereign wealth funds, private investors, institutional capital, hedge funds and strategic partners as a principal, evaluating, structuring and building opportunities together.",
       "The through-line is a private-markets ecosystem where capital, relationships and opportunity meet.",
+    ],
+    partners: [
+      "Single-family offices", "Multi-family offices", "Sovereign wealth funds", "UHNW investors",
+      "Institutional investors", "Private equity firms", "Venture capital firms", "Hedge funds", "Strategic investors",
     ],
     link: "/family-offices",
     linkLabel: "Family Offices",

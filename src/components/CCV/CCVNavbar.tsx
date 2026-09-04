@@ -8,8 +8,7 @@ const links = [
   { label: 'Home', to: '/' },
   { label: 'Investment Strategies', to: '/strategies' },
   { label: 'Family Offices', to: '/family-offices' },
-  { label: 'Portfolio and Projects', to: '/portfolio' },
-  { label: 'Insights', to: '/insights' },
+    { label: 'Insights', to: '/insights' },
   { label: 'About', to: '/about' },
 ];
 
@@ -27,14 +26,14 @@ const CCVNavbar = () => {
 
   useEffect(() => setOpen(false), [pathname]);
 
-  const contactHref = pathname === '/' ? '#contact' : '/#contact';
+  const contactHref = `mailto:${site.contact.email}?subject=${encodeURIComponent(site.contact.introductionSubject)}`;
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled || open || pathname !== '/' ? 'bg-black border-b border-cc-hairline' : 'bg-transparent'}`}>
       <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-3" aria-label="Crowley Capital home">
           <CCVLogo size="sm" variant="light" />
-          <span className="font-serif text-xl font-normal text-white">Crowley Capital</span>
+          <span className="hidden text-lg font-semibold tracking-tight text-white sm:block">Crowley Capital</span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
